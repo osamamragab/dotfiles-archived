@@ -1,0 +1,7 @@
+global-dir=~/.pnpm-global
+store-dir=~/.pnpm-store
+registry=http://registry.npmjs.org/
+maxsockets=3
+init.main=app.js
+init.author.name=Osama
+init.license=MIT

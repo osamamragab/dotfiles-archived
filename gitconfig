@@ -1,0 +1,39 @@
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[user] # add your info here
+  name = Osama
+	email = 37374086+osamaify@users.noreply.github.com
+  username = osamaify
+  fullname = Osama
+
+[github] # add your github info
+  user = osamaify
+
+[alias]
+  co = checkout
+  st = status -sb
+  br = branch
+  ci = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+  fo = fetch origin
+  dt  = difftool
+  cl = clone
+	cld = clone --depth 1
+  unstage = reset HEAD --
+
+[credential]
+	helper = cache
+
+[help]
+  autocorrect = 1

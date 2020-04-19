@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+if [ -f ~/.functions ]; then
+  . ~/.functions
+fi
+
+if [ -f ~/.transfer.sh ]; then
+  . ~/.transfer.sh
+fi
+
+if [ -f /usr/local/etc/bash_completion.d/deno.bash ]; then
+  . /usr/local/etc/bash_completion.d/deno.bash
+fi
+
+export DENO_INSTALL='/usr/local'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:$NVM_DIR:$HOME/.pnpm-global/bin:$HOME/.pnpm-global/node_modules/.bin:$HOME/.yarn/bin:/root/.local/bin:$HOME/.local/bin"
