@@ -103,7 +103,7 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 if [ -f ~/.include_all ]; then
   . ~/.include_all
