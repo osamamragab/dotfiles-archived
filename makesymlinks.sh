@@ -9,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc zshrc zsh.pre-oh-my-zsh oh-my-zsh aliases functions include_all gitconfig npmrc translate-shell/init.trans"    # list of files/folders to symlink in homedir
+files="bashrc vimrc zshrc zsh.pre-oh-my-zsh oh-my-zsh aliases functions include_all gitconfig npmrc"    # list of files/folders to symlink in homedir
 
 ##########
 
