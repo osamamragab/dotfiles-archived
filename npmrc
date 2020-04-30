@@ -1,3 +1,4 @@
+prefix=/home/osamaify/.npm-global
 global-dir=/home/osamaify/.pnpm-global
 store-dir=/home/osamaify/.pnpm-store
 registry=http://registry.npmjs.org/
