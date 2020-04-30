@@ -108,3 +108,7 @@ prompt pure
 if [ -f ~/.include_all ]; then
   . ~/.include_all
 fi
+
+# autojump
+[[ -s /home/osamaify/.autojump/etc/profile.d/autojump.sh ]] && source /home/osamaify/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
