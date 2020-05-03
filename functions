@@ -45,16 +45,18 @@ weather() {
   curl -s "wttr.in/$1?m1"
 }
 
-# counter
-count() {
+# alarm command with noisy sound
+alarm() {
   local total=$1
 
-  for ((i=total; i>0; i--)); do
+  for ((i=total; i>=0; i--)); do
     sleep 1
-    printf "Time remaining $i secs\r"
+    printf "time remaining: ${i}s...\r"
   done
 
-  echo -e "\a"
+  printf "\ndone!\n\r"
+
+  timeout 1 speaker-test -f 100 -t sine -l 1
 }
 
 # extract files from archive
