@@ -11,12 +11,8 @@
 
 [user] # add your info here
   name = Osama
-	email = 37374086+osamaify@users.noreply.github.com
+	email = iosamaify@gmail.com
   username = osamaify
-  fullname = Osama
-
-[github] # add your github info
-  user = osamaify
 
 [alias]
   co = checkout
