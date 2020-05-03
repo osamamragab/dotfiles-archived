@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# git add & git commit
+# git add && git commit
 gac() {
-  git add $1 && git cm "$2"
+  git add $1 && git commit -m "$2"
 }
 
 # cd .. is boring
@@ -24,11 +24,12 @@ ifind() {
   find . -iname "*$1*"
 }
 
-# filesystem
+# check if given path is a file
 isfile() {
   [ -f $1 ] && echo 'true' || echo 'false'
 }
 
+# check if given path is a directory
 isdir() {
   [ -d $1 ] && echo 'true' || echo 'false'
 }
@@ -39,24 +40,24 @@ wtt() {
   echo `date +%F`
 }
 
-# weather
+# get weather info
 weather() {
   curl -s "wttr.in/$1?m1"
 }
 
 # counter
 count() {
-  total=$1
+  local total=$1
 
   for ((i=total; i>0; i--)); do
-    sleep 1;
-    printf "Time remaining $i secs \r";
+    sleep 1
+    printf "Time remaining $i secs\r"
   done
 
   echo -e "\a"
 }
 
-# tar
+# extract files from archive
 extract() {
   if [ -f $1 ] ; then
     case $1 in
@@ -79,3 +80,10 @@ extract() {
   fi
 }
 
+backup() {
+  local src="$HOME/Projects"
+  local dist="$HOME/Dropbox/projects.zip"
+  local exclude='**/node_modules'
+
+  zip $dist $src -r --exclude=$exclude
+}
