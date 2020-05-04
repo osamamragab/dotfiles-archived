@@ -15,15 +15,10 @@ alias x+='chmod +x'
 alias 2pdf='wkhtmltopdf'
 
 # download file with original filename
-# alias getfile='curl -O -L'
+alias getfile='curl -O -L'
 
 # download web page with all assets
 alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
-
-
-# pnpm by default (https://pnpm.js.org)
-# alias npm='pnpm'
-alias pnpmp='pnpm i --prefer-offline'
 
 # pastebin
 alias spaste='curl -F "sprunge=<-" http://sprunge.us'
@@ -38,11 +33,8 @@ alias dl-audio='dl -f "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"'
 # shortcut for updating youtube-dl
 alias update-youtube-dl="sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl && sudo chmod a+rx /usr/bin/youtube-dl"
 
-# init mongodb
-# alias mongodb='mongod --dbpath=D:/Apps/MongoDB/Server/data/db'
-
-# yarn alias
-# alias yarn='nodejs-yarn'
-
 # alias for kickthemout
 alias kto="sudo python3 $HOME/Apps/kickthemout/kickthemout.py"
+
+# play tron online
+alias play-tron='ssh sshtron.zachlatta.com'
