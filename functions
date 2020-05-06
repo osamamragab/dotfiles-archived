@@ -82,10 +82,17 @@ extract() {
   fi
 }
 
-backup() {
+backup-projects() {
   local src="$HOME/Projects"
   local dist="$HOME/Dropbox/projects.zip"
   local exclude='**/node_modules'
 
-  zip $dist $src -r --exclude=$exclude
+  zip $dist $src -r -x=$exclude
+}
+
+backup-usrlocal() {
+  local src='/usr/local'
+  local dist="$HOME/Dropbox/usrlocal.zip"
+
+  zip $dist $src -r
 }
