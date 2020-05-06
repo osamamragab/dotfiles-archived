@@ -96,3 +96,7 @@ backup-usrlocal() {
 
   zip $dist $src -r
 }
+
+backup-all() {
+  backup-projects && backup-usrlocal
+}
