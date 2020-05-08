@@ -14,9 +14,9 @@ olddir=~/dotfiles_old
 # list of files/folders to symlink in homedir
 files=(
   bashrc
-  zshrc  
+  zshrc
   zsh.pre-oh-my-zsh
-  zsh  
+  zsh
   oh-my-zsh
   vimrc
   aliases
@@ -24,6 +24,7 @@ files=(
   include_all
   gitconfig
   npmrc
+  fonts
 )
 
 # create dotfiles_old in homedir
