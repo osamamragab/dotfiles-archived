@@ -1,8 +1,6 @@
-prefix=/home/osamaify/.npm-global
 global-dir=/home/osamaify/.pnpm-global
 store-dir=/home/osamaify/.pnpm-store
 registry=http://registry.npmjs.org/
 maxsockets=3
 init.author.name=Osama
 init.license=MIT
-
