@@ -28,6 +28,7 @@
 	cld = clone --depth 1
   unstage = reset HEAD --
 	logg = log --oneline --graph --decorate
+  undo = reset --soft HEAD^
 
 [credential]
 	helper = cache
