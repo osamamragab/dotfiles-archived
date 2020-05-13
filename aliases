@@ -30,11 +30,9 @@ alias dl-video='dl -f "best[ext=mp4]/best"'
 alias dl-video-only='dl -f "bestvideo[ext=mp4]/bestvideo"'
 alias dl-audio='dl -f "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"'
 
-# shortcut for updating youtube-dl
-alias update-youtube-dl="sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl && sudo chmod a+rx /usr/bin/youtube-dl"
+# aliases for Python
+alias python='python3'
+alias pip='pip3'
 
 # alias for kickthemout
-alias kto="sudo python3 $HOME/Apps/kickthemout/kickthemout.py"
-
-# play tron online
-alias play-tron='ssh sshtron.zachlatta.com'
+alias kto="sudo python $HOME/Apps/kickthemout/kickthemout.py"
