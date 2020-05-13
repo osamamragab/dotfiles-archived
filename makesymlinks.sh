@@ -25,6 +25,7 @@ files=(
   gitconfig
   npmrc
   fonts
+  js
 )
 
 # create dotfiles_old in homedir
