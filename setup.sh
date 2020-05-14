@@ -1,47 +1,30 @@
 #!/bin/bash
 
-############################
-# .make.sh // http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+dir="$HOME/dotfiles"
 
-# dotfiles directory
-dir=~/dotfiles
-
-# old dotfiles backup directory
-olddir=~/dotfiles_old
+olddir="$HOME/dotfiles-old"
 
 # list of files/folders to symlink in homedir
 files=(
-  bashrc
-  zshrc
-  zsh.pre-oh-my-zsh
-  zsh
-  oh-my-zsh
-  vimrc
-  aliases
-  functions
-  include_all
-  gitconfig
-  npmrc
-  fonts
-  js
+  .bashrc
+  .zshrc
+  .vimrc
+  .gitconfig
+  .npmrc
+  .fonts
+  .js
 )
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+# create $olddir to backup existing dot files
 mkdir -p $olddir
-echo '...done'
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo '...done'
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# link $files to home directory
 for file in ${files[@]}; do
-  echo "Moving any existing dotfiles from ~ to $olddir"
-  mv ~/.$file ~/dotfiles_old/
-  echo "Creating symlink to $file in home directory."
-  ln -s $dir/$file ~/.$file
+  if [ -e "$HOME/$file" ]; then
+    echo "moving $HOME/$file to $olddir/$file"
+    mv "$HOME/$file" "$olddir/$file"
+  fi
+
+  echo "creating symlink for $file"
+  ln -s "$dir/$file" "$HOME/$file"
 done
