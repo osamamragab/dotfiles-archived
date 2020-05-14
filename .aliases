@@ -12,7 +12,8 @@ alias vi='vim'
 # some shortcuts
 alias clr='clear'
 alias x+='chmod +x'
-alias 2pdf='wkhtmltopdf'
+alias topdf='wkhtmltopdf'
+alias toimg="wkhtmltoimage"
 
 # download file with original filename
 alias getfile='curl -O -L'
@@ -35,4 +36,4 @@ alias python='python3'
 alias pip='pip3'
 
 # alias for kickthemout
-alias kto="sudo python $HOME/Apps/kickthemout/kickthemout.py"
+alias kto='sudo python ~/Apps/kickthemout/kickthemout.py'
