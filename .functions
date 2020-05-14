@@ -26,12 +26,12 @@ ifind() {
 
 # check if given path is a file
 isfile() {
-  [ -f $1 ] && echo 'true' || echo 'false'
+  [ -f $1 ] && echo 'yes' || echo 'no'
 }
 
 # check if given path is a directory
 isdir() {
-  [ -d $1 ] && echo 'true' || echo 'false'
+  [ -d $1 ] && echo 'yes' || echo 'no'
 }
 
 # what the time
@@ -54,7 +54,7 @@ alarm() {
     printf "time remaining: ${i}s...\r"
   done
 
-  printf "\ndone!\n\r"
+  printf '\ndone!\n\r'
 
   timeout 1 speaker-test -f 100 -t sine -l 1
 }

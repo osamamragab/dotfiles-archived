@@ -1,25 +1,21 @@
 #!/bin/bash
 
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
+if [ -f "$HOME/dotfiles/.aliases" ]; then
+  source "$HOME/dotfiles/.aliases"
 fi
 
-if [ -f ~/.functions ]; then
-  . ~/.functions
+if [ -f "$HOME/dotfiles/.functions" ]; then
+  source "$HOME/dotfiles/.functions"
 fi
 
-if [ -f ~/.transfer.sh ]; then
-  . ~/.transfer.sh
+if [ -f "$HOME/dotfiles/.exports" ]; then
+  source "$HOME/dotfiles/.exports"
 fi
 
-if [ -f /usr/local/etc/bash_completion.d/deno.bash ]; then
-  . /usr/local/etc/bash_completion.d/deno.bash
+if [ -f "$HOME/dotfiles/extra/transfer.sh" ]; then
+  source "$HOME/dotfiles/extra/transfer.sh"
 fi
 
-export DENO_INSTALL='/usr/local'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.deno/bin:/snap/bin:$PATH:/home/linuxbrew/.linuxbrew/bin/brew:$NVM_DIR:$HOME/.pnpm-global/bin:$HOME/.pnpm-global/node_modules/.bin:$HOME/.yarn/bin:$HOME/.npm-global/bin:/root/.local/bin:$HOME/.local/bin"
+if [ -f '/usr/local/etc/bash_completion.d/deno.bash' ]; then
+  source '/usr/local/etc/bash_completion.d/deno.bash'
+fi

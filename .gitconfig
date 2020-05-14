@@ -23,7 +23,7 @@
 	cm = commit -m
 	cam = commit -am
   fo = fetch origin
-  dt  = difftool
+  dt = difftool
   cl = clone
 	cld = clone --depth 1
   unstage = reset HEAD --
