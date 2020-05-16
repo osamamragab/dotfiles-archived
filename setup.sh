@@ -28,3 +28,5 @@ for file in ${files[@]}; do
   echo "creating symlink for $file"
   ln -s "$dir/$file" "$HOME/$file"
 done
+
+unset file

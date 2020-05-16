@@ -1,1 +1,0 @@
-/home/osamaify/dotfiles/.js
