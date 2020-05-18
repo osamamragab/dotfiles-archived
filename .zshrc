@@ -12,3 +12,6 @@ autoload -U promptinit; promptinit
 prompt pure
 
 source "$HOME/dotfiles/.include_all"
+
+chmod +x ~/.vocab
+~/.vocab
