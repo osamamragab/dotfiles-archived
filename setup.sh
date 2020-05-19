@@ -20,13 +20,17 @@ mkdir -p $olddir
 
 # link $files to home directory
 for file in ${files[@]}; do
-  if [ -e "$HOME/$file" ]; then
-    echo "moving $HOME/$file to $olddir/$file"
-    mv "$HOME/$file" "$olddir/$file"
+  targetFile="$HOME/$file"
+
+  if [ -e "$targetFile" ]; then
+    echo "moving $targetFile to $olddir/$file"
+    mv "$targetFile" "$olddir"
   fi
 
   echo "creating symlink for $file"
-  ln -s "$dir/$file" "$HOME/$file"
+  ln -s "$dir/$file" "$HOME"
+
+  unset targetFile
 done
 
-unset file
+unset dir olddir files file
