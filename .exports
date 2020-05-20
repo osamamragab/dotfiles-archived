@@ -7,4 +7,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/dotfiles/plugins:$HOME/.deno/bin:/snap/bin:/home/linuxbrew/.linuxbrew/bin/brew:$NVM_DIR:$HOME/.pnpm-global/bin:$HOME/.pnpm-global/node_modules/.bin:$HOME/.yarn/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$GOPATH/bin:/root/.local/bin:$HOME/.local/bin:$PATH"
-
