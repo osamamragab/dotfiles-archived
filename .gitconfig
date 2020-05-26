@@ -3,7 +3,7 @@
   diff = auto
   interactive = auto
   status = auto
-  ui = auto
+	ui = true
 
 [color "branch"]
   current = green
@@ -27,8 +27,15 @@
   cl = clone
 	cld = clone --depth 1
   unstage = reset HEAD --
-	logg = log --oneline --graph --decorate
   undo = reset --soft HEAD^
+
+  # inspired by: https://github.com/SuperJones/New-Computer-Setup/wiki/How-to-Configure-Git
+	logg = log --oneline --graph --decorate
+	lastcm = log -1 HEAD
+	tree = ls-tree --full-tree -r HEAD
+	ls = ls-files
+	sync = !git fetch origin && git remote prune origin && :
+	reebase-master = !git fetch origin master:master && git rebase master
 
 [credential]
 	helper = cache
@@ -41,3 +48,15 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[core]
+	editor = vim
+
+[http]
+	sslVerify = false
+
+[push]
+	default = simple
+
+[pager]
+	branch = false
