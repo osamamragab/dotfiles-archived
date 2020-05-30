@@ -37,3 +37,6 @@ alias pip='pip3'
 
 # alias for kickthemout
 alias kto='sudo python ~/Apps/kickthemout/kickthemout.py'
+
+# git aliases
+alias gst="git status -sb"
