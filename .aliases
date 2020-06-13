@@ -31,12 +31,5 @@ alias dl-video='dl -f "best[ext=mp4]/best"'
 alias dl-video-only='dl -f "bestvideo[ext=mp4]/bestvideo"'
 alias dl-audio='dl -f "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"'
 
-# aliases for Python
-alias python='python3'
-alias pip='pip3'
-
-# alias for kickthemout
-alias kto='sudo python ~/Apps/kickthemout/kickthemout.py'
-
 # git aliases
 alias gst="git status -sb"
