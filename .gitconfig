@@ -1,0 +1,62 @@
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+	ui = true
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[user] # add your info here
+  name = Osama
+	email = iosamaify@gmail.com
+  username = osamaify
+
+[alias]
+  co = checkout
+  st = status -sb
+  br = branch
+  ci = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+  fo = fetch origin
+  dt = difftool
+  cl = clone
+	cld = clone --depth 1
+  unstage = reset HEAD --
+  undo = reset --soft HEAD^
+
+  # inspired by: https://github.com/SuperJones/New-Computer-Setup/wiki/How-to-Configure-Git
+	logg = log --oneline --graph --decorate
+	lastcm = log -1 HEAD
+	tree = ls-tree --full-tree -r HEAD
+	ls = ls-files
+	sync = !git fetch origin && git remote prune origin && :
+	reebase-master = !git fetch origin master:master && git rebase master
+
+[credential]
+	helper = cache
+
+[help]
+  autocorrect = 1
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[core]
+	editor = vim
+
+[http]
+	sslVerify = false
+
+[push]
+	default = simple
+
+[pager]
+	branch = false

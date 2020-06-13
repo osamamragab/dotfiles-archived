@@ -1,0 +1,95 @@
+#!/bin/bash
+
+# git add && git commit
+gac() {
+  git add "$1" && git commit -m "$2"
+}
+
+gaca() {
+  git add "$1" && git commit -am "$2"
+}
+
+# cd .. is boring
+cd..() {
+  local times=1
+
+  if [[ $1 && $1 -gt 1 ]]; then
+    times=$1
+  fi
+
+  while [ $times -gt 0 ]; do
+    cd ..
+    times=$(($times - 1))
+  done
+}
+
+# find with case insensitivity
+ifind() {
+  find . -iname "*$1*"
+}
+
+# check if given path is a file
+isfile() {
+  [ -f $1 ] && echo 'yes' || echo 'no'
+}
+
+# check if given path is a directory
+isdir() {
+  [ -d $1 ] && echo 'yes' || echo 'no'
+}
+
+# what the time
+wtt() {
+  echo `date +%r`
+  echo `date +%F`
+}
+
+# get weather info
+weather() {
+  curl -s "wttr.in/$1?m1"
+}
+
+# alarm command with noisy sound
+alarm() {
+  local total=$1
+
+  for ((i=total; i>=0; i--)); do
+    sleep 1
+    printf "time remaining: ${i}s...\r"
+  done
+
+  printf '\ndone!\n\r'
+
+  timeout 1 speaker-test -f 100 -t sine -l 1
+}
+
+# extract files from archive
+extract() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xvjf $1    ;;
+      *.tar.gz)    tar xvzf $1    ;;
+      *.tar.xz)    tar Jxvf $1    ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       rar x $1       ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xvf $1     ;;
+      *.tbz2)      tar xvjf $1    ;;
+      *.tgz)       tar xvzf $1    ;;
+      *.zip)       unzip -d `echo $1 | sed 's/\(.*\)\.zip/\1/'` $1;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *)           echo "don't know how to extract '$1'" ;;
+    esac
+  else
+    echo "'$1' is not a valid file!"
+  fi
+}
+
+backup-projects() {
+  local src="$HOME/Projects"
+  local dist="$HOME/Dropbox/projects.zip"
+  local exclude="**/**/node_modules/"
+
+  zip $dist $src -r -x=$exclude
+}

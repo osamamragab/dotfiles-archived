@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# use current PATH for sudo
+alias sudi='sudo -E env "PATH=$PATH"'
+
+# set open_command to open
+alias open='open_command'
+
+# alias vi as vim
+alias vi='vim'
+
+# some shortcuts
+alias clr='clear'
+alias x+='chmod +x'
+alias topdf='wkhtmltopdf'
+alias toimg="wkhtmltoimage"
+
+# download file with original filename
+alias getfile='curl -O -L'
+
+# download web page with all assets
+alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
+
+# pastebin
+alias spaste='curl -F "sprunge=<-" http://sprunge.us'
+
+# youtube-dl shortcuts
+alias dl='youtube-dl -i -o "%(title)s.%(ext)s"'
+alias dl-best='dl -f 22/best'
+alias dl-video='dl -f "best[ext=mp4]/best"'
+alias dl-video-only='dl -f "bestvideo[ext=mp4]/bestvideo"'
+alias dl-audio='dl -f "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"'
+
+# git aliases
+alias gst="git status -sb"

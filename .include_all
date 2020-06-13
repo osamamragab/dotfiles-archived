@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -f "$HOME/dotfiles/.aliases" ]; then
+  source "$HOME/dotfiles/.aliases"
+fi
+
+if [ -f "$HOME/dotfiles/.functions" ]; then
+  source "$HOME/dotfiles/.functions"
+fi
+
+if [ -f "$HOME/dotfiles/.exports" ]; then
+  source "$HOME/dotfiles/.exports"
+fi
+
+if [ -f "$HOME/dotfiles/extra/transfer.sh" ]; then
+  source "$HOME/dotfiles/extra/transfer.sh"
+fi
+
+if [ -f '/usr/local/etc/bash_completion.d/deno.bash' ]; then
+  source '/usr/local/etc/bash_completion.d/deno.bash'
+fi
