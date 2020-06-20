@@ -33,3 +33,7 @@ alias dl-audio='dl -f "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"'
 
 # git aliases
 alias gst="git status -sb"
+
+# python
+alias python="python3"
+alias pip="pip3"
