@@ -1,12 +1,10 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/dotfiles/.oh-my-zsh"
-
+export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git)
 
 source "$ZSH/oh-my-zsh.sh"
 
-fpath+="$HOME/dotfiles/.zsh/pure"
+fpath+="$HOME/.zsh/pure"
 
 autoload -U promptinit; promptinit
 
