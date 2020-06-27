@@ -1,21 +1,12 @@
 #!/bin/bash
 
-if [ -f "$HOME/dotfiles/.aliases" ]; then
-  source "$HOME/dotfiles/.aliases"
-fi
+[[ -s "$HOME/dotfiles/.aliases" ]] && source "$HOME/dotfiles/.aliases"
 
-if [ -f "$HOME/dotfiles/.functions" ]; then
-  source "$HOME/dotfiles/.functions"
-fi
+[[ -s "$HOME/dotfiles/.functions" ]] && source "$HOME/dotfiles/.functions"
 
-if [ -f "$HOME/dotfiles/.exports" ]; then
-  source "$HOME/dotfiles/.exports"
-fi
+[[ -s "$HOME/dotfiles/.exports" ]] && source "$HOME/dotfiles/.exports"
 
-if [ -f "$HOME/dotfiles/extra/transfer.sh" ]; then
-  source "$HOME/dotfiles/extra/transfer.sh"
-fi
+[[ -s "$GVM_DIR/scripts/gvm" ]] && source "$GVM_DIR/scripts/gvm"
 
-if [ -f '/usr/local/etc/bash_completion.d/deno.bash' ]; then
-  source '/usr/local/etc/bash_completion.d/deno.bash'
-fi
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
