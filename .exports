@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GOPATH="~/go"
+export GOPATH="$HOME/go"
 
 export GVM_DIR="$HOME/.gvm"
 
