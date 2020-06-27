@@ -10,6 +10,7 @@ set smartcase
 set ignorecase
 set incsearch
 set nobackup
+set noswapfile
 set autoindent
 set expandtab
 set shiftwidth=2
