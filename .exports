@@ -1,8 +1,10 @@
 #!/bin/bash
 
-export DENO_INSTALL="$HOME/.deno"
-
 export GOPATH="~/go"
+
+export GVM_DIR="$HOME/.gvm"
+
+export DENO_INSTALL="$HOME/.deno"
 
 export NVM_DIR="$HOME/.nvm"
 
