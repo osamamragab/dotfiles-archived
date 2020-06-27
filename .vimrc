@@ -19,7 +19,7 @@ set smarttab
 set softtabstop=2
 set ruler
 set undolevels=1000
-set backspace=2
+set backspace=indent,eol,start
 
 filetype indent on
 
