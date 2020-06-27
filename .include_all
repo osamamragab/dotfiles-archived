@@ -1,10 +1,10 @@
 #!/bin/bash
 
+[[ -s "$HOME/dotfiles/.exports" ]] && source "$HOME/dotfiles/.exports"
+
 [[ -s "$HOME/dotfiles/.aliases" ]] && source "$HOME/dotfiles/.aliases"
 
 [[ -s "$HOME/dotfiles/.functions" ]] && source "$HOME/dotfiles/.functions"
-
-[[ -s "$HOME/dotfiles/.exports" ]] && source "$HOME/dotfiles/.exports"
 
 [[ -s "$GVM_DIR/scripts/gvm" ]] && source "$GVM_DIR/scripts/gvm"
 
