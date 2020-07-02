@@ -1,0 +1,15 @@
+[submodule "nerdtree"]
+  path = .vim/plugged/nerdtree
+  url = https://github.com/scrooloose/nerdtree
+[submodule "vim-github-dashboard"]
+  path = .vim/plugged/vim-github-dashboard
+  url = https://github.com/junegunn/vim-github-dashboard
+[submodule "YouCompleteMe"]
+  path = .vim/plugged/YouCompleteMe
+  url = https://github.com/ycm-core/YouCompleteMe
+[submodule "vim-go"]
+  path = .vim/plugged/vim-go
+  url = https://github.com/fatih/vim-go
+[submodule "typescript-vim"]
+  path = .vim/plugged/typescript-vim
+  url = https://github.com/leafgarland/typescript-vim
