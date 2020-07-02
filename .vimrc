@@ -24,3 +24,11 @@ set backspace=indent,eol,start
 filetype indent on
 
 colorscheme monokai
+
+call plug#begin('~/dotfiles/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'leafgarland/typescript-vim'
+call plug#end()
