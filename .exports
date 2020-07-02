@@ -7,5 +7,3 @@ export DENO_INSTALL="$HOME/.deno"
 export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/bin:$HOME/.deno/bin:$NVM_DIR:/bin:$HOME:$HOME/.yarn/bin:$HOME:$HOME/.cargo/bin:$GOPATH/bin:$PATH"
-
-export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/osama/.local/share/flatpak/exports/share:$PATH"
