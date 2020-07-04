@@ -28,7 +28,7 @@ colorscheme monokai
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-github-dashboard'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'kien/ctrlp.vim'
