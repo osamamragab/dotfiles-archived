@@ -1,16 +1,31 @@
 syntax on
 
+filetype off
+
+colorscheme monokai
+
+set nocompatible
+
 set number
 set linebreak
 set showbreak=+++
-set textwidth=100
+set ruler
+set undolevels=1000
+set belloff=all
+set splitright
+set splitbelow
+
 set showmatch
 set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+
 set nobackup
+set nowritebackup
 set noswapfile
+
+set textwidth=100
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -18,17 +33,7 @@ set softtabstop=2
 set copyindent
 set smartindent
 set smarttab
-set ruler
-set undolevels=1000
 set backspace=indent,eol,start
-set belloff=all
-set splitright
-set splitbelow
-set nocompatible
-
-filetype off
-
-colorscheme monokai
 
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'scrooloose/nerdtree'
@@ -41,4 +46,12 @@ Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
+Plug 'moll/vim-node'
+Plug 'alvan/vim-closetag'
+Plug 'prettier/vim-prettier'
+Plug 'rust-lang/rust.vim'
+Plug 'evanleck/vim-svelte'
+Plug 'itchyny/lightline.vim'
+Plug 'myusuf3/numbers.vim'
+Plug 'terryma/vim-smooth-scroll'
 call plug#end()
