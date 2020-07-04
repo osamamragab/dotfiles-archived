@@ -52,6 +52,5 @@ Plug 'prettier/vim-prettier'
 Plug 'rust-lang/rust.vim'
 Plug 'evanleck/vim-svelte'
 Plug 'itchyny/lightline.vim'
-Plug 'myusuf3/numbers.vim'
 Plug 'terryma/vim-smooth-scroll'
 call plug#end()
