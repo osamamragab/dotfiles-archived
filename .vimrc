@@ -33,4 +33,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
+Plug 'dense-analysis/ale'
+Plug 'Yggdroot/indentLine'
 call plug#end()
