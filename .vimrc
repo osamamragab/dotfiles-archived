@@ -35,4 +35,5 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-commentary'
 call plug#end()
