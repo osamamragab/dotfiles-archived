@@ -32,4 +32,5 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
