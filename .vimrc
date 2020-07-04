@@ -14,14 +14,19 @@ set noswapfile
 set autoindent
 set expandtab
 set shiftwidth=2
+set softtabstop=2
+set copyindent
 set smartindent
 set smarttab
-set softtabstop=2
 set ruler
 set undolevels=1000
 set backspace=indent,eol,start
+set belloff=all
+set splitright
+set splitbelow
+set nocompatible
 
-filetype indent on
+filetype off
 
 colorscheme monokai
 
