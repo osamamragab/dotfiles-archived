@@ -86,14 +86,12 @@ extract() {
   fi
 }
 
-backup-projects() {
-  local src="$HOME/Projects"
-  local dist="$HOME/Dropbox/projects.zip"
-  local exclude="**/**/node_modules/"
-
-  zip $dist $src -r -x=$exclude
-}
-
 mc() {
   mkdir -p $1 && cd $1
+}
+
+open() {
+  for i in $*; do
+    setsid nohup xdg-open $i > /dev/null 2> /dev/null
+  done
 }
