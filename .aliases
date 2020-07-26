@@ -22,7 +22,7 @@ alias getpage="wget --no-clobber --page-requisites --html-extension --convert-li
 alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
 
 # youtube-dl shortcuts
-alias dl="youtube-dl -i -o %(title)s.%(ext)s"
+alias dl="youtube-dl -i -o '%(title)s.%(ext)s'"
 alias dl-best="dl -f 22/best"
 alias dl-video="dl -f best[ext=mp4]/best"
 alias dl-video-only="dl -f bestvideo[ext=mp4]/bestvideo"
