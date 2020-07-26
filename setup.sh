@@ -6,15 +6,11 @@ olddir="$HOME/dotfiles_old"
 
 # list of files/folders to symlink in homedir
 files=(
-  .zsh
-  .oh-my-zsh
   .vim
   .fonts
   .bashrc
-  .zshrc
   .vimrc
   .gitconfig
-  .npmrc
 )
 
 # create $olddir to backup existing dot files
