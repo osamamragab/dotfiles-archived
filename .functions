@@ -2,11 +2,11 @@
 
 # git add && git commit
 gac() {
-  git add "$1" && git commit -m "$2"
+  git add "${@:1:$(( $# - 1 ))}" && git commit -m "${@: -1}"
 }
 
 gaca() {
-  git add "$1" && git commit -am "$2"
+  git add "${@:1:$(( $# - 1 ))}" && git commit -am "${@: -1}"
 }
 
 # cd .. is boring
@@ -30,12 +30,12 @@ ifind() {
 
 # check if given path is a file
 isfile() {
-  [ -f $1 ] && echo 'yes' || echo 'no'
+  [ -f $1 ] && echo "true" || echo "false"
 }
 
 # check if given path is a directory
 isdir() {
-  [ -d $1 ] && echo 'yes' || echo 'no'
+  [ -d $1 ] && echo "true" || echo "false"
 }
 
 # what the time
@@ -47,20 +47,6 @@ wtt() {
 # get weather info
 weather() {
   curl -s "wttr.in/$1?m1"
-}
-
-# alarm command with noisy sound
-alarm() {
-  local total=$1
-
-  for ((i=total; i>=0; i--)); do
-    sleep 1
-    printf "time remaining: ${i}s...\r"
-  done
-
-  printf '\ndone!\n\r'
-
-  timeout 1 speaker-test -f 100 -t sine -l 1
 }
 
 # extract files from archive
@@ -82,7 +68,7 @@ extract() {
       *)           echo "don't know how to extract '$1'" ;;
     esac
   else
-    echo "'$1' is not a valid file!"
+    echo "($1) is not a valid file!"
   fi
 }
 
