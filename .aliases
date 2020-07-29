@@ -27,6 +27,8 @@ alias dl-best="dl -f 22/best"
 alias dl-video="dl -f best[ext=mp4]/best"
 alias dl-video-only="dl -f bestvideo[ext=mp4]/bestvideo"
 alias dl-audio="dl -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"
+alias dl-playlist="youtube-dl -i -o '%(playlist_title)s/%(title)s.%(ext)s' -f 22/best"
+alias dl-playlist-sorted="youtube-dl -i -o '%(playlist_title)s/%(playlist_index)s- %(title)s.%(ext)s' -f 22/best"
 
 # git aliases
 alias gst="git status -sb"
