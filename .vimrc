@@ -1,6 +1,6 @@
 syntax on
 
-filetype off
+filetype plugin indent on
 
 colorscheme monokai
 
@@ -37,9 +37,20 @@ set backspace=indent,eol,start
 
 set clipboard=unnamed
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+autocmd vimenter * NERDTree
+
 call plug#begin('~/dotfiles/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/vim-github-dashboard'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
@@ -52,7 +63,9 @@ Plug 'moll/vim-node'
 Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier'
 Plug 'rust-lang/rust.vim'
-Plug 'evanleck/vim-svelte'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 call plug#end()
