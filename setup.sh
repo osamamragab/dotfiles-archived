@@ -1,11 +1,11 @@
 #!/bin/bash
 
-dir="$HOME/dotfiles"
+dotfiles_dir="$HOME/dotfiles"
 
-olddir="$HOME/dotfiles_old"
+dotfiles_old_dir="$HOME/dotfiles_old"
 
-# list of files/folders to symlink in homedir
-files=(
+# list of files/directories to symlink in $HOME
+symlink_files=(
   .vim
   .fonts
   .bashrc
@@ -14,21 +14,23 @@ files=(
 )
 
 # create $olddir to backup existing dot files
-mkdir -p $olddir
+mkdir -p $dotfiles_old_dir
 
 # link $files to home directory
-for file in ${files[@]}; do
+for file in ${symlink_files[@]}; do
   targetFile="$HOME/$file"
 
   if [ -e "$targetFile" ]; then
-    echo "moving $targetFile to $olddir/$file"
-    mv "$targetFile" "$olddir"
+    echo "moving old ($targetFile) to ($dotfiles_old_dir/$file)"
+    mv "$targetFile" "$dotfiles_old_dir"
   fi
 
-  echo "creating symlink for $file"
-  ln -s "$dir/$file" "$HOME"
+  echo "creating new symlink for $file"
+  ln -s "$dotfiles_dir/$file" "$HOME"
 
-  unset targetFile
+  echo ""
+
+  unset targetFile file
 done
 
-unset dir olddir files file
+unset dotfiles_dir dotfiles_old_dir symlink_files
