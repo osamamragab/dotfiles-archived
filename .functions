@@ -2,11 +2,11 @@
 
 # git add && git commit
 gac() {
-  git add "${@:1:$(( $# - 1 ))}" && git commit -m "${@: -1}"
+  git add "${@:1:$(($# - 1))}" && git commit -m "${@: -1}"
 }
 
 gaca() {
-  git add "${@:1:$(( $# - 1 ))}" && git commit -am "${@: -1}"
+  git add "${@:1:$(($# - 1))}" && git commit -am "${@: -1}"
 }
 
 # cd .. is boring
@@ -40,8 +40,8 @@ isdir() {
 
 # what the time
 wtt() {
-  echo `date +%r`
-  echo `date +%F`
+  echo $(date +%r)
+  echo $(date +%F)
 }
 
 # get weather info
@@ -51,24 +51,36 @@ weather() {
 
 # extract files from archive
 extract() {
-  if [[ -f $1 ]] ; then
+  if [[ -f $1 ]]; then
     case $1 in
-      *.tar.bz2)   tar xvjf $1    ;;
-      *.tar.gz)    tar xvzf $1    ;;
-      *.tar.xz)    tar Jxvf $1    ;;
-      *.bz2)       bunzip2 $1     ;;
-      *.rar)       rar x $1       ;;
-      *.gz)        gunzip $1      ;;
-      *.tar)       tar xvf $1     ;;
-      *.tbz2)      tar xvjf $1    ;;
-      *.tgz)       tar xvzf $1    ;;
-      *.zip)       unzip -d `echo $1 | sed 's/\(.*\)\.zip/\1/'` $1;;
-      *.Z)         uncompress $1  ;;
-      *.7z)        7z x $1        ;;
-      *)           echo "don't know how to extract '$1'" ;;
+    *.tar.bz2) tar xvjf $1 ;;
+
+    *.tar.gz) tar xvzf $1 ;;
+
+    *.tar.xz) tar Jxvf $1 ;;
+
+    *.bz2) bunzip2 $1 ;;
+
+    *.rar) rar x $1 ;;
+
+    *.gz) gunzip $1 ;;
+
+    *.tar) tar xvf $1 ;;
+
+    *.tbz2) tar xvjf $1 ;;
+
+    *.tgz) tar xvzf $1 ;;
+
+    *.zip) unzip -d $(echo $1 | sed 's/\(.*\)\.zip/\1/') $1 ;;
+
+    *.Z) uncompress $1 ;;
+
+    *.7z) 7z x $1 ;;
+
+    *) echo "file type is not supported ($1)" ;;
     esac
   else
-    echo "($1) is not a valid file!"
+    echo "($1) file does not exists"
   fi
 }
 
@@ -78,7 +90,7 @@ mc() {
 
 open() {
   for i in "$@"; do
-    setsid nohup xdg-open $i > /dev/null 2> /dev/null
+    setsid nohup xdg-open $i >/dev/null 2>/dev/null
   done
 }
 
@@ -86,7 +98,7 @@ show() {
   for p in "$@"; do
     if [[ -f $p ]]; then
       cat $p
-    elif [[ -d $p  ]]; then
+    elif [[ -d $p ]]; then
       ls $p
     fi
   done
@@ -97,29 +109,29 @@ dl() {
   local output="%(title)s.%(ext)s"
   local format="22/best[ext=mp4]/best"
 
-  while [ $# -ne 0 ]; do
+  while [[ $# -ne 0 ]]; do
     case "$1" in
-      -pl | --playlist)
-        output="%(playlist_title)s/%(title)s.%(ext)s"
-        ;;
+    -pl | --playlist)
+      output="%(playlist_title)s/%(title)s.%(ext)s"
+      ;;
 
-      -pls | --playlist-sorted)
-        output="%(playlist_title)s/%(playlist_index)s. %(title)s.%(ext)s"
-        ;;
+    -pls | --playlist-sorted)
+      output="%(playlist_title)s/%(playlist_index)s. %(title)s.%(ext)s"
+      ;;
 
-      -a | --audio | --no-vid | --no-video)
-        format="bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"
-        ;;
+    -a | --audio | --no-vid | --no-video)
+      format="bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio"
+      ;;
 
-      -v | --vid | --video | --no-audio)
-        format="bestvideo[ext=mp4]/bestvideo"
-        ;;
+    -v | --vid | --video | --no-audio)
+      format="bestvideo[ext=mp4]/bestvideo"
+      ;;
 
-      *)
-        if [[ ! -z "$1" && "$1" != -* ]]; then
-          urls+=("$1")
-        fi
-        ;;
+    *)
+      if [[ ! -z "$1" && "$1" != -* ]]; then
+        urls+=("$1")
+      fi
+      ;;
     esac
 
     shift
