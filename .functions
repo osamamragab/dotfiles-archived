@@ -105,7 +105,7 @@ show() {
 }
 
 dl() {
-  local urls=()
+  local input=()
   local output="%(title)s.%(ext)s"
   local format="22/best[ext=mp4]/best"
 
@@ -128,8 +128,8 @@ dl() {
       ;;
 
     *)
-      if [[ ! -z "$1" && "$1" != -* ]]; then
-        urls+=("$1")
+      if [[ ! -z "$1" ]]; then
+        input+=("$1")
       fi
       ;;
     esac
@@ -137,5 +137,5 @@ dl() {
     shift
   done
 
-  youtube-dl -i -o "$output" -f "$format" ${urls[*]}
+  youtube-dl -i -o "$output" -f "$format" ${input[*]}
 }
