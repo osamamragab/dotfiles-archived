@@ -1,3 +1,4 @@
 .fonts/**/.uuid
 .vim/.netrwhist
 .vim/plugged
+.vim/pack
