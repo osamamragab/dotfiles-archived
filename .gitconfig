@@ -1,3 +1,9 @@
+[init]
+	defaultBranch = main
+
+[core]
+	editor = vim
+
 [color]
   branch = auto
   diff = auto
@@ -37,6 +43,12 @@
 	sync = !git fetch origin && git remote prune origin && :
 	reebase-master = !git fetch origin master:master && git rebase master
 
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[http]
+	sslVerify = false
+
 [credential]
 	helper = cache
 
@@ -49,17 +61,8 @@
 	process = git-lfs filter-process
 	required = true
 
-[core]
-	editor = vim
-
-[http]
-	sslVerify = false
-
 [push]
 	default = simple
 
 [pager]
 	branch = false
-
-[url "git@github.com:"]
-	insteadOf = https://github.com/
