@@ -23,6 +23,7 @@ alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
 
 # git aliases
 alias gst="git status -sb"
+alias gph="git push"
 
 # python
 alias python="python3"
