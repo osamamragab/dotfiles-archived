@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# set open_command to open
-alias open="open_command"
-
 alias vi="gvim -v"
 alias vim="gvim -v"
 
