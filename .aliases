@@ -3,8 +3,8 @@
 # set open_command to open
 alias open="open_command"
 
-# alias vi as vim
-alias vi="vim"
+alias vi="gvim -v"
+alias vim="gvim -v"
 
 # some shortcuts
 alias clr="clear"
