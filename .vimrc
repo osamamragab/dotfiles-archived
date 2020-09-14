@@ -4,6 +4,8 @@ filetype plugin indent on
 
 colorscheme monokai
 
+set encoding=utf-8
+
 set nocompatible
 
 set number
