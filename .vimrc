@@ -2,8 +2,6 @@ syntax on
 
 filetype plugin indent on
 
-colorscheme monokai
-
 set encoding=utf-8
 
 set nocompatible
@@ -45,19 +43,19 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
-Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
 Plug 'moll/vim-node'
 Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier'
-Plug 'rust-lang/rust.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'terryma/vim-smooth-scroll'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'sainnhe/sonokai'
 call plug#end()
+
+colorscheme sonokai
