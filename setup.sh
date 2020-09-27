@@ -6,9 +6,9 @@ dotfiles_old_dir="$HOME/dotfiles_old"
 
 # list of files/directories to symlink in $HOME
 symlink_files=(
-  .vim
-  .fonts
   .bashrc
+  .bash_profile
+  .vim
   .vimrc
   .gitconfig
 )
