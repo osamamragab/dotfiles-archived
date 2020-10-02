@@ -44,20 +44,20 @@ call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
-Plug 'mattn/emmet-vim'
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-commentary'
-Plug 'moll/vim-node'
-Plug 'alvan/vim-closetag'
+Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier'
-Plug 'vim-syntastic/syntastic'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
 call plug#end()
 
 colorscheme sonokai
+
+
+let mapleader=" "
+map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>w <esc>:w<CR>
+nnoremap <leader>q <esc>:q<CR>
+nnoremap <leader>Q <esc>:q!<CR>
+nnoremap <leader>n <esc>:nohlsearch<CR>
