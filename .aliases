@@ -9,8 +9,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias vi="gvim -v"
-#alias vim="gvim -v"
+alias vi="nvim"
 
 # some shortcuts
 alias clr="clear"
