@@ -38,8 +38,6 @@ set backspace=indent,eol,start
 
 set clipboard=unnamed
 
-let &t_ut=''
-
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -54,10 +52,15 @@ call plug#end()
 
 colorscheme sonokai
 
-
 let mapleader=" "
+
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>w <esc>:w<CR>
 nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
 nnoremap <leader>n <esc>:nohlsearch<CR>
+
+execute "set <xUp>=\e[1;*A"
+execute "set <xDown>=\e[1;*B"
+execute "set <xRight>=\e[1;*C"
+execute "set <xLeft>=\e[1;*D"
