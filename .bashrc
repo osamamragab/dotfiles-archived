@@ -1,6 +1,4 @@
-#!/bin/bash
-
-source "$HOME/dotfiles/.bashrc_original_fedora"
+[[ $- != *i* ]] && return
 
 PS1='\u@\h:\w\$ '
 
