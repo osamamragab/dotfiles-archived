@@ -1,0 +1,32 @@
+super + Return
+  st
+
+super + v
+  st -e vim
+
+super + b
+  firefox
+
+super + {equal, minus, BackSpace}
+  $HOME/dotfiles/scripts/volume.sh {up, down, toggle}
+
+super + shift + BackSpace
+  $HOME/dotfiles/scripts/shutdown.sh
+
+super + m
+  $HOME/dotfiles/scripts/mount.sh
+
+super + f 
+  st -e nnn -Rr
+
+Print
+  maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
+
+ctrl + Print
+  maim -s | xclip -sel clip -t image/png
+
+ctrl + shift + Print
+  $HOME/dotfiles/scripts/screencast.sh
+
+super + p
+  mpv $(xclip -o)
