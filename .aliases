@@ -33,3 +33,8 @@ alias gph="git push"
 # python
 alias python="python3"
 alias pip="pip3"
+
+# xbps
+alias xi="doas xbps-install -Sy"
+alias xr="doas xbps-remove -R"
+alias xq="xbps-query -Rs"
