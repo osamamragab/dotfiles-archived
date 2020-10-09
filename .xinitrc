@@ -14,5 +14,6 @@ fi
 eval $(ssh-agent -s)
 
 exec sxhkd &
+exec xautolock -time 10 -locker slock &
 exec dwmblocks &
 exec dwm
