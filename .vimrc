@@ -8,7 +8,7 @@ set nocompatible
 
 set number
 set linebreak
-set showbreak=+++
+set showbreak=++ 
 set ruler
 set undolevels=1000
 set belloff=all
@@ -25,7 +25,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set textwidth=100
+""set textwidth=100
 set autoindent
 set expandtab
 set shiftwidth=2
