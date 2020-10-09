@@ -38,6 +38,8 @@ set backspace=indent,eol,start
 
 set clipboard=unnamed
 
+set display+=lastline
+
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
