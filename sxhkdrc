@@ -5,7 +5,10 @@ super + v
   st -e vim
 
 super + b
-  firefox
+  chromium
+
+super + f 
+  st -e nnn -Rr
 
 super + {equal, minus, BackSpace}
   $HOME/dotfiles/scripts/volume.sh {up, down, toggle}
@@ -15,9 +18,6 @@ super + shift + BackSpace
 
 super + m
   $HOME/dotfiles/scripts/mount.sh
-
-super + f 
-  st -e nnn -Rr
 
 Print
   maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
