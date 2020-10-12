@@ -36,7 +36,7 @@ set smartindent
 set smarttab
 set backspace=indent,eol,start
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set display+=lastline
 
