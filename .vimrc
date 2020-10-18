@@ -56,6 +56,8 @@ colorscheme sonokai
 
 let mapleader=" "
 
+inoremap ;; <Esc>
+
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>w <esc>:w<CR>
 nnoremap <leader>q <esc>:q<CR>
