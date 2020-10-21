@@ -49,10 +49,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier'
 Plug 'vim-airline/vim-airline'
+Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/sonokai'
 call plug#end()
 
-colorscheme sonokai
+colorscheme onedark
 
 let mapleader=" "
 
