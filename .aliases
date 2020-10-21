@@ -24,7 +24,8 @@ alias getfile="curl -O -L"
 alias getpage="wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories"
 
 # pastebin
-alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
+alias ix="curl -F 'f:1=<-' ix.io"
+#alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
 
 # git aliases
 alias gst="git status -sb"
