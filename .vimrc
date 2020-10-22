@@ -60,6 +60,9 @@ colorscheme onedark
 
 let mapleader=" "
 
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+
 inoremap ;; <Esc>
 
 map <C-n> :NERDTreeToggle<CR>
