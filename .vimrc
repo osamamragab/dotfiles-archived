@@ -41,11 +41,12 @@ set clipboard+=unnamedplus
 set display+=lastline
 
 call plug#begin('~/dotfiles/.vim/plugged')
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot'
+Plug 'kien/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier'
 Plug 'vim-airline/vim-airline'
