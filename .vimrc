@@ -60,6 +60,8 @@ call plug#end()
 
 colorscheme onedark
 
+highlight Normal ctermbg=0
+
 let mapleader=" "
 
 let g:go_fmt_autosave = 1
