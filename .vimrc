@@ -51,9 +51,9 @@ Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 Plug 'sainnhe/sonokai'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'airblade/vim-gitgutter'
 "Plug 'joshdick/onedark.vim'
 call plug#end()
 
