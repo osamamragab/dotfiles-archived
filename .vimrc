@@ -68,6 +68,8 @@ let g:go_fmt_command = "goimports"
 
 let python_highlight_all = 1
 
+let g:NERDTreeWinPos = "right"
+
 inoremap ;; <Esc>
 
 map <C-n> :NERDTreeToggle<CR>
