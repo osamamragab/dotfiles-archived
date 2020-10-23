@@ -15,7 +15,7 @@ set belloff=all
 set splitright
 set splitbelow
 
-set showmatch
+"set showmatch
 set hlsearch
 set smartcase
 set ignorecase
@@ -25,7 +25,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-""set textwidth=100
+"set textwidth=100
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -47,25 +47,26 @@ Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
-Plug 'prettier/vim-prettier'
 Plug 'vim-airline/vim-airline'
-Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/sonokai'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'joshdick/onedark.vim'
 call plug#end()
 
-colorscheme onedark
+colorscheme sonokai
 
-highlight Normal ctermbg=0
+"highlight Normal ctermbg=0
 
 let mapleader=" "
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+
+let python_highlight_all = 1
 
 inoremap ;; <Esc>
 
