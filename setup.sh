@@ -7,6 +7,7 @@ dotfiles_old_dir="$HOME/dotfiles_old"
 # list of files/directories to symlink in $HOME
 symlink_files=(
   .xinitrc
+  .inputrc
   .bashrc
   .bash_profile
   .vim
