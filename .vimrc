@@ -53,11 +53,12 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'sainnhe/sonokai'
+Plug 'rhysd/conflict-marker.vim'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'joshdick/onedark.vim'
 call plug#end()
 
-colorscheme sonokai
+colorscheme sonokai 
 
 "highlight Normal ctermbg=0
 
