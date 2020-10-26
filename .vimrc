@@ -74,15 +74,17 @@ let g:NERDTreeWinPos = "right"
 
 inoremap ;; <Esc>
 
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>w <esc>:w<CR>
 nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
 nnoremap <leader>n <esc>:nohlsearch<CR>
-
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
 
 execute "set <xUp>=\e[1;*A"
 execute "set <xDown>=\e[1;*B"
