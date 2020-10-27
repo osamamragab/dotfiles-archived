@@ -1,4 +1,4 @@
-"syntax on
+syntax on
 
 filetype plugin indent on
 
@@ -39,6 +39,8 @@ set backspace=indent,eol,start
 set clipboard+=unnamedplus
 
 set display+=lastline
+
+set updatetime=100
 
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
