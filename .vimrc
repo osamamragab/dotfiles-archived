@@ -55,8 +55,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'brooth/far.vim'
 Plug 'sainnhe/sonokai'
+Plug 'joshdick/onedark.vim'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'joshdick/onedark.vim'
 call plug#end()
 
 colorscheme sonokai 
