@@ -1,4 +1,4 @@
-syntax on
+"syntax on
 
 filetype plugin indent on
 
@@ -50,18 +50,19 @@ Plug 'kien/ctrlp.vim'
 Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'brooth/far.vim'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-vinegar'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 colorscheme sonokai 
-
-"highlight Normal ctermbg=0
 
 let mapleader=" "
 
