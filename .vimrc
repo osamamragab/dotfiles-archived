@@ -96,3 +96,5 @@ set autoread
 
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
   \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+autocmd BufWritePre * :%s/\s\+$//e
