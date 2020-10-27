@@ -10,6 +10,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias vi="nvim"
+alias vii="nvim-qt"
 
 # some shortcuts
 alias clr="clear"
