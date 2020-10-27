@@ -8,7 +8,7 @@ set nocompatible
 
 set number
 set linebreak
-set showbreak=++ 
+set showbreak=++
 set ruler
 set undolevels=1000
 set belloff=all
@@ -52,17 +52,18 @@ Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'brooth/far.vim'
 Plug 'wellle/targets.vim'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-vinegar'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
-colorscheme sonokai 
+colorscheme sonokai
 
 let mapleader=" "
 
