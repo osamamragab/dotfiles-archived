@@ -76,6 +76,8 @@ let python_highlight_all = 1
 
 let g:NERDTreeWinPos = "right"
 
+let g:airline#extensions#tabline#enabled = 1
+
 inoremap ;; <Esc>
 
 nnoremap <leader>d "_d
