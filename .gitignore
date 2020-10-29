@@ -1,4 +1,5 @@
 .vim/plugged
 .vim/pack
 .vim/.netrwhist
+.config/nvim/.netrwhist
 _tmp/
