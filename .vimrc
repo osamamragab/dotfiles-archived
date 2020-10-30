@@ -62,6 +62,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-vinegar'
 Plug 'easymotion/vim-easymotion'
+Plug 'mg979/vim-visual-multi'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
 call plug#end()
