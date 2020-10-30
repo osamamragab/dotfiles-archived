@@ -7,7 +7,7 @@ super + v
 super + b
   chromium
 
-super + f 
+super + f
   st -e nnn -Rr
 
 super + {equal, minus, BackSpace}
@@ -16,17 +16,20 @@ super + {equal, minus, BackSpace}
 super + shift + BackSpace
   $HOME/dotfiles/scripts/shutdown.sh
 
-super + m
-  $HOME/dotfiles/scripts/mount.sh
+#super + m
+#  $HOME/dotfiles/scripts/mount.sh
 
 Print
   maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
+
+shift + Print
+  maim -u -i $(xdotool getactivewindow) ~/Pictures/screenshot-$(date +%s).png
 
 ctrl + Print
   maim -s | xclip -sel clip -t image/png
 
 ctrl + shift + Print
-  $HOME/dotfiles/scripts/screencast.sh
+  maim -s ~/Pictures/screenshot-$(date +%s).png
 
 super + p
   mpv $(xclip -o)
