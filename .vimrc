@@ -15,7 +15,7 @@ set belloff=all
 set splitright
 set splitbelow
 
-"set showmatch
+" set showmatch
 set hlsearch
 set smartcase
 set ignorecase
@@ -25,7 +25,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"set textwidth=100
+" set textwidth=100
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -69,16 +69,16 @@ call plug#end()
 
 colorscheme sonokai
 
-let mapleader=" "
+let mapleader=' '
 
 let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 
 let python_highlight_all = 1
 
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = 'right'
 
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 inoremap ;; <Esc>
 
@@ -94,10 +94,10 @@ nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
 nnoremap <leader>n <esc>:nohlsearch<CR>
 
-execute "set <xUp>=\e[1;*A"
-execute "set <xDown>=\e[1;*B"
-execute "set <xRight>=\e[1;*C"
-execute "set <xLeft>=\e[1;*D"
+execute 'set <xUp>=\e[1;*A'
+execute 'set <xDown>=\e[1;*B'
+execute 'set <xRight>=\e[1;*C'
+execute 'set <xLeft>=\e[1;*D'
 
 set autoread
 
