@@ -82,6 +82,8 @@ let g:NERDTreeWinPos = 'right'
 
 inoremap kj <Esc>
 
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
