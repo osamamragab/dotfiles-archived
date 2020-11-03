@@ -80,7 +80,7 @@ let g:NERDTreeWinPos = 'right'
 
 " let g:airline#extensions#tabline#enabled = 1
 
-inoremap ;; <Esc>
+inoremap kj <Esc>
 
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
