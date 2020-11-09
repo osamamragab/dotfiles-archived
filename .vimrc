@@ -15,7 +15,6 @@ set belloff=all
 set splitright
 set splitbelow
 
-" set showmatch
 set hlsearch
 set smartcase
 set ignorecase
@@ -42,29 +41,20 @@ set display+=lastline
 
 set updatetime=100
 
+
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'prettier/vim-prettier'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-Plug 'rhysd/conflict-marker.vim'
-Plug 'brooth/far.vim'
-Plug 'wellle/targets.vim'
-Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-vinegar'
-Plug 'easymotion/vim-easymotion'
-Plug 'mg979/vim-visual-multi'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'mhinz/vim-signify'
+Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
-Plug 'joshdick/onedark.vim'
 call plug#end()
 
 colorscheme sonokai
@@ -78,8 +68,6 @@ let python_highlight_all = 1
 
 let g:NERDTreeWinPos = 'right'
 
-" let g:airline#extensions#tabline#enabled = 1
-
 inoremap kj <Esc>
 
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -90,7 +78,7 @@ xnoremap <leader>p "_dP
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 nnoremap <leader>w <esc>:w<CR>
 nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
