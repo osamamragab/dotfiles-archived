@@ -94,7 +94,7 @@ let g:NERDTreeWinPos = 'right'
 
 let mapleader=' '
 
-inoremap kj <Esc>
+inoremap jj <Esc>
 
 map q: :q
 
