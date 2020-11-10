@@ -85,7 +85,12 @@ let g:rehash256 = 1
 colorscheme molokai
 
 highlight LineNr ctermbg=234
+
 highlight SignColumn ctermbg=234
+highlight SignifySignAdd ctermfg=28
+highlight SignifySignChange ctermfg=26
+
+let g:signify_sign_change = '~'
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
