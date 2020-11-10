@@ -89,6 +89,11 @@ highlight LineNr ctermbg=234
 highlight TabLine ctermbg=233
 highlight TabLineFill ctermfg=233
 
+highlight Pmenu ctermbg=233 ctermfg=252
+highlight PmenuSel ctermbg=235 ctermfg=252
+highlight PmenuSbar ctermbg=233
+highlight PmenuThumb ctermbg=236
+
 highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
