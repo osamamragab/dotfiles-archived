@@ -91,8 +91,11 @@ let g:go_auto_type_info = 1
 let python_highlight_all = 1
 
 let g:NERDTreeWinPos = 'right'
+let NERDTreeShowHidden = 1
 
-let mapleader=' '
+let g:airline_theme = 'sonokai'
+
+let mapleader = ' '
 
 inoremap jj <Esc>
 
