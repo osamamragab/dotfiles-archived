@@ -2,6 +2,7 @@ call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'Raimondi/delimitMate'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
