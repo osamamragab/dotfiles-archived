@@ -86,6 +86,9 @@ colorscheme molokai
 
 highlight LineNr ctermbg=234
 
+highlight TabLine ctermbg=233
+highlight TabLineFill ctermfg=233
+
 highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
