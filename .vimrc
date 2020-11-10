@@ -79,10 +79,13 @@ syntax enable
 set t_Co=256
 set background=dark
 
-let g:molokai_original = 1
+"let g:molokai_original = 1
 let g:rehash256 = 1
 
 colorscheme molokai
+
+highlight LineNr ctermbg=234
+highlight SignColumn ctermbg=234
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
