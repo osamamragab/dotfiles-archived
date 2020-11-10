@@ -112,6 +112,11 @@ nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
 nnoremap <leader>n <esc>:nohlsearch<CR>
 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
 execute 'set <xRight>=\e[1;*C'
