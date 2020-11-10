@@ -1,47 +1,3 @@
-syntax on
-
-filetype plugin indent on
-
-set encoding=utf-8
-
-set nocompatible
-
-set number
-set linebreak
-set showbreak=++
-set ruler
-set undolevels=1000
-set belloff=all
-set splitright
-set splitbelow
-
-set hlsearch
-set smartcase
-set ignorecase
-set incsearch
-
-set nobackup
-set nowritebackup
-set noswapfile
-
-" set textwidth=100
-set autoindent
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set copyindent
-set smartindent
-set smarttab
-set backspace=indent,eol,start
-
-set clipboard+=unnamedplus
-
-set display+=lastline
-
-set updatetime=100
-
-
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -58,9 +14,74 @@ Plug 'sainnhe/sonokai'
 Plug 'fatih/molokai'
 call plug#end()
 
-colorscheme molokai
+set nocompatible
 
-let mapleader=' '
+filetype off
+filetype plugin indent on
+
+set encoding=utf-8
+
+set autoread
+set autowrite
+set ttyfast
+set lazyredraw
+set number
+set linebreak
+set showbreak=++
+set ruler
+set undolevels=1000
+set belloff=all
+set splitright
+set splitbelow
+set noshowmode
+set noshowmatch
+set hidden
+
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+set autoindent
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set copyindent
+set smartindent
+set smarttab
+set backspace=indent,eol,start
+
+set clipboard^=unnamed
+set clipboard^=unnamedplus
+
+set display+=lastline
+
+set mouse=a
+
+set updatetime=300
+
+set completeopt=menu,menuone
+set nocursorcolumn
+set nocursorline
+set pumheight=10
+set conceallevel=2
+
+set fileformats=unix,dos,mac
+
+syntax enable
+
+set t_Co=256
+set background=dark
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+colorscheme molokai
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
@@ -70,7 +91,11 @@ let python_highlight_all = 1
 
 let g:NERDTreeWinPos = 'right'
 
+let mapleader=' '
+
 inoremap kj <Esc>
+
+map q: :q
 
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
@@ -90,10 +115,3 @@ execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
 execute 'set <xRight>=\e[1;*C'
 execute 'set <xLeft>=\e[1;*D'
-
-set autoread
-
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
-  \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
-
-autocmd BufWritePre * :%s/\s\+$//e
