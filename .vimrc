@@ -55,14 +55,16 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'sainnhe/sonokai'
+Plug 'fatih/molokai'
 call plug#end()
 
-colorscheme sonokai
+colorscheme molokai
 
 let mapleader=' '
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
+let g:go_auto_type_info = 1
 
 let python_highlight_all = 1
 
