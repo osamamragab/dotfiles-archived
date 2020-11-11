@@ -99,22 +99,40 @@ highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
 
-let g:signify_sign_change = '~'
+let mapleader = ' '
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
+let g:go_def_mode = 'gopls'
+let g:go_list_type = "quickfix"
+let g:go_auto_type_info = 0
+let g:go_auto_sameids = 0
+let g:go_null_module_warning = 0
+let g:go_echo_command_info = 1
+let g:go_autodetect_gopath = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['vet', 'golint']
+let g:go_info_mode = 'gopls'
+let g:go_rename_command = 'gopls'
+let g:go_gopls_complete_unimported = 1
+let g:go_implements_mode = 'gopls'
+let g:go_diagnostics_enabled = 1
+let g:go_doc_popup_window = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_operators = 1
+let g:go_fold_enable = []
 
 let python_highlight_all = 1
+
+let g:sql_type_default = 'pgsql'
 
 let g:NERDTreeWinPos = 'right'
 let NERDTreeShowHidden = 1
 
 let g:airline_theme = 'sonokai'
 
-let g:sql_type_default = 'pgsql'
-
-let mapleader = ' '
+let g:signify_sign_change = '~'
 
 inoremap jj <Esc>
 
@@ -125,6 +143,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
+
+nmap <C-g> :GoDecls<cr>
+imap <C-g> <esc>:<C-u>GoDecls<cr>
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
