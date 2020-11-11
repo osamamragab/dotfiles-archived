@@ -112,6 +112,8 @@ let NERDTreeShowHidden = 1
 
 let g:airline_theme = 'sonokai'
 
+let g:sql_type_default = 'pgsql'
+
 let mapleader = ' '
 
 inoremap jj <Esc>
