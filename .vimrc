@@ -11,6 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
+Plug 'exu/pgsql.vim'
 Plug 'sainnhe/sonokai'
 Plug 'fatih/molokai'
 call plug#end()
