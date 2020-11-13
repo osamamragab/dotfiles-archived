@@ -1,7 +1,6 @@
 #!/bin/bash
 
 dotfiles_dir="$HOME/dotfiles"
-
 dotfiles_old_dir="$HOME/dotfiles_old"
 
 # list of files/directories to symlink in $HOME
@@ -15,24 +14,23 @@ symlink_files=(
   .gitconfig
 )
 
-# create $olddir to backup existing dot files
-mkdir -p $dotfiles_old_dir
+[ ! -d "$dotfiles_old_dir" ] && mkdir "$dotfiles_old_dir"
+[ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
 
-# link $files to home directory
-for file in ${symlink_files[@]}; do
-  targetFile="$HOME/$file"
-
-  if [ -e "$targetFile" ]; then
-    echo "moving old ($targetFile) to ($dotfiles_old_dir/$file)"
-    mv "$targetFile" "$dotfiles_old_dir"
+# link $symlink_files to home directory
+for f in ${symlink_files[@]}; do
+  if [ -e "$HOME/$f" ]; then
+    echo "move ($HOME/$f => $dotfiles_old_dir/$f)"
+    mv "$HOME/$f" "$dotfiles_old_dir"
   fi
 
-  echo "creating new symlink for $file"
-  ln -s "$dotfiles_dir/$file" "$HOME"
-
-  echo ""
-
-  unset targetFile file
+  echo "creating new symlink for $HOME/$f"
+  ln -s "$dotfiles_dir/$f" "$HOME"
 done
 
-unset dotfiles_dir dotfiles_old_dir symlink_files
+for f in $(ls "$dotfiles_dir/bin"); do
+  if [ ! -e "$HOME/bin/$f" ]; then
+    echo "creating new symlink for $dotfiles_dir/bin/$f"
+    ln -s "$dotfiles_dir/bin/$f" "$HOME/bin"
+  fi
+done
