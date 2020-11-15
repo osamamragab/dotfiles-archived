@@ -48,7 +48,9 @@ set incsearch
 
 set nobackup
 set nowritebackup
-set noswapfile
+
+" set noswapfile
+set directory^=$HOME/.vim/tmp//
 
 set autoindent
 set expandtab
