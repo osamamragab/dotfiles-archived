@@ -136,11 +136,11 @@ let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
 
-inoremap jj <Esc>
+imap jj <Esc>
 
 map q: :q
 
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+" nnoremap <C-l> :nohl<CR>
 
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
