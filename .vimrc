@@ -131,7 +131,7 @@ let g:airline_theme = 'sonokai'
 
 let g:signify_sign_change = '~'
 
-let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_keymap_toggle = '<C-space>'
 let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
