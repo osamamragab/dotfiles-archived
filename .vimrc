@@ -38,6 +38,7 @@ set splitbelow
 set noshowmode
 set noshowmatch
 set hidden
+set nowrap
 
 set hlsearch
 set smartcase
