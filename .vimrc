@@ -141,21 +141,21 @@ nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
-nmap <C-g> :GoDecls<cr>
-imap <C-g> <esc>:<C-u>GoDecls<cr>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
-inoremap <silent><expr> <c-space> coc#refresh()
+nmap <C-g> :GoDecls<CR>
+imap <C-g> <esc>:<C-u>GoDecls<CR>
+
+inoremap <silent><expr> <C-space> coc#refresh()
 
 map <C-b> :NERDTreeToggle<CR>
 nnoremap <leader>w <esc>:w<CR>
 nnoremap <leader>q <esc>:q<CR>
 nnoremap <leader>Q <esc>:q!<CR>
 nnoremap <leader>n <esc>:nohlsearch<CR>
-
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 
 execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
