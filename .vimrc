@@ -14,6 +14,7 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'exu/pgsql.vim'
+Plug 'fatih/vim-nginx'
 Plug 'sainnhe/sonokai'
 Plug 'fatih/molokai'
 call plug#end()
