@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-input=()
+input=""
 output="%(title)s.%(ext)s"
 format="22/best[ext=mp4]/best"
 
@@ -24,7 +24,7 @@ while [ $# -ne 0 ]; do
 
   *)
     if [ "$1" ]; then
-      input+=("$1")
+      [ "$input" = "" ] && input="$1" || input="$input $1"
     fi
     ;;
   esac
@@ -32,4 +32,4 @@ while [ $# -ne 0 ]; do
   shift
 done
 
-youtube-dl -i -o "$output" -f "$format" ${input[*]}
+youtube-dl -i -o "$output" -f "$format" "$input"
