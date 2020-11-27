@@ -6,6 +6,15 @@ for f in "$@"; do
   [ "$f" = "$msg" ] && continue
   [ "$files" = "" ] && files="$f" || files="$files $f"
 
+  case "$f" in
+    .*)
+      n=$(echo "$f" | cut -c2-)
+      ;;
+    *)
+      n=$(echo "$f" | cut -f 1 -d '.')
+      ;;
+  esac
+
   [ "$names" = "" ] && names="$n" || names="$names, $n"
 done
 
