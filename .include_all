@@ -1,12 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-[[ -s "$HOME/dotfiles/.exports" ]] && source "$HOME/dotfiles/.exports"
+[ -s "$HOME/dotfiles/.exports" ] && . "$HOME/dotfiles/.exports"
 
-[[ -s "$HOME/dotfiles/.aliases" ]] && source "$HOME/dotfiles/.aliases"
+[ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
 
-[[ -s "$HOME/dotfiles/.functions" ]] && source "$HOME/dotfiles/.functions"
-
-[[ -s "$GVM_DIR/scripts/gvm" ]] && source "$GVM_DIR/scripts/gvm"
-
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+[ -s "$HOME/dotfiles/.functions" ] && . "$HOME/dotfiles/.functions"
