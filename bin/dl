@@ -23,9 +23,7 @@ while [ $# -ne 0 ]; do
     ;;
 
   *)
-    if [ "$1" ]; then
-      [ "$input" = "" ] && input="$1" || input="$input $1"
-    fi
+    [ "$input" = "" ] && input="$1" || input="$input $1"
     ;;
   esac
 
