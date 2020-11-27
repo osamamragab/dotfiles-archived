@@ -1,3 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-git add "${@:1:$(($# - 1))}" && git commit -m "${@: -1}"
+for msg in "$@"; do :; done
+
+for f in "$@"; do
+  [ "$f" = "$msg" ] && continue
+  [ "$files" = "" ] && files="$f" || files="$files $f"
+done
+
+git add "$files" && git commit -m "$msg"
