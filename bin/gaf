@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for msg in "$@"; do :; done
+
+for f in "$@"; do
+  [ "$f" = "$msg" ] && continue
+  [ "$files" = "" ] && files="$f" || files="$files $f"
+
+  [ "$names" = "" ] && names="$n" || names="$names, $n"
+done
+
+git add "$files" && git commit -m "$names: $msg"
