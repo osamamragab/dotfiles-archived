@@ -1,24 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
 dotfiles_dir="$HOME/dotfiles"
 dotfiles_old_dir="$HOME/dotfiles_old"
 
 # list of files/directories to symlink in $HOME
-symlink_files=(
-  .xinitrc
-  .inputrc
-  .bashrc
-  .bash_profile
-  .vim
-  .vimrc
-  .gitconfig
-)
+symlink_files=".xinitrc .inputrc .bashrc .bash_profile .vim .vimrc .gitconfig"
 
-[ ! -d "$dotfiles_old_dir" ] && mkdir "$dotfiles_old_dir"
+# create needed directories
 [ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
+[ ! -d "$dotfiles_old_dir" ] && mkdir "$dotfiles_old_dir"
+[ ! -d "$dotfiles_old_dir/bin" ] && mkdir "$dotfiles_old_dir/bin"
 
 # link $symlink_files to home directory
-for f in ${symlink_files[@]}; do
+for f in $symlink_files; do
   if [ -e "$HOME/$f" ]; then
     echo "move ($HOME/$f => $dotfiles_old_dir/$f)"
     mv "$HOME/$f" "$dotfiles_old_dir"
@@ -28,9 +22,16 @@ for f in ${symlink_files[@]}; do
   ln -s "$dotfiles_dir/$f" "$HOME"
 done
 
-for f in $(ls "$dotfiles_dir/bin"); do
-  if [ ! -e "$HOME/bin/$f" ]; then
-    echo "creating new symlink for $dotfiles_dir/bin/$f"
-    ln -s "$dotfiles_dir/bin/$f" "$HOME/bin"
+for f in "$dotfiles_dir"/bin/*; do
+  [ -e "$f" ] || break
+
+  n=$(basename "$f")
+
+  if [ -e "$HOME/bin/$n" ]; then
+    echo "move ($HOME/bin/$n => $dotfiles_old_dir/bin/$n)"
+    mv "$HOME/bin/$n" "$dotfiles_old_dir/bin"
   fi
+
+  echo "creating new symlink for $dotfiles_dir/bin/$n"
+  ln -s "$f" "$HOME/bin"
 done
