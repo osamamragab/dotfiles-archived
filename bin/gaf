@@ -18,4 +18,4 @@ for f in "$@"; do
   [ "$names" = "" ] && names="$n" || names="$names, $n"
 done
 
-git add "$files" && git commit -m "$names: $msg"
+git add $files && git commit -m "$names: $msg"

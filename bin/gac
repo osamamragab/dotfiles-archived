@@ -7,4 +7,4 @@ for f in "$@"; do
   [ "$files" = "" ] && files="$f" || files="$files $f"
 done
 
-git add "$files" && git commit -m "$msg"
+git add $files && git commit -m "$msg"
