@@ -60,6 +60,7 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set noexpandtab
 set copyindent
 set smartindent
 set smarttab
@@ -173,6 +174,6 @@ execute 'set <xRight>=\e[1;*C'
 execute 'set <xLeft>=\e[1;*D'
 
 augroup cfiletype
-  autocmd!
-  autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+	autocmd!
+	autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
