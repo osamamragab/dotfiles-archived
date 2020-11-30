@@ -30,4 +30,4 @@ while [ $# -ne 0 ]; do
   shift
 done
 
-youtube-dl -i -o "$output" -f "$format" "$input"
+youtube-dl -i -o "$output" -f "$format" $input[*]
