@@ -15,8 +15,9 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'exu/pgsql.vim'
 Plug 'fatih/vim-nginx'
-Plug 'sainnhe/sonokai'
 Plug 'fatih/molokai'
+Plug 'sainnhe/sonokai'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 set nocompatible
@@ -178,5 +179,6 @@ execute 'set <xLeft>=\e[1;*D'
 
 augroup cfiletype
 	autocmd!
-	autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+	"autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+	autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 augroup END
