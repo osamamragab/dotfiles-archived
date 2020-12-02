@@ -1,0 +1,7 @@
+#!/bin/sh
+
+sxhkd &
+xautolock -time 10 -locker slock &
+dwmblocks &
+
+! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
