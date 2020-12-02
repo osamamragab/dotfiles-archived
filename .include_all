@@ -1,7 +1,0 @@
-#!/bin/sh
-
-[ -s "$HOME/dotfiles/.exports" ] && . "$HOME/dotfiles/.exports"
-
-[ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
-
-[ -s "$HOME/dotfiles/.functions" ] && . "$HOME/dotfiles/.functions"
