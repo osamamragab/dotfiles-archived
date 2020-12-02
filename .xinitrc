@@ -15,6 +15,4 @@ if [ -f "$HOME/.xprofile" ]; then
 	. "$HOME/.xprofile"
 fi
 
-eval $(ssh-agent -s)
-
-dwm
+ssh-agent dwm
