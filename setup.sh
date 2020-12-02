@@ -4,7 +4,7 @@ dotfiles_dir="$HOME/dotfiles"
 dotfiles_old_dir="$HOME/dotfiles_old"
 
 # list of files/directories to symlink in $HOME
-symlink_files=".xinitrc .xprofile .inputrc .bashrc .bash_profile .vim .vimrc .gitconfig"
+symlink_files=".xinitrc .xprofile .profile .inputrc .bashrc .bash_profile .vim .vimrc .gitconfig"
 
 # create needed directories
 [ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
