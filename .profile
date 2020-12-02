@@ -1,9 +1,11 @@
 #!/bin/sh
 
-export PATH="$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.gvm/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$NVM_DIR:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export GOPATH="$HOME/go"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
 export TERMINAL="st"
 export EDITOR="nvim"
 export BROWSER="chromium"
+
+export GOPATH="$HOME/go"
+
+export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$HOME/.yarn/bin"
