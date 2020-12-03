@@ -1,14 +1,14 @@
 super + Return
-  st
+	$TERMINAL
 
 super + v
-  st -e vim
+  $TERMINAL -e vim
 
 super + b
-  chromium
+  $BROWSER
 
 super + f
-  st -e nnn -Rr
+  $TERMINAL -e nnn -Rr
 
 super + {equal, minus, BackSpace}
   $HOME/dotfiles/scripts/volume.sh {up, down, toggle}
