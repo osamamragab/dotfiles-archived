@@ -60,14 +60,10 @@ set swapfile
 set directory^=$HOME/.vim/tmp//
 
 set autoindent
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
 set noexpandtab
-set copyindent
-set smartindent
-set smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set backspace=indent,eol,start
 
 set clipboard^=unnamed
