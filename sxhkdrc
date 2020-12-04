@@ -1,16 +1,19 @@
 super + Return
 	$TERMINAL
 
-super + v
+alt + v
   $TERMINAL -e vim
 
-super + b
+alt + b
   $BROWSER
 
-super + f
+alt + f
   $TERMINAL -e nnn -Rr
 
-super + {equal, minus, BackSpace}
+alt + p
+  mpv $(xclip -o)
+
+alt + {equal, minus, BackSpace}
   $HOME/dotfiles/scripts/volume.sh {up, down, toggle}
 
 super + shift + BackSpace
@@ -30,6 +33,3 @@ ctrl + Print
 
 ctrl + shift + Print
   maim -s ~/Pictures/screenshot-$(date +%s).png
-
-super + p
-  mpv $(xclip -o)
