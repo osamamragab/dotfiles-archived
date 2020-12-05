@@ -19,6 +19,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/molokai'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set nocompatible
