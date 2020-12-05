@@ -9,7 +9,7 @@ __prompt_color() {
 
 __git_branch() {
 	br="$(git symbolic-ref HEAD --short 2> /dev/null)"
-	[ ! -z "$br" ] && echo "($br) "
+	[ ! -z "$br" ] && printf '\e[34m(%s) ' "$br"
 }
 
 export PS1='\e[1;36m\W $(__git_branch)$(__prompt_color)>\e[m '
