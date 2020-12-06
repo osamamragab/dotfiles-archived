@@ -4,12 +4,15 @@ for msg in "$@"; do :; done
 
 for f in "$@"; do
 	[ "$f" = "$msg" ] && continue
+
 	[ "$files" = "" ] && files="$f" || files="$files $f"
 
 	case "$f" in
 		.*) n=$(echo "$f" | cut -c2-) ;;
 		*) n=$(echo "$f" | cut -f 1 -d '.') ;;
 	esac
+
+	n=$(echo "$n" | sed 's:/*$::')
 
 	dn=$(echo "$n" | cut -f 2 -d '/')
 	if [ "$(echo "$n" | cut -f 1 -d '/')" = "$dn" ]; then
