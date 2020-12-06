@@ -3,19 +3,20 @@
 for msg in "$@"; do :; done
 
 for f in "$@"; do
-  [ "$f" = "$msg" ] && continue
-  [ "$files" = "" ] && files="$f" || files="$files $f"
+	[ "$f" = "$msg" ] && continue
+	[ "$files" = "" ] && files="$f" || files="$files $f"
 
-  case "$f" in
-    .*)
-      n=$(echo "$f" | cut -c2-)
-      ;;
-    *)
-      n=$(echo "$f" | cut -f 1 -d '.')
-      ;;
-  esac
+	case "$f" in
+		.*) n=$(echo "$f" | cut -c2-) ;;
+		*) n=$(echo "$f" | cut -f 1 -d '.') ;;
+	esac
 
-  [ "$names" = "" ] && names="$n" || names="$names, $n"
+	dn=$(echo "$n" | cut -f 2 -d '/')
+	if [ "$(echo "$n" | cut -f 1 -d '/')" = "$dn" ]; then
+		n="$dn"
+	fi
+
+	[ "$names" = "" ] && names="$n" || names="$names, $n"
 done
 
 git add $files && git commit -m "$names: $msg"
