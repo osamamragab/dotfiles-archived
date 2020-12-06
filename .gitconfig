@@ -5,37 +5,37 @@
 	editor = vim
 
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 	ui = true
 
 [color "branch"]
-  current = green
-  remote = yellow
+	current = green
+	remote = yellow
 
 [user] # add your info here
-  name = Osama
+	name = Osama
 	email = iosamaify@gmail.com
-  username = osamai
+	username = osamai
 
 [alias]
-  co = checkout
-  st = status -sb
-  br = branch
-  ci = commit
+	co = checkout
+	st = status -sb
+	br = branch
+	ci = commit
 	ca = commit -a
 	cm = commit -m
 	cam = commit -am
-  fo = fetch origin
-  dt = difftool
-  cl = clone
+	fo = fetch origin
+	dt = difftool
+	cl = clone
 	cld = clone --depth 1
-  unstage = reset HEAD --
-  undo = reset --soft HEAD^
+	unstage = reset HEAD --
+	undo = reset --soft HEAD^
 
-  # inspired by: https://github.com/SuperJones/New-Computer-Setup/wiki/How-to-Configure-Git
+	# inspired by: https://github.com/SuperJones/New-Computer-Setup/wiki/How-to-Configure-Git
 	logg = log --oneline --graph --decorate
 	lastcm = log -1 HEAD
 	tree = ls-tree --full-tree -r HEAD
@@ -53,7 +53,7 @@
 	helper = cache --timeout=3600
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

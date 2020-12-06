@@ -3,8 +3,8 @@
 for msg in "$@"; do :; done
 
 for f in "$@"; do
-  [ "$f" = "$msg" ] && continue
-  [ "$files" = "" ] && files="$f" || files="$files $f"
+	[ "$f" = "$msg" ] && continue
+	[ "$files" = "" ] && files="$f" || files="$files $f"
 done
 
 git add $files && git commit -m "$msg"

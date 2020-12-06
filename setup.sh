@@ -13,25 +13,25 @@ symlink_files=".xinitrc .xprofile .profile .inputrc .bashrc .bash_profile .vim .
 
 # link $symlink_files to home directory
 for f in $symlink_files; do
-  if [ -e "$HOME/$f" ]; then
-    echo "move ($HOME/$f => $dotfiles_old_dir/$f)"
-    mv "$HOME/$f" "$dotfiles_old_dir"
-  fi
+	if [ -e "$HOME/$f" ]; then
+		echo "move ($HOME/$f => $dotfiles_old_dir/$f)"
+		mv "$HOME/$f" "$dotfiles_old_dir"
+	fi
 
-  echo "creating new symlink for $HOME/$f"
-  ln -s "$dotfiles_dir/$f" "$HOME"
+	echo "creating new symlink for $HOME/$f"
+	ln -s "$dotfiles_dir/$f" "$HOME"
 done
 
 for f in "$dotfiles_dir"/bin/*; do
-  [ -e "$f" ] || break
+	[ -e "$f" ] || break
 
-  n=$(basename "$f")
+	n=$(basename "$f")
 
-  if [ -e "$HOME/bin/$n" ]; then
-    echo "move ($HOME/bin/$n => $dotfiles_old_dir/bin/$n)"
-    mv "$HOME/bin/$n" "$dotfiles_old_dir/bin"
-  fi
+	if [ -e "$HOME/bin/$n" ]; then
+		echo "move ($HOME/bin/$n => $dotfiles_old_dir/bin/$n)"
+		mv "$HOME/bin/$n" "$dotfiles_old_dir/bin"
+	fi
 
-  echo "creating new symlink for $dotfiles_dir/bin/$n"
-  ln -s "$f" "$HOME/bin"
+	echo "creating new symlink for $dotfiles_dir/bin/$n"
+	ln -s "$f" "$HOME/bin"
 done

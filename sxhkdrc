@@ -2,34 +2,34 @@ super + Return
 	$TERMINAL
 
 alt + v
-  $TERMINAL -e vim
+	$TERMINAL -e vim
 
 alt + b
-  $BROWSER
+	$BROWSER
 
 alt + f
-  $TERMINAL -e nnn -Rr
+	$TERMINAL -e nnn -Rr
 
 alt + p
-  mpv $(xclip -o)
+	mpv $(xclip -o)
 
 alt + {equal, minus, BackSpace}
-  $HOME/dotfiles/scripts/volume.sh {up, down, toggle}
+	$HOME/dotfiles/scripts/volume.sh {up, down, toggle}
 
 super + shift + BackSpace
-  $HOME/dotfiles/scripts/shutdown.sh
+	$HOME/dotfiles/scripts/shutdown.sh
 
 #super + m
-#  $HOME/dotfiles/scripts/mount.sh
+#	$HOME/dotfiles/scripts/mount.sh
 
 Print
-  maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
+	maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
 
 shift + Print
-  maim -u -i $(xdotool getactivewindow) ~/Pictures/screenshot-$(date +%s).png
+	maim -u -i $(xdotool getactivewindow) ~/Pictures/screenshot-$(date +%s).png
 
 ctrl + Print
-  maim -s | xclip -sel clip -t image/png
+	maim -s | xclip -sel clip -t image/png
 
 ctrl + shift + Print
-  maim -s ~/Pictures/screenshot-$(date +%s).png
+	maim -s ~/Pictures/screenshot-$(date +%s).png

@@ -2,25 +2,25 @@
 
 # find with case insensitivity
 ifind() {
-  find . -iname "*$1*"
+	find . -iname "*$1*"
 }
 
 # check if given path is a file
 isfile() {
-  [ -f "$1" ] && echo "true" || echo "false"
+	[ -f "$1" ] && echo "true" || echo "false"
 }
 
 # check if given path is a directory
 isdir() {
-  [ -d "$1" ] && echo "true" || echo "false"
+	[ -d "$1" ] && echo "true" || echo "false"
 }
 
 # what the time
 wtt() {
-  date +%r
-  date +%F
+	date +%r
+	date +%F
 }
 
 weather() {
-  curl -s "wttr.in/$1?m1"
+	curl -s "wttr.in/$1?m1"
 }
