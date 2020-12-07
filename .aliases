@@ -32,10 +32,6 @@ alias ix="curl -F 'f:1=<-' ix.io"
 alias gst="git status -sb"
 alias gph="git push"
 
-# python
-alias python="python3"
-alias pip="pip3"
-
 # xbps
 alias xi="doas xbps-install -Sy"
 alias xr="doas xbps-remove -R"
