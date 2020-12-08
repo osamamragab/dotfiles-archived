@@ -5,8 +5,8 @@ if [ ! "$1" ]; then
 	exit
 fi
 
-if [ ! -f "$1" ]; then
-	echo "$1: file does not exists"
+if [ ! -f "$1" -o ! -r "$1" ]; then
+	echo "$1: file does not exists or not readable"
 	exit 1
 fi
 
