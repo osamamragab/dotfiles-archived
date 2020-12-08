@@ -19,7 +19,7 @@ for f in "$@"; do
 		n="$dn"
 	fi
 
-	[ "$names" = "" ] && names="$n" || names="$names, $n"
+	[ ! "$names" ] && names="$n" || names="$names, $n"
 done
 
 git add $files && git commit -m "$names: $msg"

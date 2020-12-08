@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -z "$1" ]; then
+if [ ! "$1" ]; then
 	printf "usage:\n\t%s archive_file_name\n" "$0"
 	exit
 fi
