@@ -200,3 +200,9 @@ augroup END
 
 " remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+" smart cursorline
+set cursorline
+autocmd WinEnter,InsertLeave * set cursorline
+autocmd WinLeave,InsertEnter * set nocursorline
