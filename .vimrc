@@ -61,7 +61,6 @@ set incsearch
 set nobackup
 set nowritebackup
 
-" set noswapfile
 set swapfile
 set directory^=$HOME/.vim/tmp//
 
@@ -148,31 +147,31 @@ let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
 
-imap jj <Esc>
+inoremap jj <esc>
 
-map q: :q
+inoremap q: :q
 
-" nnoremap <C-l> :nohl<CR>
+nnoremap <C-n> :nohl<cr>
 
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 
-nmap <C-g> :GoDecls<CR>
-imap <C-g> <esc>:<C-u>GoDecls<CR>
+noremap <C-g> :GoDecls<cr>
+inoremap <C-g> <esc>:<C-u>GoDecls<cr>
 
 inoremap <silent><expr> <C-space> coc#refresh()
 
-map <C-b> :NERDTreeToggle<CR>
-nnoremap <leader>w <esc>:w<CR>
-nnoremap <leader>q <esc>:q<CR>
-nnoremap <leader>Q <esc>:q!<CR>
-nnoremap <leader>n <esc>:nohlsearch<CR>
+noremap <C-b> :NERDTreeToggle<cr>
+nnoremap <leader>w <esc>:w<cr>
+nnoremap <leader>q <esc>:q<cr>
+nnoremap <leader>Q <esc>:q!<cr>
+nnoremap <leader>n <esc>:nohlsearch<cr>
 
 execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
