@@ -26,9 +26,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+
 set nocompatible
 
-filetype off
 filetype plugin indent on
 
 set encoding=utf-8
@@ -88,6 +88,7 @@ set conceallevel=2
 
 set fileformats=unix,dos,mac
 
+
 syntax enable
 
 set t_Co=256
@@ -111,6 +112,7 @@ highlight PmenuThumb ctermbg=236
 highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
+
 
 let mapleader = ' '
 
@@ -147,6 +149,7 @@ let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
 
+
 " esc is far away
 inoremap jj <esc>
 
@@ -181,11 +184,13 @@ nnoremap <leader>q <esc>:q<cr>
 nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
 
+
 " disable C-<arrow> wired behavior
 execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
 execute 'set <xRight>=\e[1;*C'
 execute 'set <xLeft>=\e[1;*D'
+
 
 " set headers file type to C
 augroup cfiletype
