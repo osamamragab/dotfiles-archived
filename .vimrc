@@ -98,19 +98,19 @@ let g:rehash256 = 1
 
 colorscheme molokai
 
-hi LineNr ctermbg=234
+highlight LineNr ctermbg=234
 
-hi TabLine ctermbg=233
-hi TabLineFill ctermfg=233
+highlight TabLine ctermbg=233
+highlight TabLineFill ctermfg=233
 
-hi Pmenu ctermbg=233 ctermfg=252
-hi PmenuSel ctermbg=235 ctermfg=252
-hi PmenuSbar ctermbg=233
-hi PmenuThumb ctermbg=236
+highlight Pmenu ctermbg=233 ctermfg=252
+highlight PmenuSel ctermbg=235 ctermfg=252
+highlight PmenuSbar ctermbg=233
+highlight PmenuThumb ctermbg=236
 
-hi SignColumn ctermbg=234
-hi SignifySignAdd ctermfg=28
-hi SignifySignChange ctermfg=26
+highlight SignColumn ctermbg=234
+highlight SignifySignAdd ctermfg=28
+highlight SignifySignChange ctermfg=26
 
 let mapleader = ' '
 
@@ -147,41 +147,51 @@ let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
 
+" esc is far away
 inoremap jj <esc>
 
+" disable that stupid list
 inoremap q: :q
 
+" clear search highlight
 nnoremap <C-n> :nohl<cr>
 
+" delete without yanking
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
+" move faster between windows
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 
+" show Go declarations
 noremap <C-g> :GoDecls<cr>
 inoremap <C-g> <esc>:<C-u>GoDecls<cr>
 
+" coc completion menu
 inoremap <silent><expr> <C-space> coc#refresh()
 
+" nerdtree shortcuts
 noremap <C-b> :NERDTreeToggle<cr>
 nnoremap <leader>w <esc>:w<cr>
 nnoremap <leader>q <esc>:q<cr>
 nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
 
+" disable C-<arrow> wired behavior
 execute 'set <xUp>=\e[1;*A'
 execute 'set <xDown>=\e[1;*B'
 execute 'set <xRight>=\e[1;*C'
 execute 'set <xLeft>=\e[1;*D'
 
+" set headers file type to C
 augroup cfiletype
 	autocmd!
-	"autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-	autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+	autocmd BufNewFile,BufRead *.c,*.h set filetype=c
 augroup END
 
+" remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
