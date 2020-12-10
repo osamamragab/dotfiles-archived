@@ -24,3 +24,7 @@ wtt() {
 weather() {
 	curl -s "wttr.in/$1?m1"
 }
+
+rot13() {
+	echo "$@" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
