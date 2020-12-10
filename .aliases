@@ -13,8 +13,9 @@ alias vi="nvim"
 alias vii="nvim-qt"
 
 # some shortcuts
-alias clr="clear"
 alias x+="chmod +x"
+alias clr="clear"
+alias cd..="cd .."
 alias topdf="wkhtmltopdf"
 alias toimg="wkhtmltoimage"
 
