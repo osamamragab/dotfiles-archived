@@ -5,21 +5,19 @@ for msg in "$@"; do :; done
 for f in "$@"; do
 	[ "$f" = "$msg" ] && continue
 
-	[ "$files" = "" ] && files="$f" || files="$files $f"
+	[ "$files" ] && files="$files $f" || files="$f"
 
 	case "$f" in
 		.*) n=$(echo "$f" | cut -c2-) ;;
-		*) n=$(echo "$f" | cut -f 1 -d '.') ;;
+		*) n=$(echo "$f" | cut -d '.' -f 1) ;;
 	esac
 
 	n=$(echo "$n" | sed 's:/*$::')
 
-	dn=$(echo "$n" | cut -f 2 -d '/')
-	if [ "$(echo "$n" | cut -f 1 -d '/')" = "$dn" ]; then
-		n="$dn"
-	fi
+	dn=$(echo "$n" | cut -d '/' -f 2)
+	[ "$(echo "$n" | cut -d '/' -f 1)" = "$dn" ] && n="$dn"
 
-	[ ! "$names" ] && names="$n" || names="$names, $n"
+	[ "$names" ] && names="$names, $n" || names="$n"
 done
 
 git add $files && git commit -m "$names: $msg"
