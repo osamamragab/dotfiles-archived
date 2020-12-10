@@ -37,3 +37,5 @@ alias gph="git push"
 alias xi="doas xbps-install -Sy"
 alias xr="doas xbps-remove -R"
 alias xq="xbps-query -Rs"
+
+alias gpg="gpg2"
