@@ -192,11 +192,16 @@ execute 'set <xRight>=\e[1;*C'
 execute 'set <xLeft>=\e[1;*D'
 
 
-" set headers file type to C
-augroup cfiletype
-	autocmd!
-	autocmd BufNewFile,BufRead *.c,*.h set filetype=c
+augroup filetypedetect
+	autocmd BufNewFile,BufRead *.c,*.h setf c
+	autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
+  autocmd BufNewFile,BufRead *.hcl setf conf
+
+	autocmd FileType yaml setlocal expandtab
+	autocmd FileType python setlocal expandtab
+	autocmd FileType ruby setlocal expandtab
 augroup END
+
 
 " remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
