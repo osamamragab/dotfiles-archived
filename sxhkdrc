@@ -22,6 +22,9 @@ super + shift + BackSpace
 #super + m
 #	$HOME/dotfiles/scripts/mount.sh
 
+super + l
+	slock
+
 Print
 	maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
 
