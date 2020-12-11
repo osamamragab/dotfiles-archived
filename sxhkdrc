@@ -19,11 +19,11 @@ alt + {equal, minus, BackSpace}
 super + shift + BackSpace
 	$HOME/dotfiles/scripts/shutdown.sh
 
+super + shift + l
+	slock
+
 #super + m
 #	$HOME/dotfiles/scripts/mount.sh
-
-super + l
-	slock
 
 Print
 	maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png
