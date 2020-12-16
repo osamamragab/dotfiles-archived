@@ -14,7 +14,7 @@ symlink_files=".xinitrc .xprofile .profile .inputrc .bashrc .bash_profile .vim .
 # link $symlink_files to home directory
 for f in $symlink_files; do
 	if [ -e "$HOME/$f" ]; then
-		echo "move ($HOME/$f => $dotfiles_old_dir/$f)"
+		echo "move ($HOME/$f -> $dotfiles_old_dir/$f)"
 		mv "$HOME/$f" "$dotfiles_old_dir"
 	fi
 
@@ -26,10 +26,22 @@ for f in "$dotfiles_dir"/bin/*; do
 	n=$(basename "$f")
 
 	if [ -e "$HOME/bin/$n" ]; then
-		echo "move ($HOME/bin/$n => $dotfiles_old_dir/bin/$n)"
+		echo "move ($HOME/bin/$n -> $dotfiles_old_dir/bin/$n)"
 		mv "$HOME/bin/$n" "$dotfiles_old_dir/bin"
 	fi
 
 	echo "creating new symlink for $dotfiles_dir/bin/$n"
 	ln -s "$f" "$HOME/bin"
+done
+
+for f in "$dotfiles_dir"/.config/*; do
+	n=$(basename "$f")
+
+	if [ -e "$HOME/.config/$n" ]; then
+		echo "move ($HOME/.config/$n -> $dotfiles_old_dir/.config/$n)"
+		mv "$HOME/.config/$n" "$dotfiles_old_dir/.config"
+	fi
+
+	echo "creating new symlink for $dotfiles_dir/.config/$n"
+	ln -s "$f" "$HOME/.config"
 done
