@@ -154,7 +154,7 @@ let g:floaterm_height = 0.2
 inoremap jj <esc>
 
 " disable that stupid list
-inoremap q: :q
+nnoremap q: :q
 
 " clear search highlight
 nnoremap <C-n> :nohl<cr>
