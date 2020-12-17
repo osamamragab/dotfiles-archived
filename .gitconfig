@@ -15,7 +15,7 @@
 	current = green
 	remote = yellow
 
-[user] # add your info here
+[user]
 	name = Osama
 	email = iosamaify@gmail.com
 	username = osamai
@@ -35,7 +35,6 @@
 	unstage = reset HEAD --
 	undo = reset --soft HEAD^
 
-	# inspired by: https://github.com/SuperJones/New-Computer-Setup/wiki/How-to-Configure-Git
 	logg = log --oneline --graph --decorate
 	lastcm = log -1 HEAD
 	tree = ls-tree --full-tree -r HEAD
