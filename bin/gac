@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ $# -lt 2 ]; then
+	printf "usage:\n\t%s files... message" "$0"
+	exit 1
+fi
+
 for msg in "$@"; do :; done
 
 for f in "$@"; do
