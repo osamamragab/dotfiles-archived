@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -lt 2 ]; then
-	printf "usage:\n\t%s files... message" "$0"
+	printf "usage:\n\t%s files... message\n" "$0"
 	exit 1
 fi
 
@@ -12,24 +12,24 @@ for f in "$@"; do
 
 	[ "$files" ] && files="$files $f" || files="$f"
 
-	case "$f" in .*) n=$(echo "$f" | cut -c2-) ;; esac
+	n="$f"
+	case "$n" in .*) n=$(echo "$n" | cut -c 2-) ;; esac
 
-	n=$(echo "$f" | cut -d '.' -f 1 | sed 's:/*$::')
-
+	n=$(echo "$n" | cut -d '.' -f 1 | sed 's:/*$::')
 	case "$n" in
-		"pkg/"* | "internal/"*) n=$(echo "$n" | cut -d '/' -f 2-) ;;
-		"cmd/"*)
+		pkg/* | internal/*) n=$(echo "$n" | cut -d '/' -f 2-) ;;
+		cmd/*)
 			n=$(echo "$n" | cut -d '/' -f 2-)
 			[ "$(basename "$n")" = "main" ] && n=$(dirname "$n")
 			;;
-		"migrations/"*)
-			pn=$(basename "$n" | cut -d '_' -f 1)
-			[ "$pn" -eq "$pn" ] && n="$(dirname "$n")/$(basename "$n" | cut -d '_' -f 2-)"
+		migrations/*)
+			bn=$(basename "$n" | cut -d '_' -f 1)
+			[ "$bn" -eq "$bn" ] && n="$(dirname "$n")/$(basename "$n" | cut -d '_' -f 2-)"
 			;;
 	esac
 
-	dn=$(echo "$n" | cut -d '/' -f 2)
-	[ "$(echo "$n" | cut -d '/' -f 1)" = "$dn" ] && n="$dn"
+	bn=$(basename "$n")
+	[ "$(dirname "$n")" = "$bn" ] && n="$bn"
 
 	[ "$names" ] && names="$names, $n" || names="$n"
 done
