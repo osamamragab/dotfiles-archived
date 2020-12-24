@@ -14,10 +14,9 @@ for f in "$@"; do
 
 	case "$f" in
 		.*) n=$(echo "$f" | cut -c2-) ;;
-		*) n=$(echo "$f" | cut -d '.' -f 1) ;;
 	esac
 
-	n=$(echo "$n" | sed 's:/*$::')
+	n=$(echo "$f" | cut -d '.' -f 1 | sed 's:/*$::')
 
 	dn=$(echo "$n" | cut -d '/' -f 2)
 	[ "$(echo "$n" | cut -d '/' -f 1)" = "$dn" ] && n="$dn"
