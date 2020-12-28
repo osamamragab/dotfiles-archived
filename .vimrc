@@ -9,6 +9,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'sheerun/vim-polyglot'
 Plug 'voldikss/vim-floaterm'
 Plug 'rhysd/clever-f.vim'
+Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
@@ -184,6 +185,9 @@ nnoremap <leader>w <esc>:w<cr>
 nnoremap <leader>q <esc>:q<cr>
 nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
+
+" toggle undotree
+nnoremap <C-u> :UndotreeToggle<cr>
 
 
 " disable C-<arrow> wired behavior
