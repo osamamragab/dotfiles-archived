@@ -41,7 +41,6 @@ set autoread
 set autowrite
 set ttyfast
 set lazyredraw
-set title
 set number
 set linebreak
 set showbreak=++
