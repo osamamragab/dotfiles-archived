@@ -1,16 +1,15 @@
 [[ $- != *i* ]] && return
 
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
-[ -s "$HOME/dotfiles/.functions" ] && . "$HOME/dotfiles/.functions"
 
-__git_branch() {
-	br="$(git symbolic-ref HEAD --short 2> /dev/null)"
-	[ -z "$br" ] && exit 0
-	echo "($br) "
+wttr() {
+	curl -s "wttr.in/$1?m1"
 }
 
-export PS1='\[\e[1;36m\]\W \[\e[34m\]$(__git_branch)\[\e[32m\]>\[\e[m\] '
-
+# find with case insensitivity
+ifind() {
+	find . -iname "*$1*"
+}
 
 # colorful man pages
 man() {
@@ -23,6 +22,15 @@ man() {
 	LESS_TERMCAP_us=$'\e[01;32m' \
 	command man "$@"
 }
+
+
+__git_branch() {
+	br="$(git symbolic-ref HEAD --short 2> /dev/null)"
+	[ -z "$br" ] && exit 0
+	echo "($br) "
+}
+
+export PS1='\[\e[1;36m\]\W \[\e[34m\]$(__git_branch)\[\e[32m\]>\[\e[m\] '
 
 
 # https://github.com/rupa/z
