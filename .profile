@@ -2,6 +2,7 @@
 
 export TERMINAL="st"
 export EDITOR="nvim"
+export VISUAL="nvim"
 export BROWSER="chromium"
 
 export GOPATH="$HOME/go"
