@@ -13,6 +13,6 @@ fi
 
 eval $(ssh-agent -s)
 
-[ -f "$HOME/dotfiles/.xprofile" ] && . "$HOME/dotfiles/.xprofile"
+[ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
 dwm
