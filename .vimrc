@@ -93,8 +93,9 @@ set fileformats=unix,dos,mac
 
 syntax enable
 
-set t_Co=256
 set background=dark
+set termguicolors
+set t_Co=256
 
 "let g:molokai_original = 1
 let g:rehash256 = 1
