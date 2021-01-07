@@ -25,6 +25,7 @@ Plug 'fatih/molokai'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 
@@ -119,14 +120,14 @@ let mapleader = ' '
 
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
-let g:go_def_mode = 'gopls'
 let g:go_list_type = 'quickfix'
 let g:go_echo_command_info = 1
 let g:go_autodetect_gopath = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_enabled = ['vet', 'golint']
-let g:go_imports_mode = 'gopls'
+let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
+let g:go_imports_mode = 'gopls'
 let g:go_rename_command = 'gopls'
 let g:go_implements_mode = 'gopls'
 let g:go_gopls_complete_unimported = 1
