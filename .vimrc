@@ -1,8 +1,8 @@
 call plug#begin('~/dotfiles/.vim/plugged')
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -120,6 +120,9 @@ highlight SignifySignChange ctermfg=26
 
 let mapleader = ' '
 
+let g:rustfmt_autosave = 1
+let g:rust_recommended_style = 0
+
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
@@ -141,7 +144,6 @@ let g:go_fmt_fail_silently = 1
 let g:go_diagnostics_level = 2
 let g:go_imports_autosave = 1
 let g:go_test_show_name = 1
-
 
 let python_highlight_all = 1
 
