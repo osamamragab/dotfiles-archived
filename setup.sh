@@ -38,8 +38,13 @@ for f in "$dotfiles_dir"/.config/*; do
 	n=$(basename "$f")
 
 	if [ -e "$HOME/.config/$n" ]; then
-		echo "move ($HOME/.config/$n -> $dotfiles_old_dir/.config/$n)"
-		mv "$HOME/.config/$n" "$dotfiles_old_dir/.config"
+		if [ -L "$HOME/.config/$n" -a -d "$HOME/.config/$n" ]; then
+			echo "removing directory symlink ($HOME/.config/$n)"
+			rm "$HOME/.config/$n"
+		else
+			echo "move ($HOME/.config/$n -> $dotfiles_old_dir/.config/$n)"
+			mv "$HOME/.config/$n" "$dotfiles_old_dir/.config"
+		fi
 	fi
 
 	echo "creating new symlink for $dotfiles_dir/.config/$n"
