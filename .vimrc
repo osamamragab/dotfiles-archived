@@ -2,6 +2,7 @@ call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
