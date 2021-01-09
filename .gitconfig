@@ -63,5 +63,8 @@
 [push]
 	default = simple
 
+[pull]
+	ff = only
+
 [pager]
 	branch = false
