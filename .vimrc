@@ -119,6 +119,8 @@ highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
 
+highlight FloatermBorder guibg=transparent
+
 
 let mapleader = ' '
 
@@ -158,10 +160,11 @@ let g:airline_theme = 'sonokai'
 
 let g:signify_sign_change = '~'
 
-let g:floaterm_keymap_toggle = '<C-space>'
-let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.2
+let g:floaterm_position = 'bottom'
+let g:floaterm_keymap_toggle = '<C-f>'
+let g:floaterm_title = 'Terminal'
 
 
 " esc is far away
