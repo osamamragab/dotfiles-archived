@@ -57,6 +57,8 @@ set noshowmode
 set noshowmatch
 set hidden
 set nowrap
+set path+=**
+set wildmenu
 
 set hlsearch
 set smartcase
@@ -174,7 +176,7 @@ inoremap jj <esc>
 nnoremap q: :q
 
 " clear search highlight
-nnoremap <C-n> :nohl<cr>
+" nnoremap <C-n> :nohl<cr>
 
 " delete without yanking
 nnoremap <leader>d "_d
