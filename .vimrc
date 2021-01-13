@@ -34,6 +34,7 @@ call plug#end()
 
 set nocompatible
 
+syntax enable
 filetype plugin indent on
 
 set encoding=utf-8
@@ -95,15 +96,12 @@ set conceallevel=2
 
 set fileformats=unix,dos,mac
 
-
-syntax enable
-
 set background=dark
 set termguicolors
 set t_Co=256
 
-"let g:molokai_original = 1
-let g:rehash256 = 1
+"let g:molokai_original=1
+let g:rehash256=1
 
 colorscheme molokai
 
@@ -124,7 +122,7 @@ highlight SignifySignChange ctermfg=26
 highlight FloatermBorder guibg=transparent
 
 
-let mapleader = ' '
+let mapleader=' '
 
 let g:netrw_banner=0
 let g:netrw_browse_split=4
@@ -133,47 +131,47 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-let g:NERDTreeWinPos = 'right'
-let NERDTreeShowHidden = 1
+let g:NERDTreeWinPos='right'
+let NERDTreeShowHidden=1
 
-let g:airline_theme = 'sonokai'
+let g:airline_theme='sonokai'
 
-let g:signify_sign_change = '~'
+let g:signify_sign_change='~'
 
-let g:floaterm_width = 1.0
-let g:floaterm_height = 0.2
-let g:floaterm_position = 'bottom'
-let g:floaterm_keymap_toggle = '<C-f>'
-let g:floaterm_title = 'Terminal'
+let g:floaterm_width=1.0
+let g:floaterm_height=0.2
+let g:floaterm_position='bottom'
+let g:floaterm_keymap_toggle='<C-f>'
+let g:floaterm_title='Terminal'
 
-let g:rustfmt_autosave = 1
-let g:rust_recommended_style = 0
+let g:rustfmt_autosave=1
+let g:rust_recommended_style=0
 
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = 'goimports'
-let g:go_list_type = 'quickfix'
-let g:go_echo_command_info = 1
-let g:go_autodetect_gopath = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_enabled = ['vet', 'golint']
-let g:go_def_mode = 'gopls'
-let g:go_info_mode = 'gopls'
-let g:go_imports_mode = 'gopls'
-let g:go_rename_command = 'gopls'
-let g:go_implements_mode = 'gopls'
-let g:go_gopls_complete_unimported = 1
-let g:go_diagnostics_enabled = 1
-let g:go_doc_popup_window = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_operators = 1
-let g:go_fmt_fail_silently = 1
-let g:go_diagnostics_level = 2
-let g:go_imports_autosave = 1
-let g:go_test_show_name = 1
+let g:go_fmt_autosave=1
+let g:go_fmt_command='goimports'
+let g:go_list_type='quickfix'
+let g:go_echo_command_info=1
+let g:go_autodetect_gopath=1
+let g:go_metalinter_autosave_enabled=['vet', 'golint']
+let g:go_metalinter_enabled=['vet', 'golint']
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_imports_mode='gopls'
+let g:go_rename_command='gopls'
+let g:go_implements_mode='gopls'
+let g:go_gopls_complete_unimported=1
+let g:go_diagnostics_enabled=1
+let g:go_doc_popup_window=1
+let g:go_highlight_build_constraints=1
+let g:go_highlight_operators=1
+let g:go_fmt_fail_silently=1
+let g:go_diagnostics_level=2
+let g:go_imports_autosave=1
+let g:go_test_show_name=1
 
-let python_highlight_all = 1
+let python_highlight_all=1
 
-let g:sql_type_default = 'pgsql'
+let g:sql_type_default='pgsql'
 
 
 " esc is far away
