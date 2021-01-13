@@ -126,6 +126,26 @@ highlight FloatermBorder guibg=transparent
 
 let mapleader = ' '
 
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+let g:NERDTreeWinPos = 'right'
+let NERDTreeShowHidden = 1
+
+let g:airline_theme = 'sonokai'
+
+let g:signify_sign_change = '~'
+
+let g:floaterm_width = 1.0
+let g:floaterm_height = 0.2
+let g:floaterm_position = 'bottom'
+let g:floaterm_keymap_toggle = '<C-f>'
+let g:floaterm_title = 'Terminal'
+
 let g:rustfmt_autosave = 1
 let g:rust_recommended_style = 0
 
@@ -154,19 +174,6 @@ let g:go_test_show_name = 1
 let python_highlight_all = 1
 
 let g:sql_type_default = 'pgsql'
-
-let g:NERDTreeWinPos = 'right'
-let NERDTreeShowHidden = 1
-
-let g:airline_theme = 'sonokai'
-
-let g:signify_sign_change = '~'
-
-let g:floaterm_width = 1.0
-let g:floaterm_height = 0.2
-let g:floaterm_position = 'bottom'
-let g:floaterm_keymap_toggle = '<C-f>'
-let g:floaterm_title = 'Terminal'
 
 
 " esc is far away
@@ -233,3 +240,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 set cursorline
 autocmd WinEnter,InsertLeave * set cursorline
 autocmd WinLeave,InsertEnter * set nocursorline
+
+
+command! MakeTags !ctags -R .
