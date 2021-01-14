@@ -1,43 +1,40 @@
-call plug#begin('~/dotfiles/.vim/plugged')
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'sheerun/vim-polyglot'
-Plug 'voldikss/vim-floaterm'
-Plug 'rhysd/clever-f.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mbbill/undotree'
-Plug 'rhysd/conflict-marker.vim'
-Plug 'mhinz/vim-signify'
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/goyo.vim'
-Plug 'exu/pgsql.vim'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'stevearc/vim-arduino'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-nginx'
-Plug 'fatih/molokai'
-Plug 'sainnhe/sonokai'
-Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim'
-call plug#end()
-
-
 set nocompatible
 
 syntax enable
 filetype plugin indent on
 
-set encoding=utf-8
+
+call plug#begin('~/dotfiles/.vim/plugged')
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'rhysd/clever-f.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mbbill/undotree'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'stevearc/vim-arduino'
+Plug 'exu/pgsql.vim'
+Plug 'fatih/molokai'
+Plug 'sainnhe/sonokai'
+Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
+call plug#end()
+
 
 set exrc
 set secure
