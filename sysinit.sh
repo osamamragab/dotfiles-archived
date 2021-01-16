@@ -60,3 +60,29 @@ pip install vint
 
 echo "installing docker..."
 doas xbps-install -Sy docker docker-compose docker-credential-pass
+
+
+echo "installing suckless programs..."
+
+$prgdir="$HOME/programs"
+
+[ ! -e "$prgdir" ] && mkdir -p "$prgdir"
+cd "$prgdir"
+
+suckless_programs="dwm st dmenu dwmblocks surf slock sent"
+
+for p in $suckless_programs; do
+	echo "installig $p"
+
+	if [ "$p" = "surf" ]; then
+		echo "installing surf stuff..."
+		doas xbps-install -Sy webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
+	fi
+
+	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:osamai/$p.git"
+	cd "$prgdir/$p"
+
+	git checkout main
+	doas make install
+	make clean
+done
