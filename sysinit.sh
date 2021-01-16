@@ -64,7 +64,7 @@ doas xbps-install -Sy docker docker-compose docker-credential-pass
 
 echo "installing suckless programs..."
 
-$prgdir="$HOME/programs"
+prgdir="$HOME/programs"
 
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
 cd "$prgdir"
