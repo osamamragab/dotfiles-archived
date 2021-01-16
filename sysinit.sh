@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if ! command -v doas > /dev/null 2>&1; then
+	echo "installing doas..."
+	sudo xbps-install -Sy opendoas
+fi
+
 echo "updating system..."
 doas xbps-install -u xbps
 doas xbps-install -Syu
