@@ -47,3 +47,6 @@ doas xbps-install -Sy obs openshot shotcut darktable darktable-cli
 
 echo "installing fonts..."
 doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
+
+echo "installing networking stuff..."
+doas xbps-install -Sy nmap netcat wireshark inetutils net-tools iperf3 iputils aircrack-ng arp-scan
