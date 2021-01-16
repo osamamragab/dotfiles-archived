@@ -57,3 +57,6 @@ doas xbps-install -Sy rustup go python3 nodejs yarn R ruby grpc protobuf
 echo "installing linters..."
 doas xbps-install -Sy shellcheck pylint vale tflint
 pip install vint
+
+echo "installing docker..."
+doas xbps-install -Sy docker docker-compose docker-credential-pass
