@@ -19,8 +19,9 @@ for f in "$@"; do
 		esac
 	fi
 
-	n="$(dirname "$n")/$(basename "$n" | cut -d '.' -f 1)"
-	n="$(echo "$n" | sed 's:/*$::')"
+	dn=$(dirname "$n")
+	bn="$(basename "$n" | cut -d '.' -f 1 | sed 's:/*$::')"
+	[ "$dn" = "." ] && n="$bn" || n="$dn/$bn"
 
 	case "$n" in
 		pkg/* | internal/* | .config/*)
