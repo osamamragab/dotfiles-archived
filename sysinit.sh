@@ -50,3 +50,10 @@ doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
 
 echo "installing networking stuff..."
 doas xbps-install -Sy nmap netcat wireshark inetutils net-tools iperf3 iputils aircrack-ng arp-scan
+
+echo "installing programming stuff..."
+doas xbps-install -Sy rustup go python3 nodejs yarn R ruby grpc protobuf
+
+echo "installing linters..."
+doas xbps-install -Sy shellcheck pylint vale tflint
+pip install vint
