@@ -9,8 +9,8 @@ echo "updating system..."
 doas xbps-install -u xbps
 doas xbps-install -Syu
 
-echo "installing xorg..."
-doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg
+echo "installing x..."
+doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xdotool
 
 echo "installing filesystems support..."
 doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs
