@@ -13,11 +13,19 @@ for f in "$@"; do
 	[ "$files" ] && files="$files $f" || files="$f"
 
 	n="$f"
-	case "$n" in .*) n=$(echo "$n" | cut -c 2-) ;; esac
+	if [ -f "$(echo "$n" | cut -d '/' -f 1)" ]; then
+		case "$n" in
+			.*) n=$(echo "$n" | cut -c 2-) ;;
+		esac
+	fi
 
-	n=$(echo "$n" | cut -d '.' -f 1 | sed 's:/*$::')
+	n="$(dirname "$n")/$(basename "$n" | cut -d '.' -f 1)"
+	n="$(echo "$n" | sed 's:/*$::')"
+
 	case "$n" in
-		pkg/* | internal/*) n=$(echo "$n" | cut -d '/' -f 2-) ;;
+		pkg/* | internal/* | .config/*)
+			n=$(echo "$n" | cut -d '/' -f 2-)
+			;;
 		cmd/*)
 			n=$(echo "$n" | cut -d '/' -f 2-)
 			[ "$(basename "$n")" = "main" ] && n=$(dirname "$n")
