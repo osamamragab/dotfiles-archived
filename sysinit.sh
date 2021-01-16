@@ -37,7 +37,7 @@ echo "installing email tools..."
 doas xbps-install -Sy neomutt msmtp
 
 echo "installing web browsers..."
-doas xbps-install -Sy chromium firefox lynx w3m
+doas xbps-install -Sy chromium firefox lynx w3m tor torbrowser-launcher
 
 echo "installing image/video stuff..."
 doas xbps-install -Sy obs openshot shotcut darktable darktable-cli
