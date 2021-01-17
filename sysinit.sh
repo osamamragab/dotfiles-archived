@@ -31,7 +31,7 @@ echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-doas xbps-install -Sy ffmpeg ImageMagick mpv mpd sxiv zathura zathura-pdf-mupdf obs openshot shotcut darktable darktable-cli audacity lmms
+doas xbps-install -Sy ffmpeg ImageMagick mpv mpd sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms
 
 echo "installing system monitoring tools..."
 doas xbps-install -Sy htop iotop
