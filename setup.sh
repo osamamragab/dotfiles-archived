@@ -1,54 +1,41 @@
 #!/bin/sh
 
 dotfiles_dir="$HOME/dotfiles"
-dotfiles_old_dir="$HOME/dotfiles_old"
 
 # list of files/directories to symlink in $HOME
 symlink_files=".xinitrc .xprofile .profile .inputrc .bashrc .bash_profile .vim .vimrc .gitconfig"
 
-# create needed directories
 [ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
-[ ! -d "$dotfiles_old_dir" ] && mkdir "$dotfiles_old_dir"
-[ ! -d "$dotfiles_old_dir/bin" ] && mkdir "$dotfiles_old_dir/bin"
+[ ! -d "${dotfiles_dir}_old" ] && mkdir -p "${dotfiles_dir}_old" "${dotfiles_dir}_old/bin" "${dotfiles_dir}_old/.config"
 
-# link $symlink_files to home directory
-for f in $symlink_files; do
-	if [ -e "$HOME/$f" ]; then
-		echo "move ($HOME/$f -> $dotfiles_old_dir/$f)"
-		mv "$HOME/$f" "$dotfiles_old_dir"
-	fi
-
-	echo "creating new symlink for $HOME/$f"
-	ln -s "$dotfiles_dir/$f" "$HOME"
-done
-
-for f in "$dotfiles_dir"/bin/*; do
-	n=$(basename "$f")
-	t="$HOME/bin/$n"
+symlink() {
+	n=$(basename "$1")
+	t="$2/$n"
+	bd=$(basename "$(dirname "$t")")
 
 	if [ -e "$t" ]; then
-		echo "move "$t" -> $dotfiles_old_dir/bin/$n"
-		mv "$t" "$dotfiles_old_dir/bin"
-	fi
-
-	echo "creating new symlink for $dotfiles_dir/bin/$n"
-	ln -s "$f" "$HOME/bin"
-done
-
-for f in "$dotfiles_dir"/.config/*; do
-	n=$(basename "$f")
-	t="$HOME/.config/$n"
-
-	if [ -e "$t" ]; then
-		if [ -d "$t" -a -L "$t" ]; then
-			echo "removing directory symlink ($t)"
+		if [ -L "$t" ]; then
+			echo "remove symlink ($t)"
 			rm "$t"
 		else
-			echo "move ($t -> $dotfiles_old_dir/.config/$n)"
-			mv "$t" "$dotfiles_old_dir/.config"
+			echo "move ($t -> ${dotfiles_dir}_old/$bd/$n)"
+			mv "$t" "${dotfiles_dir}_old/$bd"
 		fi
 	fi
 
-	echo "creating new symlink for $dotfiles_dir/.config/$n"
-	ln -s "$f" "$HOME/.config"
+	echo "creating new symlink for $dotfiles_dir/$bd/$n"
+	ln -s "$1" "$2"
+}
+
+# link $symlink_files to home directory
+for f in $symlink_files; do
+	symlink "$dotfiles_dir/$f" "$HOME"
+done
+
+for f in "$dotfiles_dir"/bin/*; do
+	symlink "$f" "$HOME/bin"
+done
+
+for f in "$dotfiles_dir"/.config/*; do
+	symlink "$f" "$HOME/.config"
 done
