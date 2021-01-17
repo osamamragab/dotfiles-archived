@@ -13,7 +13,7 @@ echo "installing x..."
 doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xdotool
 
 echo "installing filesystems support..."
-doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs autofs
+doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs autofs lsblk
 
 echo "installing build tools..."
 doas xbps-install -Sy git gcc clang tcc make pkg-config
