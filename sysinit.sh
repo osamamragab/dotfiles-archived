@@ -25,13 +25,13 @@ echo "installing text editor..."
 doas xbps-install -Sy vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep xz groff upx jq glow translate-shell
+doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff upx jq glow translate-shell
 
 echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
 
-echo "installing media players/viewers..."
-doas xbps-install -Sy ffmpeg ImageMagick mpv mpd sxiv zathura zathura-pdf-mupdf
+echo "installing multimedia tools..."
+doas xbps-install -Sy ffmpeg ImageMagick mpv mpd sxiv zathura zathura-pdf-mupdf obs openshot shotcut darktable darktable-cli audacity lmms
 
 echo "installing system monitoring tools..."
 doas xbps-install -Sy htop iotop
@@ -44,9 +44,6 @@ doas xbps-install -Sy irssi weechat weechat-python
 
 echo "installing web browsers..."
 doas xbps-install -Sy chromium firefox lynx w3m tor torbrowser-launcher
-
-echo "installing image/video stuff..."
-doas xbps-install -Sy obs openshot shotcut darktable darktable-cli
 
 echo "installing fonts..."
 doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
