@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# vim: wrap
+
 if ! command -v doas > /dev/null 2>&1; then
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
@@ -31,7 +33,7 @@ echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-doas xbps-install -Sy ffmpeg ImageMagick mpv mpd ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote
+doas xbps-install -Sy ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
 
 echo "installing system monitoring tools..."
 doas xbps-install -Sy htop iotop
