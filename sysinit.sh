@@ -90,3 +90,11 @@ echo "installing mutt-wizard..."
 cd "$prgdir/mutt-wizard"
 git checkout master
 doas make install
+
+cd "$prgdir"
+
+echo "installing z..."
+[ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
+
+echo "installing v..."
+[ ! -e "$prgdir/v" ] && git clone "git@github.com:rupa/v.git"
