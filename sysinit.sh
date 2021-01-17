@@ -49,7 +49,7 @@ echo "installing fonts..."
 doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
 
 echo "installing networking stuff..."
-doas xbps-install -Sy ufw nmap netcat wireshark inetutils net-tools iperf3 iputils aircrack-ng arp-scan
+doas xbps-install -Sy ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan
 
 echo "installing programming languages..."
 doas xbps-install -Sy rustup go python3 nodejs yarn R ruby lua grpc protobuf apl
