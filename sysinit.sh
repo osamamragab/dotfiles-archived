@@ -25,7 +25,7 @@ echo "installing text editor..."
 doas xbps-install -Sy vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff upx jq glow translate-shell ctags anki zeal asciinema texlive tinycron tig tree gdb unclutter urlscan urlview uftp
+doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff jq glow translate-shell anki zeal asciinema texlive tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal
 
 echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
@@ -51,10 +51,18 @@ doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
 echo "installing networking stuff..."
 doas xbps-install -Sy ufw nmap netcat wireshark inetutils net-tools iperf3 iputils aircrack-ng arp-scan
 
-echo "installing programming stuff..."
-doas xbps-install -Sy rustup go python3 nodejs yarn R ruby grpc protobuf apl cloc scc android-tools terraform docker docker-compose docker-credential-pass shellcheck pylint vale tflint
+echo "installing programming languages..."
+doas xbps-install -Sy rustup go python3 nodejs yarn R ruby lua grpc protobuf apl
+
+echo "installing programming tools..."
+doas xbps-install -Sy gdb ctags upx terraform ninja shellcheck pylint vale tflint cloc scc
 pip install vint
 
+echo "installing docker..."
+doas xbps-install -Sy docker docker-compose docker-credential-pass
+
+echo "installing arduino..."
+doas xbps-install -Sy arduino arduino-cli
 
 prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
