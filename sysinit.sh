@@ -13,7 +13,7 @@ echo "installing x..."
 doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xdotool
 
 echo "installing filesystems support..."
-doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs
+doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs autofs
 
 echo "installing build tools..."
 doas xbps-install -Sy git gcc clang make pkg-config
@@ -25,7 +25,10 @@ echo "installing text editor..."
 doas xbps-install -Sy vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync xz alsa-utils groff upx jq glow mdcat grip translate-shell
+doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync xz groff upx jq glow translate-shell
+
+echo "installing audio tools..."
+doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
 
 echo "installing media players/viewers..."
 doas xbps-install -Sy ffmpeg ImageMagick mpv mpd sxiv zathura zathura-pdf-mupdf
