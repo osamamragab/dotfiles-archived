@@ -94,8 +94,12 @@ set conceallevel=2
 set fileformats=unix,dos,mac
 
 set background=dark
-set termguicolors
-set t_Co=256
+
+
+if has('nvim')
+	set termguicolors
+	highlight FloatermBorder guibg=transparent
+endif
 
 "let g:molokai_original=1
 let g:rehash256=1
@@ -115,8 +119,6 @@ highlight PmenuThumb ctermbg=236
 highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
-
-highlight FloatermBorder guibg=transparent
 
 
 let mapleader=' '
