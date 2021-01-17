@@ -25,8 +25,7 @@ man() {
 
 __git_branch() {
 	br="$(git symbolic-ref HEAD --short 2> /dev/null)"
-	[ -z "$br" ] && exit 0
-	echo "($br) "
+	[ "$br" ] && echo "($br) "
 }
 
 export PS1='\[\e[1;36m\]\W \[\e[34m\]$(__git_branch)\[\e[32m\]>\[\e[m\] '
