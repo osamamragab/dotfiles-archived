@@ -98,7 +98,6 @@ set background=dark
 
 if has('nvim')
 	set termguicolors
-	highlight FloatermBorder guibg=transparent
 endif
 
 "let g:molokai_original=1
@@ -120,6 +119,9 @@ highlight SignColumn ctermbg=234
 highlight SignifySignAdd ctermfg=28
 highlight SignifySignChange ctermfg=26
 
+if has('nvim')
+	highlight FloatermBorder guibg=none
+endif
 
 let mapleader=' '
 
