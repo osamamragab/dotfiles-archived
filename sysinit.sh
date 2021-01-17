@@ -111,3 +111,7 @@ echo "installing v..."
 
 echo "installing SETools..."
 [ ! -e "$prgdir/setools" ] && git clone "git@github.com:SELinuxProject/setools.git"
+
+[ -x "$HOME/dotfiles/setup.sh" ] && exec "$HOME/dotfiles/setup.sh"
+
+echo "done"
