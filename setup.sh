@@ -24,10 +24,11 @@ done
 
 for f in "$dotfiles_dir"/bin/*; do
 	n=$(basename "$f")
+	t="$HOME/bin/$n"
 
-	if [ -e "$HOME/bin/$n" ]; then
-		echo "move ($HOME/bin/$n -> $dotfiles_old_dir/bin/$n)"
-		mv "$HOME/bin/$n" "$dotfiles_old_dir/bin"
+	if [ -e "$t" ]; then
+		echo "move "$t" -> $dotfiles_old_dir/bin/$n"
+		mv "$t" "$dotfiles_old_dir/bin"
 	fi
 
 	echo "creating new symlink for $dotfiles_dir/bin/$n"
@@ -36,14 +37,15 @@ done
 
 for f in "$dotfiles_dir"/.config/*; do
 	n=$(basename "$f")
+	t="$HOME/.config/$n"
 
-	if [ -e "$HOME/.config/$n" ]; then
-		if [ -L "$HOME/.config/$n" -a -d "$HOME/.config/$n" ]; then
-			echo "removing directory symlink ($HOME/.config/$n)"
-			rm "$HOME/.config/$n"
+	if [ -e "$t" ]; then
+		if [ -d "$t" -a -L "$t" ]; then
+			echo "removing directory symlink ($t)"
+			rm "$t"
 		else
-			echo "move ($HOME/.config/$n -> $dotfiles_old_dir/.config/$n)"
-			mv "$HOME/.config/$n" "$dotfiles_old_dir/.config"
+			echo "move ($t -> $dotfiles_old_dir/.config/$n)"
+			mv "$t" "$dotfiles_old_dir/.config"
 		fi
 	fi
 
