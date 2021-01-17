@@ -25,4 +25,4 @@ while [ $# -ne 0 ]; do
 	shift
 done
 
-youtube-dl -i -o "$output" -f "$format" $urls
+youtube-dl -ic --add-metadata -o "$output" -f "$format" $urls
