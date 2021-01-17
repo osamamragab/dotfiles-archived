@@ -38,3 +38,5 @@ alias xr="doas xbps-remove -R"
 alias xq="xbps-query -Rs"
 
 alias gpg="gpg2"
+
+command -v nvim > /dev/null 2>&1 && alias v="vim=nvim v"
