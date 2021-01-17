@@ -7,9 +7,9 @@ dotfiles_old_dir="$HOME/dotfiles_old"
 symlink_files=".xinitrc .xprofile .profile .inputrc .bashrc .bash_profile .vim .vimrc .gitconfig"
 
 # create needed directories
-[ -d "$HOME/bin" ] || mkdir "$HOME/bin"
-[ -d "$dotfiles_old_dir" ] || mkdir "$dotfiles_old_dir"
-[ -d "$dotfiles_old_dir/bin" ] || mkdir "$dotfiles_old_dir/bin"
+[ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
+[ ! -d "$dotfiles_old_dir" ] && mkdir "$dotfiles_old_dir"
+[ ! -d "$dotfiles_old_dir/bin" ] && mkdir "$dotfiles_old_dir/bin"
 
 # link $symlink_files to home directory
 for f in $symlink_files; do
