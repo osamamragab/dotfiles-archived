@@ -107,9 +107,12 @@ cd "$prgdir"
 
 echo "installing z..."
 [ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
+doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
 
 echo "installing v..."
 [ ! -e "$prgdir/v" ] && git clone "git@github.com:rupa/v.git"
+doas ln -s "$prgdir/v/v" "/usr/local/bin/v"
+doas ln -s "$prgdir/v/v.1" "/usr/local/share/man/man1/v.1"
 
 echo "installing SETools..."
 [ ! -e "$prgdir/setools" ] && git clone "git@github.com:SELinuxProject/setools.git"
