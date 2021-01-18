@@ -36,7 +36,7 @@ echo "installing multimedia tools..."
 doas xbps-install -Sy ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
 
 echo "installing system monitoring tools..."
-doas xbps-install -Sy htop iotop bmon
+doas xbps-install -Sy htop iotop bmon lm_sensors
 
 echo "installing email tools..."
 doas xbps-install -Sy neomutt msmtp thunderbird
