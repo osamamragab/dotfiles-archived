@@ -27,7 +27,7 @@ echo "installing text editor..."
 doas xbps-install -Sy vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff jq glow translate-shell anki zeal asciinema texlive biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown redshift
+doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz translate-shell anki zeal asciinema biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown redshift
 
 echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -47,24 +47,26 @@ doas xbps-install -Sy irssi weechat weechat-python Signal-Desktop telegram-deskt
 echo "installing web browsers..."
 doas xbps-install -Sy chromium firefox lynx w3m tor torbrowser-launcher
 
-echo "installing fonts..."
-doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
-
 echo "installing networking stuff..."
 doas xbps-install -Sy ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan
 
-echo "installing programming stuff..."
-doas xbps-install -Sy rustup go python3 nodejs yarn R ruby lua grpc protobuf apl
+echo "installing compilers..."
+doas xbps-install -Sy rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff
 
 echo "installing programming tools..."
-doas xbps-install -Sy gdb ctags upx terraform ninja shellcheck pylint vale tflint cloc scc
-pip install vint
+doas xbps-install -Sy gdb delve jq glow grpc protobuf ctags upx terraform ninja shellcheck pylint black vale tflint cloc scc misspell
+go get -u github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/m3ng9i/ran github.com/cosmtrek/air github.com/timakin/bodyclose
+pip install jupyter vint
+yarn global add tsc asc eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
 echo "installing docker..."
 doas xbps-install -Sy docker docker-compose docker-credential-pass
 
 echo "installing arduino..."
 doas xbps-install -Sy arduino arduino-cli
+
+echo "installing fonts..."
+doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
 
 prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
