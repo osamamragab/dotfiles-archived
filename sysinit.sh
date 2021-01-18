@@ -2,10 +2,10 @@
 
 # vim: wrap
 
-if ! command -v doas > /dev/null 2>&1; then
+command -v doas > /dev/null 2>&1 || {
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
-fi
+}
 
 echo "updating system..."
 doas xbps-install -u xbps
@@ -30,7 +30,7 @@ echo "installing general tools..."
 doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff jq glow translate-shell anki zeal asciinema texlive biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown redshift
 
 echo "installing audio tools..."
-doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
+doas xbps-install -Sy alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
 doas xbps-install -Sy ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
@@ -117,6 +117,7 @@ doas ln -s "$prgdir/v/v.1" "/usr/local/share/man/man1/v.1"
 echo "installing SETools..."
 [ ! -e "$prgdir/setools" ] && git clone "git@github.com:SELinuxProject/setools.git"
 
+echo "running dotfiles setup script..."
 [ -x "$HOME/dotfiles/setup.sh" ] && exec "$HOME/dotfiles/setup.sh"
 
 echo "done"
