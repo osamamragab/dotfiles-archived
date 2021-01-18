@@ -1,6 +1,7 @@
+_tmp/
 .vim/plugged
 .vim/pack
 .vim/tmp
 .vim/.netrwhist
 .config/nvim/.netrwhist
-_tmp/
+**/*.log
