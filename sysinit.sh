@@ -80,7 +80,7 @@ for p in $suckless_programs; do
 		doas xbps-install -Sy webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
 	fi
 
-	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:osamai/$p.git"
+	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$(git config --global --get user.username)/$p.git"
 	cd "$prgdir/$p"
 	git checkout main
 	doas make install
