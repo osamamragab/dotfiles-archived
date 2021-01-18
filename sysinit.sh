@@ -27,7 +27,7 @@ echo "installing text editor..."
 doas xbps-install -Sy vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff jq glow translate-shell anki zeal asciinema texlive biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown
+doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz groff jq glow translate-shell anki zeal asciinema texlive biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown redshift
 
 echo "installing audio tools..."
 doas xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pamixer pulsemixer
