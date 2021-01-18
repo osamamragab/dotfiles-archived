@@ -12,7 +12,7 @@ doas xbps-install -u xbps
 doas xbps-install -Syu
 
 echo "installing x..."
-doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xdotool
+doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xclip xdotool
 
 echo "installing filesystems support..."
 doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs autofs lsblk
