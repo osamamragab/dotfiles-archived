@@ -22,16 +22,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mbbill/undotree'
-Plug 'rhysd/conflict-marker.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'stevearc/vim-arduino'
-Plug 'exu/pgsql.vim'
 Plug 'fatih/molokai'
 Plug 'sainnhe/sonokai'
-Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
@@ -171,9 +164,6 @@ let g:go_imports_autosave=1
 let g:go_test_show_name=1
 
 let python_highlight_all=1
-
-let g:sql_type_default='pgsql'
-
 
 " esc is far away
 inoremap jj <esc>
