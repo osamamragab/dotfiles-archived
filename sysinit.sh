@@ -50,7 +50,7 @@ echo "installing web browsers..."
 i chromium firefox lynx w3m tor torbrowser-launcher
 
 echo "installing networking stuff..."
-i ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan
+i ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip
 
 echo "installing compilers..."
 i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown
