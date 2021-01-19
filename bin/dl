@@ -19,7 +19,7 @@ while [ $# -ne 0 ]; do
 		format="bestvideo[ext=mp4]/bestvideo"
 		;;
 	*)
-		[ "$urls" ] && urls="$urls '$1'" || urls="'$1'"
+		[ "$urls" ] && urls="$urls $1" || urls="$1"
 		;;
 	esac
 	shift
