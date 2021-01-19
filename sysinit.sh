@@ -2,6 +2,8 @@
 
 # vim: wrap
 
+alias i="doas xbps-install -Sy"
+
 command -v doas > /dev/null 2>&1 || {
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
@@ -12,61 +14,61 @@ doas xbps-install -u xbps
 doas xbps-install -Syu
 
 echo "installing x..."
-doas xbps-install -Sy xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg xclip xdotool
+i xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg
 
 echo "installing filesystems support..."
-doas xbps-install -Sy fuse fuse-exfat mtpfs simple-mtpfs autofs lsblk
+i fuse fuse-exfat mtpfs simple-mtpfs autofs
 
 echo "installing build tools..."
-doas xbps-install -Sy git gcc clang tcc make pkg-config
+i git gcc clang tcc make pkg-config
 
 echo "installing manual pages..."
-doas xbps-install -Sy man-pages man-pages-devel man-pages-posix tldr
+i man-pages man-pages-devel man-pages-posix tldr
 
 echo "installing text editor..."
-doas xbps-install -Sy vim neovim
+i vim neovim
 
 echo "installing general tools..."
-doas xbps-install -Sy curl wget ssh gnupg2 pass sxhkd nnn maim youtube-dl rsync ripgrep bat xz translate-shell anki zeal asciinema biber tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc lowdown redshift
+i curl wget ssh gnupg2 pass sxhkd nnn maim xclip xdotool xdg-utils youtube-dl rsync ripgrep fzf bat xz translate-shell xtools anki zeal tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift
 
 echo "installing audio tools..."
-doas xbps-install -Sy alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
+i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-doas xbps-install -Sy ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
+i ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
 
 echo "installing system monitoring tools..."
-doas xbps-install -Sy htop iotop bmon lm_sensors
+i htop iotop bmon lm_sensors
 
 echo "installing email tools..."
-doas xbps-install -Sy neomutt msmtp thunderbird
+i neomutt msmtp thunderbird
 
 echo "installing chatting applications..."
-doas xbps-install -Sy irssi weechat weechat-python Signal-Desktop telegram-desktop cordless 6cord tuir toxcore toxic utox
+i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
 
 echo "installing web browsers..."
-doas xbps-install -Sy chromium firefox lynx w3m tor torbrowser-launcher
+i chromium firefox lynx w3m tor torbrowser-launcher
 
 echo "installing networking stuff..."
-doas xbps-install -Sy ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan
+i ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan
 
 echo "installing compilers..."
-doas xbps-install -Sy rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff
+i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown
 
 echo "installing programming tools..."
-doas xbps-install -Sy gdb delve jq glow grpc protobuf ctags upx terraform ninja shellcheck pylint black vale tflint cloc scc misspell
+i gdb binutils upx ctags delve jq glow grpc protobuf terraform ninja shellcheck pylint black vale tflint cloc scc misspell
 go get -u github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/m3ng9i/ran github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint
 yarn global add tsc asc eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
 echo "installing docker..."
-doas xbps-install -Sy docker docker-compose docker-credential-pass
+i docker docker-compose docker-credential-pass
 
 echo "installing arduino..."
-doas xbps-install -Sy arduino arduino-cli
+i arduino arduino-cli
 
 echo "installing fonts..."
-doas xbps-install -Sy font-ibm-plex-otf font-inconsolata-otf
+i font-ibm-plex-otf font-inconsolata-otf
 
 prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
@@ -79,7 +81,7 @@ for p in $suckless_programs; do
 
 	if [ "$p" = "surf" ]; then
 		echo "installing surf dependencies..."
-		doas xbps-install -Sy webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
+		i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
 	fi
 
 	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$(git config --global --get user.username)/$p.git"
@@ -121,5 +123,3 @@ echo "installing SETools..."
 
 echo "running dotfiles setup script..."
 [ -x "$HOME/dotfiles/setup.sh" ] && exec "$HOME/dotfiles/setup.sh"
-
-echo "done"
