@@ -29,7 +29,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim xclip xdotool xdg-utils youtube-dl rsync ripgrep fzf bat xz translate-shell xtools anki zeal tinycron tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift
+i curl wget ssh gnupg2 pass sxhkd nnn maim xclip xdotool xdg-utils youtube-dl rsync ripgrep fzf bat xz translate-shell xtools anki zeal tinycron libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
