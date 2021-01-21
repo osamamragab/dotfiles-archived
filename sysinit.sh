@@ -54,12 +54,13 @@ i ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng
 
 echo "installing compilers..."
 i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown
+curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
 i gdb binutils upx ctags delve jq glow grpc protobuf terraform ninja shellcheck pylint black vale tflint cloc scc misspell
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/m3ng9i/ran github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint
-yarn global add tsc asc eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
+yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
 echo "installing docker..."
 i docker docker-compose docker-credential-pass
