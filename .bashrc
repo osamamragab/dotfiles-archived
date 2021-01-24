@@ -1,5 +1,3 @@
-[[ $- != *i* ]] && return
-
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
 
 wttr() {
@@ -24,7 +22,7 @@ man() {
 }
 
 __git_branch() {
-	br="$(git symbolic-ref HEAD --short 2> /dev/null)"
+	br="$(git symbolic-ref HEAD --short 2>/dev/null)"
 	[ "$br" ] && echo "($br) "
 }
 
