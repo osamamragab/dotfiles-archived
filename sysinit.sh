@@ -29,13 +29,13 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim xclip xdotool xdg-utils xautolock entr youtube-dl rsync ripgrep fzf bat xz translate-shell xtools anki zeal tinycron libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift
+i curl wget ssh gnupg2 pass sxhkd nnn maim xclip xdotool xdg-utils xautolock entr youtube-dl rsync ripgrep fzf bat xz translate-shell xtools anki zeal tinycron libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift newsboat spt
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-i ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
+i ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
 
 echo "installing system monitoring tools..."
 i htop iotop bmon lm_sensors
