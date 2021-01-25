@@ -50,6 +50,7 @@ set hidden
 set nowrap
 set path+=**
 set wildmenu
+set title
 
 set hlsearch
 set smartcase
