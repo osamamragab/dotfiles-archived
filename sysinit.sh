@@ -14,10 +14,13 @@ doas xbps-install -u xbps
 doas xbps-install -Syu
 
 echo "installing x..."
-i xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel xorg
+i xorg xorg-server xinit libX11-devel libXft-devel libXinerama glib-devel
 
 echo "installing filesystems support..."
 i fuse fuse-exfat mtpfs simple-mtpfs autofs
+
+echo "installing network manager..."
+i NetworkManager ufw
 
 echo "installing build tools..."
 i git gcc clang tcc make pkg-config
@@ -49,8 +52,8 @@ i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir tox
 echo "installing web browsers..."
 i chromium firefox lynx w3m tor torbrowser-launcher
 
-echo "installing networking stuff..."
-i ufw nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip
+echo "installing networking tools..."
+i nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip
 
 echo "installing compilers..."
 i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown
