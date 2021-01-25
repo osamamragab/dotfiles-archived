@@ -15,6 +15,7 @@ for f in "$@"; do
 	n="$f"
 	if [ -f "$(echo "$n" | cut -d '/' -f 1)" ]; then
 		case "$n" in
+			.*rc) n=$(echo "$n" | cut -c 2- | rev | cut -c 3- | rev) ;;
 			.*) n=$(echo "$n" | cut -c 2-) ;;
 		esac
 	fi
@@ -37,8 +38,9 @@ for f in "$@"; do
 			;;
 	esac
 
+	dn=$(dirname "$n")
 	bn=$(basename "$n")
-	[ "$(dirname "$n")" = "$bn" ] && n="$bn"
+	[ "$dn" = "$bn" -o "${dn}rc" = "$bn" ] && n="$dn"
 
 	[ "$names" ] && names="$names, $n" || names="$n"
 done
