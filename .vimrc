@@ -211,9 +211,7 @@ execute 'set <xLeft>=\e[1;*D'
 
 
 augroup filetypedetect
-	autocmd BufNewFile,BufRead *.c,*.h setf c
-	autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
-  autocmd BufNewFile,BufRead *.hcl setf conf
+	autocmd BufNewFile,BufRead *.h set ft=c
 
 	autocmd FileType yaml setlocal expandtab
 	autocmd FileType python setlocal expandtab
