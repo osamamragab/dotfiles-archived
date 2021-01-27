@@ -6,7 +6,6 @@ filetype plugin indent on
 
 call plug#begin('~/dotfiles/.vim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -163,8 +162,6 @@ let g:go_fmt_fail_silently=1
 let g:go_diagnostics_level=2
 let g:go_imports_autosave=1
 let g:go_test_show_name=1
-
-let python_highlight_all=1
 
 " esc is far away
 inoremap jj <esc>
