@@ -41,7 +41,7 @@ echo "installing multimedia tools..."
 i ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
 
 echo "installing system monitoring tools..."
-i htop iotop bmon lm_sensors
+i htop iotop bmon lm_sensors strace
 
 echo "installing email tools..."
 i neomutt msmtp thunderbird
