@@ -38,7 +38,16 @@ echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-i ffmpeg ImageMagick mpv mpd mpc ncmpcpp sxiv zathura zathura-pdf-mupdf mupdf wkhtmltopdf obs openshot shotcut darktable darktable-cli audacity lmms transmission transmission-remote rtorrent
+i ffmpeg ImageMagick mpv sxiv obs
+
+echo "installing music players..."
+i mpd mpc ncmpcpp
+
+echo "installing pdf tools..."
+i zathura zathura-pdf-mupdf mupdf wkhtmltopdf
+
+echo "installing video/photo/audio editors..."
+i openshot shotcut darktable darktable-cli audacity lmms
 
 echo "installing system monitoring tools..."
 i htop iotop procs lm_sensors strace bmon
@@ -50,10 +59,13 @@ echo "installing chatting applications..."
 i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
 
 echo "installing web browsers..."
-i chromium firefox lynx w3m tor torbrowser-launcher
+i chromium lynx w3m tor torbrowser-launcher
 
 echo "installing networking tools..."
 i nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip
+
+echo "installing torrent tools..."
+i transmission transmission-remote rtorrent
 
 echo "installing compilers..."
 i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown
@@ -83,10 +95,10 @@ suckless_programs="dwm st dmenu dwmblocks surf slock sent"
 for p in $suckless_programs; do
 	echo "installig $p"
 
-	if [ "$p" = "surf" ]; then
+	[ "$p" = "surf" ] && {
 		echo "installing surf dependencies..."
 		i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
-	fi
+	}
 
 	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$(git config --global --get user.username)/$p.git"
 	cd "$prgdir/$p"
