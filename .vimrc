@@ -163,6 +163,9 @@ let g:go_diagnostics_level=2
 let g:go_imports_autosave=1
 let g:go_test_show_name=1
 
+let g:omni_sql_no_default_maps = 1
+
+
 " esc is far away
 inoremap jj <esc>
 
