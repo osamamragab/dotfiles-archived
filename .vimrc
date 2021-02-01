@@ -186,6 +186,9 @@ noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 
+" toggle relative number
+nnoremap <F2> :set relativenumber!<cr>
+
 " show Go declarations
 noremap <C-g> :GoDecls<cr>
 inoremap <C-g> <esc>:<C-u>GoDecls<cr>
@@ -199,9 +202,6 @@ nnoremap <leader>w <esc>:w<cr>
 nnoremap <leader>q <esc>:q<cr>
 nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
-
-" toggle undotree
-nnoremap <C-u> :UndotreeToggle<cr>
 
 
 " disable C-<arrow> wired behavior
