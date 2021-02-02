@@ -10,7 +10,7 @@ case "$@" in
 		dir="/tmp/sxivr-$(date '+%s')"
 		mkdir -p "$dir"
 		for url in "$@"; do
-			curl -L -o "$dir/$(basename "$url")" "$url"
+			curl -sSL -o "$dir/$(basename "$url")" "$url"
 		done
 		sxiv "$dir/*"
 		rm -r "$dir"
