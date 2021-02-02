@@ -9,34 +9,19 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
-alias vi="nvim"
-
-# some shortcuts
-alias x+="chmod +x"
-alias clr="clear"
-alias cd..="cd .."
-alias topdf="wkhtmltopdf"
-alias toimg="wkhtmltoimage"
-
-# download file with original filename
-alias getfile="curl -O -L"
-
-# download web page with all assets
-alias getpage="wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories"
-
-# pastebin
-alias ix="curl -F 'f:1=<-' ix.io"
-#alias spaste="curl -F 'sprunge=<-' http://sprunge.us"
-
-# git aliases
 alias gst="git status -sb"
 alias gph="git push"
+alias gpl="git pull"
+alias gdf="git diff"
 
-# xbps
 alias xi="doas xbps-install -Sy"
 alias xr="doas xbps-remove -R"
-alias xq="xbps-query -Rs"
+alias xq="xbps-query -R"
+alias xs="xbps-query -Rs"
 
+alias vi="nvim"
 alias gpg="gpg2"
+alias x+="chmod +x"
+alias cd..="cd .."
 
 command -v nvim > /dev/null 2>&1 && alias v="vim=nvim v"
