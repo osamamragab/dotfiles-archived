@@ -3,9 +3,8 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 
-
 call plug#begin('~/dotfiles/.vim/plugged')
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -26,7 +25,6 @@ Plug 'fatih/molokai'
 Plug 'sainnhe/sonokai'
 Plug 'ayu-theme/ayu-vim'
 call plug#end()
-
 
 set exrc
 set secure
@@ -87,7 +85,6 @@ set conceallevel=2
 set fileformats=unix,dos,mac
 
 set background=dark
-
 
 if has('nvim')
 	set termguicolors
@@ -163,8 +160,7 @@ let g:go_diagnostics_level=2
 let g:go_imports_autosave=1
 let g:go_test_show_name=1
 
-let g:omni_sql_no_default_maps = 1
-
+let g:omni_sql_no_default_maps=1
 
 " esc is far away
 inoremap jj <esc>
@@ -193,8 +189,8 @@ nnoremap <F2> :set relativenumber!<cr>
 noremap <C-g> :GoDecls<cr>
 inoremap <C-g> <esc>:<C-u>GoDecls<cr>
 
-" coc completion menu
-inoremap <silent><expr> <C-space> coc#refresh()
+" completion menu
+inoremap <C-space> <C-x><C-o>
 
 " nerdtree shortcuts
 noremap <C-b> :NERDTreeToggle<cr>
@@ -203,31 +199,19 @@ nnoremap <leader>q <esc>:q<cr>
 nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
 
-
-" disable C-<arrow> wired behavior
-execute 'set <xUp>=\e[1;*A'
-execute 'set <xDown>=\e[1;*B'
-execute 'set <xRight>=\e[1;*C'
-execute 'set <xLeft>=\e[1;*D'
-
-
 augroup filetypedetect
 	autocmd BufNewFile,BufRead *.h set ft=c
-
 	autocmd FileType yaml setlocal expandtab
 	autocmd FileType python setlocal expandtab
 	autocmd FileType ruby setlocal expandtab
 augroup END
 
-
 " remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
-
 
 " smart cursorline
 set cursorline
 autocmd WinEnter,InsertLeave * set cursorline
 autocmd WinLeave,InsertEnter * set nocursorline
-
 
 command! MakeTags !ctags -R .
