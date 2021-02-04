@@ -1,10 +1,15 @@
 #!/bin/sh
-
 # vim: wrap
+
+cdir=$(dirname "$(readlink -f "$0")")
+[ -x "$cdir/setup.sh" ] && {
+	echo "running dotfiles setup script..."
+	"$cdir/setup.sh"
+}
 
 alias i="doas xbps-install -Sy"
 
-command -v doas > /dev/null 2>&1 || {
+! command -v doas > /dev/null 2>&1 && {
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
 }
@@ -133,9 +138,3 @@ echo "installing v..."
 [ ! -e "$prgdir/v" ] && git clone "git@github.com:rupa/v.git"
 doas ln -s "$prgdir/v/v" "/usr/local/bin/v"
 doas ln -s "$prgdir/v/v.1" "/usr/local/share/man/man1/v.1"
-
-echo "installing SETools..."
-[ ! -e "$prgdir/setools" ] && git clone "git@github.com:SELinuxProject/setools.git"
-
-echo "running dotfiles setup script..."
-[ -x "$HOME/dotfiles/setup.sh" ] && exec "$HOME/dotfiles/setup.sh"
