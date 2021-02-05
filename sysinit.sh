@@ -37,7 +37,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools anki zeal tinycron libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift newsboat spt
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift newsboat spt anki zeal
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -55,7 +55,7 @@ echo "installing video/photo/audio editors..."
 i openshot shotcut darktable darktable-cli audacity lmms
 
 echo "installing system monitoring tools..."
-i htop iotop procs lm_sensors strace bmon duf dust
+i htop iotop gotop procs lm_sensors strace bmon duf dust
 
 echo "installing email tools..."
 i neomutt msmtp thunderbird
