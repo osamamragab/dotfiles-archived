@@ -95,24 +95,31 @@ prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
 cd "$prgdir"
 
-echo "installing suckless programs..."
-suckless_programs="dwm st dmenu dwmblocks surf slock sent"
-for p in $suckless_programs; do
-	echo "installig $p"
+git_username=$(git config --global --get user.username)
+[ -z "$git_username" ] && {
+	printf "github username: "
+	read git_username
+}
 
-	[ "$p" = "surf" ] && {
-		echo "installing surf dependencies..."
-		i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
-	}
+if [ "$git_username" ]; then
+	echo "installing suckless programs..."
+	suckless_programs="dwm st dmenu dwmblocks surf slock sent"
+	for p in $suckless_programs; do
+		echo "installig $p"
 
-	[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$(git config --global --get user.username)/$p.git"
-	cd "$prgdir/$p"
-	git checkout main
-	doas make install
-	make clean
-done
+		[ "$p" = "surf" ] && {
+			echo "installing surf dependencies..."
+			i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
+		}
 
-cd "$prgdir"
+		[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
+		cd "$prgdir/$p"
+		git checkout main
+		doas make install
+		make clean
+	done
+	cd "$prgdir"
+fi
 
 echo "installing mutt-wizard..."
 [ ! -e "$prgdir/mutt-wizard" ] && git clone "git@github.com:LukeSmithxyz/mutt-wizard.git"
