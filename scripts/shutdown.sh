@@ -1,8 +1,10 @@
 #!/bin/sh
 
-choice=$(printf "shutdown\nreboot\nlock\nexit" | dmenu -i -p "choose action: ")
+choice=$(printf "lock\nshutdown\nreboot\nexit" | dmenu -i)
 
-[ "$choice" = "shutdown" ] && doas poweroff
-[ "$choice" = "reboot" ] && doas reboot
-[ "$choice" = "lock" ] && slock
-[ "$choice" = "exit" ] && pkill dwm
+case "$choice" in
+	lock) slock ;;
+	shutdown) doas poweroff ;;
+	reboot) doas reboot ;;
+	exit) pkill dwm ;;
+esac
