@@ -27,7 +27,6 @@ symlink() {
 	ln -s "$1" "$2"
 }
 
-# link $symlink_files to home directory
 for f in $symlink_files; do
 	symlink "$dotfiles_dir/$f" "$HOME"
 done
@@ -38,4 +37,15 @@ done
 
 for f in "$dotfiles_dir"/.config/*; do
 	symlink "$f" "$HOME/.config"
+done
+
+for f in "$dotfiles_dir"/.local/share/*; do
+	if [ -d "$f" ]; then
+		dn=$(basename "$f")
+		for ff in "$f"/*; do
+			symlink "$ff" "$HOME/.local/share/$dn"
+		done
+	else
+		symlink "$f" "$HOME/.local/share"
+	fi
 done
