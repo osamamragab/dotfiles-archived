@@ -6,8 +6,6 @@ alias la="ls -A"
 alias l="ls -CF"
 
 alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
 
 alias gst="git status -sb"
 alias gph="git push"
@@ -24,4 +22,4 @@ alias gpg="gpg2"
 alias x+="chmod +x"
 alias cd..="cd .."
 
-command -v nvim > /dev/null 2>&1 && alias v="vim=nvim v"
+alias v="vim=nvim v"
