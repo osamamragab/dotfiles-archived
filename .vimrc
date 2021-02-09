@@ -100,8 +100,8 @@ highlight LineNr ctermbg=234
 highlight TabLine ctermbg=233
 highlight TabLineFill ctermfg=233
 
-highlight Pmenu ctermbg=233 ctermfg=252
-highlight PmenuSel ctermbg=235 ctermfg=252
+highlight Pmenu ctermbg=233 ctermfg=252 guifg=none
+highlight PmenuSel ctermbg=235 ctermfg=252 guibg=grey20
 highlight PmenuSbar ctermbg=233
 highlight PmenuThumb ctermbg=236
 
