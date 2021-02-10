@@ -52,7 +52,7 @@ echo "installing pdf tools..."
 i zathura zathura-pdf-mupdf mupdf wkhtmltopdf
 
 echo "installing video/photo/audio editors..."
-i openshot shotcut darktable darktable-cli audacity lmms
+i openshot shotcut darktable darktable-cli audacity ardour lmms
 
 echo "installing system monitoring tools..."
 i htop iotop gotop procs lm_sensors strace bmon duf dust
