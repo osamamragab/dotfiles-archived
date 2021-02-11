@@ -37,7 +37,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tig tree unclutter urlscan urlview uftp highlight android-tools calcurse khal pandoc redshift newsboat spt anki zeal
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tig tree unclutter urlscan urlview uftp highlight android-tools redshift newsboat spt anki zeal
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -73,20 +73,26 @@ echo "installing torrent tools..."
 i transmission transmission-remote rtorrent
 
 echo "installing compilers..."
-i rustup go python3 nodejs yarn R ruby lua apl sassc texlive groff lowdown flex bison
+i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i gdb binutils upx ctags delve jq glow grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei scc misspell
+i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei scc misspell
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/m3ng9i/ran github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
+
+echo "installing markup/latex tools..."
+i pandoc groff texlive lowdown glow
 
 echo "installing docker..."
 i docker docker-compose docker-credential-pass
 
 echo "installing arduino..."
 i arduino arduino-cli
+
+echo "insatlling task/planning tools..."
+i calcurse khal task
 
 echo "installing fonts..."
 i font-ibm-plex-otf font-inconsolata-otf
@@ -145,3 +151,12 @@ echo "installing v..."
 [ ! -e "$prgdir/v" ] && git clone "git@github.com:rupa/v.git"
 doas ln -s "$prgdir/v/v" "/usr/local/bin/v"
 doas ln -s "$prgdir/v/v.1" "/usr/local/share/man/man1/v.1"
+
+echo "installing todo.txt-cli..."
+[ ! -e "$prgdir/todo.txt-cli" ] && git clone "https://github.com/todotxt/todo.txt-cli"
+cd "$prgdir/todo.txt-cli"
+git checkout master
+doas make install
+
+echo "done"
+cd "$cdir"
