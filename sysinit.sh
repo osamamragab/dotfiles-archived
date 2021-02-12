@@ -37,7 +37,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tig tree unclutter urlscan urlview uftp highlight android-tools redshift newsboat spt anki zeal sc-im
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -90,9 +90,6 @@ i docker docker-compose docker-credential-pass
 
 echo "installing arduino..."
 i arduino arduino-cli
-
-echo "insatlling task/planning tools..."
-i calcurse khal task
 
 echo "installing fonts..."
 i font-ibm-plex-otf font-inconsolata-otf
