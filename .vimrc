@@ -91,6 +91,8 @@ let g:rehash256=1
 
 colorscheme molokai
 
+hi Normal ctermfg=255
+
 hi! def link Label Statement
 
 hi LineNr ctermbg=234
