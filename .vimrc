@@ -86,10 +86,6 @@ set fileformats=unix,dos,mac
 
 set background=dark
 
-if has('nvim')
-	set termguicolors
-endif
-
 "let g:molokai_original=1
 let g:rehash256=1
 
@@ -186,6 +182,11 @@ noremap <C-l> <C-w>l
 
 " toggle relative number
 nnoremap <F2> :set relativenumber!<cr>
+
+" toggle gui colors in neovim
+if has('nvim')
+	nnoremap <F3> :set termguicolors!<cr>
+endif
 
 " show Go declarations
 noremap <C-g> :GoDecls<cr>
