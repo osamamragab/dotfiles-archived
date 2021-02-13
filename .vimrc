@@ -4,7 +4,6 @@ syntax enable
 filetype plugin indent on
 
 call plug#begin('~/dotfiles/.vim/plugged')
-"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -185,6 +184,9 @@ noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 
+" completion menu
+inoremap <C-space> <C-x><C-o>
+
 " toggle relative number
 nnoremap <F2> :set relativenumber!<cr>
 
@@ -192,13 +194,6 @@ nnoremap <F2> :set relativenumber!<cr>
 if has('nvim')
 	nnoremap <F3> :set termguicolors!<cr>
 endif
-
-" show Go declarations
-noremap <C-g> :GoDecls<cr>
-inoremap <C-g> <esc>:<C-u>GoDecls<cr>
-
-" completion menu
-inoremap <C-space> <C-x><C-o>
 
 " nerdtree shortcuts
 noremap <C-b> :NERDTreeToggle<cr>
@@ -208,18 +203,18 @@ nnoremap <leader>Q <esc>:q!<cr>
 nnoremap <leader>n <esc>:nohlsearch<cr>
 
 augroup filetypedetect
-	autocmd BufNewFile,BufRead *.h set ft=c
-	autocmd FileType yaml setlocal expandtab
-	autocmd FileType python setlocal expandtab
-	autocmd FileType ruby setlocal expandtab
+	au BufNewFile,BufRead *.h set ft=c
+	au FileType yaml setlocal expandtab
+	au FileType python setlocal expandtab
+	au FileType ruby setlocal expandtab
 augroup END
-
-" remove trailing spaces
-autocmd BufWritePre * :%s/\s\+$//e
 
 " smart cursorline
 set cursorline
-autocmd WinEnter,InsertLeave * set cursorline
-autocmd WinLeave,InsertEnter * set nocursorline
+au WinEnter,InsertLeave * set cursorline
+au WinLeave,InsertEnter * set nocursorline
+
+" remove trailing spaces
+au BufWritePre * :%s/\s\+$//e
 
 command! MakeTags !ctags -R .
