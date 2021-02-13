@@ -95,22 +95,24 @@ let g:rehash256=1
 
 colorscheme molokai
 
-highlight LineNr ctermbg=234
+hi! def link Label Statement
 
-highlight TabLine ctermbg=233
-highlight TabLineFill ctermfg=233
+hi LineNr ctermbg=234
 
-highlight Pmenu ctermbg=233 ctermfg=252 guifg=none
-highlight PmenuSel ctermbg=235 ctermfg=252 guibg=grey20
-highlight PmenuSbar ctermbg=233
-highlight PmenuThumb ctermbg=236
+hi TabLine ctermbg=233
+hi TabLineFill ctermfg=233
 
-highlight SignColumn ctermbg=234
-highlight SignifySignAdd ctermfg=28
-highlight SignifySignChange ctermfg=26
+hi Pmenu ctermbg=233 ctermfg=252 guifg=none
+hi PmenuSel ctermbg=235 ctermfg=252 guibg=grey20
+hi PmenuSbar ctermbg=233
+hi PmenuThumb ctermbg=236
+
+hi SignColumn ctermbg=234
+hi SignifySignAdd ctermfg=28
+hi SignifySignChange ctermfg=26
 
 if has('nvim')
-	highlight FloatermBorder guibg=none
+	hi FloatermBorder guibg=none
 endif
 
 let mapleader=' '
