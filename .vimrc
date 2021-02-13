@@ -20,7 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'fatih/molokai'
 Plug 'sainnhe/sonokai'
 Plug 'ayu-theme/ayu-vim'
@@ -123,7 +123,10 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:NERDTreeWinPos='right'
 let NERDTreeShowHidden=1
 
-let g:airline_theme='sonokai'
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {'right': [['lineinfo'], ['percent'], ['filetype', 'fileencoding', 'fileformat']]},
+\ }
 
 let g:signify_sign_change='~'
 
