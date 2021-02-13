@@ -21,8 +21,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/molokai'
-Plug 'sainnhe/sonokai'
-Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 set exrc
@@ -90,10 +88,9 @@ let g:rehash256=1
 
 colorscheme molokai
 
-hi Normal ctermfg=255
-
 hi! def link Label Statement
 
+hi Normal ctermfg=255
 hi LineNr ctermbg=234
 
 hi TabLine ctermbg=233
@@ -108,9 +105,7 @@ hi SignColumn ctermbg=234
 hi SignifySignAdd ctermfg=28
 hi SignifySignChange ctermfg=26
 
-if has('nvim')
-	hi FloatermBorder guibg=none
-endif
+hi FloatermBorder guibg=none
 
 let mapleader=' '
 
