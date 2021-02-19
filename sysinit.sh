@@ -37,7 +37,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse surfraw
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse surfraw miniserve
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -78,7 +78,7 @@ curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
 i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei scc misspell
-go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/m3ng9i/ran github.com/cosmtrek/air github.com/timakin/bodyclose
+go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
