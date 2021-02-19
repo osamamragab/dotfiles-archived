@@ -35,5 +35,8 @@ __git_branch() {
 
 export PS1='\[\e[1;36m\]\W \[\e[34m\]$(__git_branch)\[\e[32m\]>\[\e[m\] '
 
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
 # https://github.com/rupa/z
 [ -f "$HOME/programs/z/z.sh" ] && . "$HOME/programs/z/z.sh"
