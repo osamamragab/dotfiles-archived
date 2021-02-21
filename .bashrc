@@ -1,6 +1,6 @@
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
 
-shopt -s dirspell direxpand
+shopt -s dirspell
 shopt -s nocaseglob
 shopt -s no_empty_cmd_completion
 shopt -s checkhash
