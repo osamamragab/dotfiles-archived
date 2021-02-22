@@ -31,13 +31,13 @@ bindkey -v "^?" backward-delete-char
 bindkey "^[[P" delete-char
 
 # vi cursor shapes
-function zle-vicursorshape() {
+zle-keymap-select() {
 	case $KEYMAP in
 		vicmd) echo -ne '\e[1 q' ;;
 		viins|main) echo -ne '\e[5 q' ;;
 	esac
 }
-zle -N zle-vicursorshape
+zle -N zle-keymap-select
 zle-line-init() {
 	zle -K viins
 	echo -ne '\e[5 q'
