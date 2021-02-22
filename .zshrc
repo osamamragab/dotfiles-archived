@@ -53,3 +53,6 @@ zle -N edit-command-line
 bindkey "^e" edit-command-line
 
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
+
+# https://github.com/rupa/z
+[ -s "$HOME/programs/z/z.sh" ] && . "$HOME/programs/z/z.sh"
