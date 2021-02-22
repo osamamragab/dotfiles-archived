@@ -1,20 +1,9 @@
-[ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
-
 shopt -s dirspell
 shopt -s nocaseglob
 shopt -s no_empty_cmd_completion
 shopt -s checkhash
 shopt -s autocd
 shopt -s globstar extglob dotglob
-
-wttr() {
-	curl -s "wttr.in/$1?m1"
-}
-
-# find with case insensitivity
-ifind() {
-	find . -iname "*$1*"
-}
 
 # colorful man pages
 man() {
@@ -38,5 +27,7 @@ export PS1='\[\e[1;36m\]\W \[\e[34m\]$(__git_branch)\[\e[32m\]>\[\e[m\] '
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 
+[ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
+
 # https://github.com/rupa/z
-[ -f "$HOME/programs/z/z.sh" ] && . "$HOME/programs/z/z.sh"
+[ -s "$HOME/programs/z/z.sh" ] && . "$HOME/programs/z/z.sh"
