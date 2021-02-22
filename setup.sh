@@ -5,7 +5,7 @@ dotfiles_dir="$HOME/dotfiles"
 # list of files/directories to symlink in $HOME
 symlink_files=".xinitrc .xprofile .profile .inputrc .zshrc .zprofile .bashrc .bash_profile .vim .vimrc .gitconfig"
 
-[ ! -d "${dotfiles_dir}_old" ] && mkdir -p "${dotfiles_dir}_old"/{.config,.local/{bin,share}}
+[ ! -d "${dotfiles_dir}_old" ] && mkdir -p "${dotfiles_dir}_old/.config" "${dotfiles_dir}_old/.local/bin" "${dotfiles_dir}_old/.local/share"
 
 symlink() {
 	n=$(basename "$1")
