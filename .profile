@@ -16,3 +16,5 @@ export LESS_TERMCAP_se="$(printf '%b' '\e[0m')"
 export LESS_TERMCAP_so="$(printf '%b' '\e[01;44;33m')"
 export LESS_TERMCAP_ue="$(printf '%b' '\e[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '\e[01;32m')"
+
+[ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
