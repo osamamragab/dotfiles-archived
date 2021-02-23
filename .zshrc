@@ -51,6 +51,9 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^e" edit-command-line
 
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
 
 # https://github.com/rupa/z
