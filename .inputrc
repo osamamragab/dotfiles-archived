@@ -19,7 +19,3 @@ Control-l: clear-screen
 Control-a: beginning-of-line
 
 $endif
-
-TAB: menu-complete
-set show-all-if-ambiguous on
-set menu-complete-display-prefix on
