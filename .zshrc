@@ -27,8 +27,12 @@ bindkey -M menuselect "h" vi-backward-char
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
 bindkey -M menuselect "j" vi-down-line-or-history
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 bindkey -v "^?" backward-delete-char
 bindkey "^[[P" delete-char
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
 
 # vi cursor shapes
 zle-keymap-select() {
@@ -51,9 +55,6 @@ preexec() {
 autoload edit-command-line
 zle -N edit-command-line
 bindkey "^e" edit-command-line
-
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
 
 [ -s "$HOME/dotfiles/.aliases" ] && . "$HOME/dotfiles/.aliases"
 
