@@ -55,7 +55,7 @@ echo "installing video/photo/audio editors..."
 i openshot shotcut darktable darktable-cli audacity ardour lmms
 
 echo "installing system monitoring tools..."
-i htop iotop gotop procs lm_sensors strace bmon duf dust
+i htop iotop gotop procs lm_sensors strace iftop bmon duf dust
 
 echo "installing email tools..."
 i neomutt msmtp thunderbird
