@@ -37,7 +37,7 @@ echo "installing text editor..."
 i vim neovim
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse surfraw miniserve youtube-viewer mps-youtube
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse surfraw thttpd miniserve youtube-viewer mps-youtube
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
