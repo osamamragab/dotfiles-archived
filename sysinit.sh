@@ -28,22 +28,25 @@ echo "installing network manager..."
 i NetworkManager ufw
 
 echo "installing build tools..."
-i git gcc clang tcc make pkg-config
-
-echo "installing manual pages..."
-i man-pages man-pages-devel man-pages-posix tldr
+i gcc clang tcc git make pkg-config
 
 echo "installing text editor..."
 i vim neovim
 
+echo "installing x11 tools..."
+i xdotool xclip xautolock xzoom
+
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xclip xdotool xdg-utils xautolock entr youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell xtools cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt anki zeal sc-im calcurse surfraw thttpd miniserve youtube-viewer mps-youtube
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit
+
+echo "installing manual pages..."
+i man-pages man-pages-devel man-pages-posix cheat tldr
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-i ffmpeg ImageMagick mpv sxiv obs
+i ffmpeg ImageMagick mpv sxiv obs gimp
 
 echo "installing music players..."
 i mpd mpc ncmpcpp
@@ -58,10 +61,10 @@ echo "installing system monitoring tools..."
 i htop iotop gotop procs lm_sensors strace iftop bmon duf dust
 
 echo "installing email tools..."
-i neomutt msmtp thunderbird
+i neomutt msmtp
 
 echo "installing chatting applications..."
-i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
+i weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
 
 echo "installing web browsers..."
 i chromium lynx w3m amfora tor torbrowser-launcher
