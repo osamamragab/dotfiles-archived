@@ -64,7 +64,7 @@ echo "installing email tools..."
 i neomutt msmtp
 
 echo "installing chatting applications..."
-i weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
+i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
 
 echo "installing web browsers..."
 i chromium lynx w3m amfora tor torbrowser-launcher
@@ -80,13 +80,13 @@ i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei scc misspell
+i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei misspell
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
 echo "installing markup/latex tools..."
-i pandoc groff texlive lowdown glow
+i pandoc groff mdocml texlive lowdown glow
 
 echo "installing docker..."
 i docker docker-compose docker-credential-pass
