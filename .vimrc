@@ -182,14 +182,6 @@ noremap <C-l> <C-w>l
 " completion menu
 inoremap <C-space> <C-x><C-o>
 
-" toggle relative number
-nnoremap <F2> :set relativenumber!<cr>
-
-" toggle gui colors in neovim
-if has('nvim')
-	nnoremap <F3> :set termguicolors!<cr>
-endif
-
 " nerdtree shortcuts
 noremap <C-b> :NERDTreeToggle<cr>
 nnoremap <leader>w <esc>:w<cr>
