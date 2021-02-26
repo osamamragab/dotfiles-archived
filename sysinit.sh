@@ -37,7 +37,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit
+i curl wget ssh gnupg2 pass sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit hyperfine diskus
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix cheat tldr
@@ -80,9 +80,9 @@ i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei misspell
+i gdb binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck pylint black vale tflint tokei misspell pgcli
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
-pip install jupyter vint
+pip install jupyter vint mycli ptpython
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
 
 echo "installing markup/latex tools..."
