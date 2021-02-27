@@ -3,7 +3,7 @@
 export TERMINAL="st"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="chromium"
+export BROWSER="firefox"
 
 export GOPATH="$HOME/go"
 
