@@ -18,7 +18,6 @@ alias xq="xbps-query -R"
 alias xs="xbps-query -Rs"
 
 alias vi="nvim"
-alias gpg="gpg2"
 alias x+="chmod +x"
 alias cd..="cd .."
 
