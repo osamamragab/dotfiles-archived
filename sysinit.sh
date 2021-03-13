@@ -32,7 +32,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget gnupg2 openssh pass passmenu sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper
+i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix cheat tldr
