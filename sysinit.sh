@@ -9,10 +9,11 @@ cdir=$(dirname "$(readlink -f "$0")")
 
 alias i="doas xbps-install -Sy"
 
-! command -v doas > /dev/null 2>&1 && {
+if ! command -v doas > /dev/null 2>&1; then
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
-}
+	sudo echo "permit nopass keepenv :wheel" > /etc/doas.conf
+fi
 
 echo "updating system..."
 doas xbps-install -u xbps
