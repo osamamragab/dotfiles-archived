@@ -32,7 +32,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget ssh gnupg2 pass passmenu sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit hyperfine diskus pam-gnupg abook notmuch isync msmtp
+i curl wget gnupg2 openssh pass passmenu sxhkd nnn maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell scron cronie libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit hyperfine diskus pam-gnupg abook notmuch isync msmtp
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix cheat tldr
@@ -114,7 +114,7 @@ if [ "$git_username" ]; then
 
 		[ "$p" = "surf" ] && {
 			echo "installing surf dependencies..."
-			i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
+			i webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
 		}
 
 		[ ! -d "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
@@ -122,6 +122,7 @@ if [ "$git_username" ]; then
 		git checkout main
 		doas make install
 		make clean
+		unset p
 	done
 	cd "$prgdir"
 fi
