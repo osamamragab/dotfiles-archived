@@ -68,7 +68,7 @@ echo "installing chatting applications..."
 i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
 
 echo "installing web browsers..."
-i chromium lynx w3m amfora tor torbrowser-launcher
+i firefox lynx w3m amfora tor torbrowser-launcher
 
 echo "installing networking tools..."
 i nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip speedometer
@@ -97,7 +97,6 @@ i arduino arduino-cli
 
 echo "installing fonts..."
 i font-ibm-plex-otf font-inconsolata-otf
-
 
 echo "installing zsh..."
 i zsh
