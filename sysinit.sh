@@ -1,12 +1,6 @@
 #!/bin/sh
 # vim: wrap
 
-cdir=$(dirname "$(readlink -f "$0")")
-[ -x "$cdir/setup.sh" ] && {
-	echo "running dotfiles setup script..."
-	"$cdir/setup.sh"
-}
-
 alias i="doas xbps-install -Sy"
 
 if ! command -v doas > /dev/null 2>&1; then
@@ -106,7 +100,7 @@ prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
 cd "$prgdir"
 
-git_username=$(git config --global --get user.username)
+git_username="$(git config --global --get user.username)"
 [ -z "$git_username" ] && {
 	printf "github username: "
 	read git_username
@@ -123,7 +117,7 @@ if [ "$git_username" ]; then
 			i webkit2gtk-devel gcr-devel gst-libav gst-plugin-good1
 		}
 
-		[ ! -e "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
+		[ ! -d "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
 		cd "$prgdir/$p"
 		git checkout main
 		doas make install
@@ -151,5 +145,11 @@ cd "$prgdir"
 echo "installing z..."
 [ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
 doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
+
+cdir=$(dirname "$(readlink -f "$0")")
+[ -x "$cdir/setup.sh" ] && {
+	echo "running dotfiles setup script..."
+	"$cdir/setup.sh"
+}
 
 cd "$cdir"
