@@ -98,6 +98,11 @@ i arduino arduino-cli
 echo "installing fonts..."
 i font-ibm-plex-otf font-inconsolata-otf
 
+
+echo "installing zsh..."
+i zsh
+chsh -s "$(which zsh)"
+
 prgdir="$HOME/programs"
 [ ! -e "$prgdir" ] && mkdir -p "$prgdir"
 cd "$prgdir"
