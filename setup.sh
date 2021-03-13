@@ -5,6 +5,8 @@ dotfiles_dir="$HOME/dotfiles"
 # list of files/directories to symlink in $HOME
 symlink_files=".xinitrc .xprofile .inputrc .zshrc .zprofile .bashrc .vim .vimrc .gitconfig"
 
+[ ! -d "$HOME/.config" ] && mkdir -p "$HOME/.config"
+[ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local/bin" "$HOME/.local/share/applications"
 [ ! -d "${dotfiles_dir}_old" ] && mkdir -p "${dotfiles_dir}_old/.config" "${dotfiles_dir}_old/.local/bin" "${dotfiles_dir}_old/.local/share"
 
 symlink() {
