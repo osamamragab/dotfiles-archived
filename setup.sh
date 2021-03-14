@@ -1,13 +1,13 @@
 #!/bin/sh
 
 dotfiles_dir="$HOME/dotfiles"
+tmp_dir="/tmp/dotfiles-$(date '+%s')"
 
 # list of files/directories to symlink in $HOME
 symlink_files=".xinitrc .xprofile .inputrc .zshrc .zprofile .bashrc .vim .vimrc .gitconfig"
 
 [ ! -d "$HOME/.config" ] && mkdir -p "$HOME/.config"
 [ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local/bin" "$HOME/.local/share/applications"
-[ ! -d "${dotfiles_dir}_old" ] && mkdir -p "${dotfiles_dir}_old/.config" "${dotfiles_dir}_old/.local/bin" "${dotfiles_dir}_old/.local/share"
 
 symlink() {
 	n=$(basename "$1")
@@ -19,8 +19,9 @@ symlink() {
 			echo "remove symlink ($t)"
 			rm "$t"
 		else
-			echo "move ($t -> ${dotfiles_dir}_old/$bd/$n)"
-			mv "$t" "${dotfiles_dir}_old/$bd"
+			echo "move ($t -> $tmp_dir/$bd/$n)"
+			mkdir -p "$tmp_dir/$bd"
+			mv "$t" "$tmp_dir/$bd"
 		fi
 	fi
 
