@@ -135,14 +135,6 @@ doas make install
 
 cd "$prgdir"
 
-echo "installing telegram cli..."
-[ ! -e "$prgdir/tg" ] && git clone "git@github.com:kenorb-contrib/tg.git"
-cd "$prgdir/tg"
-git checkout master
-doas make install
-
-cd "$prgdir"
-
 echo "installing z..."
 [ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
 doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
