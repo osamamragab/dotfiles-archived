@@ -68,7 +68,7 @@ echo "installing networking tools..."
 i nmap netcat wireshark socat inetutils net-tools iperf3 iputils aircrack-ng arp-scan geoip speedometer
 
 echo "installing torrent tools..."
-i transmission transmission-remote rtorrent
+i transmission rtorrent
 
 echo "installing compilers..."
 i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
