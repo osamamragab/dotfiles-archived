@@ -21,6 +21,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/molokai'
+Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
