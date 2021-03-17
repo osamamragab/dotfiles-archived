@@ -1,1 +1,1 @@
-/home/osama/dotfiles/.profile
+.config/shell/profile
