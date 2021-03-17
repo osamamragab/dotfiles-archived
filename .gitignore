@@ -1,9 +1,8 @@
 _tmp/
 **/*.log
-.vim/autoload/plug.vim
-.vim/plugged
-.vim/pack
-.vim/tmp
-.vim/.netrwhist
+.config/nvim/autoload/plug.vim
+.config/nvim/plugged
+.config/nvim/pack
+.config/nvim/tmp
 .config/nvim/.netrwhist
 .config/zsh/.zcompdump
