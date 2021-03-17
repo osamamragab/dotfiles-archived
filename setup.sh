@@ -10,9 +10,9 @@ symlink_files=".zprofile .vim .vimrc"
 [ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local/bin" "$HOME/.local/share/applications"
 
 symlink() {
-	n=$(basename "$1")
+	n="$(basename "$1")"
 	t="$2/$n"
-	bd=$(basename "$(dirname "$t")")
+	bd="$(basename "$(dirname "$t")")"
 
 	if [ -e "$t" ]; then
 		if [ -L "$t" ]; then
@@ -43,7 +43,7 @@ done
 
 for f in "$dotfiles_dir"/.local/share/*; do
 	if [ -d "$f" ]; then
-		dn=$(basename "$f")
+		dn="$(basename "$f")"
 		for ff in "$f"/*; do
 			symlink "$ff" "$HOME/.local/share/$dn"
 		done
