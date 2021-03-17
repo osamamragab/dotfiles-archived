@@ -145,4 +145,9 @@ cdir=$(dirname "$(readlink -f "$0")")
 	"$cdir/setup.sh"
 }
 
+[ ! -f "$HOME/.vim/autoload/plug.vim" ] && {
+	echo "installing vim plug..."
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
 cd "$cdir"

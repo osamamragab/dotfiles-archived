@@ -51,8 +51,3 @@ for f in "$dotfiles_dir"/.local/share/*; do
 		symlink "$f" "$HOME/.local/share"
 	fi
 done
-
-[ ! -f "$HOME/.vim/autoload/plug.vim" ] && {
-	echo "installing vim plug..."
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
