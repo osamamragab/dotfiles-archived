@@ -4,7 +4,7 @@ dotfiles_dir="$HOME/dotfiles"
 tmp_dir="/tmp/dotfiles-$(date '+%s')"
 
 # list of files/directories to symlink in $HOME
-symlink_files=".zprofile .vim .vimrc"
+symlink_files=".zprofile"
 
 [ ! -d "$HOME/.config" ] && mkdir -p "$HOME/.config"
 [ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local/bin" "$HOME/.local/share/applications"
