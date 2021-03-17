@@ -101,10 +101,10 @@ prgdir="$HOME/programs"
 cd "$prgdir"
 
 git_username="$(git config --global --get user.username)"
-[ -z "$git_username" ] && {
+if [ -z "$git_username" ]; then
 	printf "github username: "
 	read git_username
-}
+fi
 
 if [ "$git_username" ]; then
 	echo "installing suckless programs..."
@@ -112,10 +112,10 @@ if [ "$git_username" ]; then
 	for p in $suckless_programs; do
 		echo "installig $p"
 
-		[ "$p" = "surf" ] && {
+		if [ "$p" = "surf" ]; then
 			echo "installing surf dependencies..."
 			i webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
-		}
+		fi
 
 		[ ! -d "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
 		cd "$prgdir/$p"
@@ -140,14 +140,14 @@ echo "installing z..."
 doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
 
 cdir=$(dirname "$(readlink -f "$0")")
-[ -x "$cdir/setup.sh" ] && {
+if [ -x "$cdir/setup.sh" ]; then
 	echo "running dotfiles setup script..."
 	"$cdir/setup.sh"
-}
+fi
 
-[ ! -f "$HOME/.vim/autoload/plug.vim" ] && {
+if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	echo "installing vim plug..."
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
+	curl --create-dirs -fLo "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+fi
 
 cd "$cdir"
