@@ -75,7 +75,7 @@ i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i gdb rust-analyzer valgrind binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli
+i c gdb rust-analyzer valgrind binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint mycli ptpython
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
@@ -139,7 +139,7 @@ echo "installing z..."
 [ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
 doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
 
-cdir=$(dirname "$(readlink -f "$0")")
+cdir="$(dirname "$(readlink -f "$0")")"
 if [ -x "$cdir/setup.sh" ]; then
 	echo "running dotfiles setup script..."
 	"$cdir/setup.sh"
