@@ -1,4 +1,0 @@
-**/*.log
-.config/nvim/autoload/plug.vim
-.config/nvim/plugged
-.config/zsh/.zcompdump
