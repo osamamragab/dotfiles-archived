@@ -75,7 +75,7 @@ i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli
+i c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli xxd hexedit
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint mycli ptpython
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
