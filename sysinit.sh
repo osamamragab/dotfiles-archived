@@ -32,7 +32,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell cronie at libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer mps-youtube stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer
+i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell cronie at libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix cheat tldr
@@ -50,10 +50,10 @@ echo "installing pdf tools..."
 i zathura zathura-pdf-mupdf mupdf wkhtmltopdf
 
 echo "installing video/photo/audio editors..."
-i openshot shotcut darktable audacity ardour lmms
+i openshot darktable audacity lmms
 
 echo "installing system monitoring tools..."
-i htop iotop gotop procs lm_sensors strace iftop bmon duf dust
+i htop iotop gotop procs lm_sensors iftop bmon duf dust
 
 echo "installing email tools..."
 i neomutt msmtp
@@ -75,7 +75,7 @@ i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing programming tools..."
-i c gdb rust-analyzer valgrind binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli
+i c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform ninja shellcheck shfmt pylint black vale tflint tokei misspell pgcli
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter vint mycli ptpython
 yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
