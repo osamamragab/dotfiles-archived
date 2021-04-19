@@ -32,7 +32,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell cronie at libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer screenkey
+i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell cronie at libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer screenkey openntpd
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix cheat tldr
@@ -59,7 +59,7 @@ echo "installing email tools..."
 i neomutt msmtp
 
 echo "installing chatting applications..."
-i irssi weechat weechat-python Signal-Desktop telegram-desktop cordless tuir toxcore toxic utox
+i irssi weechat weechat-python Signal-Desktop telegram-desktop tuir toxcore toxic utox
 
 echo "installing web browsers..."
 i firefox lynx w3m amfora tor torbrowser-launcher
