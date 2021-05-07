@@ -70,15 +70,14 @@ i nmap netcat lsof wireshark wireshark-qt termshark socat inetutils net-tools ip
 echo "installing torrent tools..."
 i transmission rtorrent
 
-echo "installing compilers..."
-i rustup go python3 nodejs yarn R ruby lua apl sassc flex bison
-curl -fsSL "https://deno.land/x/install/install.sh" | sh
-
-echo "installing programming tools..."
-i c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit
+echo "installing programming stuff..."
+i rustup go python3 nodejs yarn lua R ruby sassc postgresql13 redis flex bison c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
-pip install jupyter vint mycli ptpython
-yarn global add typescript eslint babel degit surge http-server serve nodemon tsserver ts-node sass pug live-server parcel prettier svgo
+pip install jupyter
+yarn global add typescript eslint prettier sass pug svgo
+
+DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno/bin" \
+curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing markup/latex tools..."
 i pandoc groff mdocml texlive lowdown glow
@@ -122,8 +121,8 @@ if [ "$git_username" ]; then
 		git checkout main
 		doas make install
 		make clean
-		unset p
 	done
+	unset p
 	cd "$prgdir"
 fi
 
