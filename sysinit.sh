@@ -35,7 +35,7 @@ echo "installing general tools..."
 i curl wget gnupg gnupg2 openssh pass passmenu sxhkd nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat xz translate-shell cronie at libnotify tree unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer screenkey openntpd fswebcam lprng bind-utils
 
 echo "installing manual pages..."
-i man-pages man-pages-devel man-pages-posix cheat tldr
+i man-pages man-pages-devel man-pages-posix
 
 echo "installing audio tools..."
 i alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
@@ -75,9 +75,12 @@ i rustup go python3 nodejs yarn lua R ruby sassc postgresql13 redis flex bison c
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter
 yarn global add typescript eslint prettier sass pug svgo
-
 DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno/bin" \
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
+
+echo "installing cheat sheet tools..."
+i cheat tealdeer
+doas curl https://cht.sh/:cht.sh -o /usr/local/bin/cht.sh && doas chmod +x "$_"
 
 echo "installing markup/latex tools..."
 i pandoc groff mdocml texlive lowdown glow
