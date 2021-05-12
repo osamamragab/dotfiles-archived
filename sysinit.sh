@@ -3,7 +3,7 @@
 
 alias i="doas xbps-install -Sy"
 
-if ! command -v doas > /dev/null 2>&1; then
+if ! command -v doas >/dev/null 2>&1; then
 	echo "installing doas..."
 	sudo xbps-install -Sy opendoas
 	sudo echo "permit nopass keepenv :wheel" > /etc/doas.conf
@@ -23,7 +23,7 @@ echo "installing network manager..."
 i NetworkManager ufw
 
 echo "installing build tools..."
-i gcc clang tcc git make pkg-config
+i gcc git make pkg-config
 
 echo "installing text editor..."
 i vim neovim
@@ -71,7 +71,7 @@ echo "installing torrent tools..."
 i transmission rtorrent
 
 echo "installing programming stuff..."
-i rustup go python3 nodejs yarn lua R ruby sassc postgresql13 redis flex bison c gdb valgrind strace ltrace rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit
+i clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter
 yarn global add typescript eslint prettier sass pug svgo
