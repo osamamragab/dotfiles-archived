@@ -32,7 +32,7 @@ echo "installing x11 tools..."
 i xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-i curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie at libnotify tree xcompmgr unclutter urlscan urlview uftp highlight redshift newsboat spt sc-im surfraw thttpd miniserve youtube-viewer stagit tig hyperfine diskus pam-gnupg abook notmuch isync msmtp xwallpaper pmount mlocate zip unzip geoip speedometer screenkey openntpd fswebcam lprng bind-utils
+i curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview uftp redshift newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng bind-utils
 
 echo "installing manual pages..."
 i man-pages man-pages-devel man-pages-posix
@@ -53,19 +53,19 @@ echo "installing video/photo/audio editors..."
 i openshot darktable audacity lmms
 
 echo "installing system monitoring tools..."
-i htop iotop gotop procs lm_sensors iftop bmon duf dust
+i htop iotop gotop procs lm_sensors iftop bmon speedometer
 
 echo "installing email tools..."
-i neomutt msmtp
+i neomutt msmtp isync notmuch
 
 echo "installing chatting applications..."
-i irssi weechat weechat-python Signal-Desktop telegram-desktop tuir toxcore toxic utox
+i irssi weechat weechat-python Signal-Desktop telegram-tg telegram-desktop tuir toxcore toxic utox
 
 echo "installing web browsers..."
 i firefox lynx w3m amfora tor torbrowser-launcher
 
 echo "installing networking tools..."
-i nmap netcat lsof wireshark wireshark-qt termshark socat inetutils net-tools iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap
+i nmap netcat lsof wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap
 pip install mitmproxy
 
 echo "installing torrent tools..."
