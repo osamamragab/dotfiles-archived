@@ -72,9 +72,9 @@ echo "installing torrent tools..."
 i transmission rtorrent
 
 echo "installing programming stuff..."
-i clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hex
+i clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hex
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
-pip install jupyter
+pip install jupyter mycli litecli
 yarn global add typescript eslint prettier sass pug svgo
 DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno/bin" \
 curl -fsSL "https://deno.land/x/install/install.sh" | sh
