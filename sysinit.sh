@@ -70,7 +70,7 @@ echo "installing web browsers..."
 i firefox lynx w3m amfora tor torbrowser-launcher
 
 echo "installing networking tools..."
-i nmap netcat lsof wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap
+i nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap
 pip install mitmproxy
 
 echo "installing torrent tools..."
