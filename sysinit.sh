@@ -81,8 +81,7 @@ i clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb 
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter mycli litecli
 yarn global add typescript eslint prettier sass pug svgo
-DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno" \
-	curl -fsSL "https://deno.land/x/install/install.sh" | sh
+curl -fsSL "https://deno.land/x/install/install.sh" | DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno" sh
 
 echo "installing cheat sheet tools..."
 i cheat tealdeer
