@@ -1,7 +1,10 @@
 #!/bin/sh
-# vim: wrap
 
-alias i="doas xbps-install -Sy"
+cdir="$(dirname "$(readlink -f "$0")")"
+if [ -x "$cdir/setup.sh" ]; then
+	echo "running dotfiles setup script..."
+	"$cdir/setup.sh"
+fi
 
 if ! command -v doas >/dev/null 2>&1; then
 	echo "installing doas..."
@@ -12,6 +15,8 @@ fi
 echo "updating system..."
 doas xbps-install -u xbps
 doas xbps-install -Syu
+
+alias i="doas xbps-install -Sy"
 
 echo "installing x..."
 i xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel glib-devel
@@ -76,8 +81,8 @@ i clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb 
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter mycli litecli
 yarn global add typescript eslint prettier sass pug svgo
-DENO_INSTALL_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/deno/bin" \
-curl -fsSL "https://deno.land/x/install/install.sh" | sh
+DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno" \
+	curl -fsSL "https://deno.land/x/install/install.sh" | sh
 
 echo "installing cheat sheet tools..."
 i cheat tealdeer
@@ -100,38 +105,40 @@ i zsh
 chsh -s "$(which zsh)"
 
 prgdir="$HOME/programs"
-[ ! -e "$prgdir" ] && mkdir -p "$prgdir"
-cd "$prgdir"
+[ -d "$prgdir" ] || mkdir -p "$prgdir"
 
-git_username="$(git config --global --get user.username)"
-if [ -z "$git_username" ]; then
+ghuser="$(git config --global --get user.username)"
+if [ -z "$ghuser" ]; then
 	printf "github username: "
-	read git_username
+	read ghuser
 fi
 
-if [ "$git_username" ]; then
+if [ "$ghuser" ]; then
 	echo "installing suckless programs..."
-	suckless_programs="dwm st dmenu dwmblocks surf slock sent"
-	for p in $suckless_programs; do
+	for p in dwm st dmenu dwmblocks surf slock sent; do
 		echo "installig $p"
 
-		if [ "$p" = "surf" ]; then
-			echo "installing surf dependencies..."
-			i webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
-		fi
+		case "$p" in
+			surf)
+				echo "installing surf dependencies..."
+				i webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
+				;;
+			sent)
+				echo "installing sent dependencies..."
+				i farbfeld
+				;;
+		esac
 
-		[ ! -d "$prgdir/$p" ] && git clone "git@github.com:$git_username/$p.git"
+		[ -d "$prgdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$prgdir/$p"
 		cd "$prgdir/$p"
 		git checkout main
 		doas make install
 		make clean
 	done
-	unset p
-	cd "$prgdir"
 fi
 
 echo "installing mutt-wizard..."
-[ ! -e "$prgdir/mutt-wizard" ] && git clone "git@github.com:LukeSmithxyz/mutt-wizard.git"
+[ -d "$prgdir/mutt-wizard" ] || git clone "git@github.com:LukeSmithxyz/mutt-wizard.git" "$prgdir/mutt-wizard"
 cd "$prgdir/mutt-wizard"
 git checkout master
 doas make install
@@ -139,14 +146,9 @@ doas make install
 cd "$prgdir"
 
 echo "installing z..."
-[ ! -e "$prgdir/z" ] && git clone "git@github.com:rupa/z.git"
-doas ln -s "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
-
-cdir="$(dirname "$(readlink -f "$0")")"
-if [ -x "$cdir/setup.sh" ]; then
-	echo "running dotfiles setup script..."
-	"$cdir/setup.sh"
-fi
+[ -d "$prgdir/z" ] || git clone "git@github.com:rupa/z.git" "$prgdir/z"
+doas cp -f "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
+doas chmod 644 "/usr/local/share/man/man1/z.1"
 
 if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	echo "installing vim plug..."
@@ -154,3 +156,5 @@ if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 fi
 
 cd "$cdir"
+
+# vim: wrap
