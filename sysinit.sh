@@ -64,7 +64,7 @@ echo "installing email tools..."
 xi neomutt msmtp isync notmuch
 
 echo "installing chatting applications..."
-xi irssi weechat weechat-python Signal-Desktop telegram-tg telegram-desktop tuir toxcore toxic utox
+xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-desktop tuir toxcore toxic utox
 
 echo "installing web browsers..."
 xi firefox lynx w3m amfora tor torbrowser-launcher
