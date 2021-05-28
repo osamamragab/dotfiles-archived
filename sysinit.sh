@@ -80,7 +80,7 @@ echo "installing programming stuff..."
 xi clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hex
 go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
 pip install jupyter mycli litecli
-yarn global add typescript eslint prettier sass pug svgo
+yarn global add typescript eslint prettier sass pug svgo ts-node
 if ! command -v deno >/dev/null 2>&1; then
 	export DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
 	curl -fsSL "https://deno.land/x/install/install.sh" | sh
