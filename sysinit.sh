@@ -70,7 +70,7 @@ echo "installing web browsers..."
 xi firefox lynx w3m amfora tor torbrowser-launcher
 
 echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wuzz
 pip install mitmproxy
 
 echo "installing torrent tools..."
@@ -147,8 +147,6 @@ echo "installing mutt-wizard..."
 cd "$prgdir/mutt-wizard"
 git checkout master
 doas make install
-
-cd "$prgdir"
 
 echo "installing z..."
 [ -d "$prgdir/z" ] || git clone "git@github.com:rupa/z.git" "$prgdir/z"
