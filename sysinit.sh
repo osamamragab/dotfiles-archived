@@ -58,7 +58,7 @@ echo "installing video/photo/audio editors..."
 xi openshot darktable audacity lmms
 
 echo "installing system monitoring tools..."
-xi htop iotop gotop procs lm_sensors iftop bmon speedometer
+xi htop iotop gotop procs mon lm_sensors iftop bmon speedometer
 
 echo "installing email tools..."
 xi neomutt msmtp isync notmuch
