@@ -69,16 +69,12 @@ xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-d
 echo "installing web browsers..."
 xi firefox lynx w3m amfora tor torbrowser-launcher
 
-echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wuzz
-pip install mitmproxy
-
 echo "installing torrent tools..."
 xi transmission rtorrent
 
 echo "installing programming stuff..."
 xi clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra ccls rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hex hyperfine
-go get -u -v github.com/google/pprof github.com/securego/gosec google.golang.org/protobuf/cmd/protoc-gen-go github.com/fullstorydev/grpcurl github.com/cosmtrek/air github.com/timakin/bodyclose
+go install -v github.com/google/pprof@latest github.com/securego/gosec@latest google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/cosmtrek/air@latest github.com/timakin/bodyclose@latest
 pip install jupyter mycli litecli
 yarn global add typescript eslint prettier sass pug svgo ts-node
 if ! command -v deno >/dev/null 2>&1; then
@@ -93,14 +89,20 @@ if ! command -v cht.sh >/dev/null 2>&1; then
 	doas chmod +x /usr/local/bin/cht.sh
 fi
 
-echo "installing markup/latex tools..."
-xi pandoc groff mdocml texlive lowdown glow mdp
-
 echo "installing docker..."
 xi docker docker-compose docker-credential-pass
 
 echo "installing arduino..."
 xi arduino arduino-cli
+
+echo "installing markup/latex tools..."
+xi pandoc groff mdocml texlive lowdown glow mdp
+
+echo "installing networking tools..."
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wrk hey wuzz httpie
+cargo install xh
+go install -v github.com/rs/curlie@latest
+pip install mitmproxy
 
 echo "installing fonts..."
 xi font-ibm-plex-otf font-inconsolata-otf
