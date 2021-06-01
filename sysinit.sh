@@ -67,7 +67,7 @@ echo "installing chatting applications..."
 xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-desktop tuir toxcore toxic utox
 
 echo "installing web browsers..."
-xi firefox lynx w3m amfora tor torbrowser-launcher
+xi firefox lynx w3m amfora sacc lagrange tor torbrowser-launcher
 
 echo "installing torrent tools..."
 xi transmission rtorrent
@@ -111,8 +111,8 @@ echo "installing zsh..."
 xi zsh
 chsh -s "$(which zsh)"
 
-prgdir="$HOME/programs"
-[ -d "$prgdir" ] || mkdir -p "$prgdir"
+progdir="$HOME/programs"
+[ -d "$progdir" ] || mkdir -p "$progdir"
 
 ghuser="$(git config --global --get user.username)"
 if [ -z "$ghuser" ]; then
@@ -136,8 +136,8 @@ if [ "$ghuser" ]; then
 				;;
 		esac
 
-		[ -d "$prgdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$prgdir/$p"
-		cd "$prgdir/$p"
+		[ -d "$progdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$progdir/$p"
+		cd "$progdir/$p"
 		git checkout main
 		doas make install
 		make clean
@@ -145,21 +145,21 @@ if [ "$ghuser" ]; then
 fi
 
 echo "installing mutt-wizard..."
-[ -d "$prgdir/mutt-wizard" ] || git clone "git@github.com:LukeSmithxyz/mutt-wizard.git" "$prgdir/mutt-wizard"
-cd "$prgdir/mutt-wizard"
+[ -d "$progdir/mutt-wizard" ] || git clone "git@github.com:LukeSmithxyz/mutt-wizard.git" "$progdir/mutt-wizard"
+cd "$progdir/mutt-wizard"
 git checkout master
 doas make install
 
 echo "installing hx..."
-[ -d "$prgdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$prgdir/hx"
-cd "$prgdir/hx"
+[ -d "$progdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$progdir/hx"
+cd "$progdir/hx"
 git checkout master
 doas make install
 make clean
 
 echo "installing z..."
-[ -d "$prgdir/z" ] || git clone "git@github.com:rupa/z.git" "$prgdir/z"
-doas cp -f "$prgdir/z/z.1" "/usr/local/share/man/man1/z.1"
+[ -d "$progdir/z" ] || git clone "git@github.com:rupa/z.git" "$progdir/z"
+doas cp -f "$progdir/z/z.1" "/usr/local/share/man/man1/z.1"
 doas chmod 644 "/usr/local/share/man/man1/z.1"
 
 if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
