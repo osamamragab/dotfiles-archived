@@ -73,7 +73,7 @@ echo "installing torrent tools..."
 xi transmission rtorrent
 
 echo "installing programming stuff..."
-xi clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra ccls rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hex hyperfine
+xi clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra ccls rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hyperfine
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/cosmtrek/air@latest github.com/timakin/bodyclose@latest
 pip install jupyter mycli litecli
 yarn global add typescript eslint prettier sass pug svgo ts-node
@@ -149,6 +149,13 @@ echo "installing mutt-wizard..."
 cd "$prgdir/mutt-wizard"
 git checkout master
 doas make install
+
+echo "installing hx..."
+[ -d "$prgdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$prgdir/hx"
+cd "$prgdir/hx"
+git checkout master
+doas make install
+make clean
 
 echo "installing z..."
 [ -d "$prgdir/z" ] || git clone "git@github.com:rupa/z.git" "$prgdir/z"
