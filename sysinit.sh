@@ -37,7 +37,7 @@ echo "installing x11 tools..."
 xi xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview uftp redshift newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng bind-utils
+xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng bind-utils
 
 echo "installing manual pages..."
 xi man-pages man-pages-devel man-pages-posix
@@ -64,7 +64,7 @@ echo "installing email tools..."
 xi neomutt msmtp isync notmuch
 
 echo "installing chatting applications..."
-xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-desktop tuir toxcore toxic utox
+xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
 
 echo "installing web browsers..."
 xi firefox lynx w3m amfora sacc lagrange tor torbrowser-launcher
