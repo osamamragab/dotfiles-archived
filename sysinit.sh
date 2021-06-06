@@ -37,7 +37,7 @@ echo "installing x11 tools..."
 xi xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift safeeyes newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng ncftp bluez
+xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift safeeyes newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng ncftp bluez qemu
 
 echo "installing manual pages..."
 xi man-pages man-pages-devel man-pages-posix
