@@ -96,7 +96,7 @@ echo "installing arduino..."
 xi arduino arduino-cli
 
 echo "installing markup/latex tools..."
-xi pandoc groff mdocml texlive lowdown glow mdp
+xi pandoc groff mdocml texlive lowdown glow mdp mdBook
 
 echo "installing networking tools..."
 xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools bind-utils socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wrk hey wuzz httpie
