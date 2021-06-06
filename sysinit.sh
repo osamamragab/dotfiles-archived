@@ -37,7 +37,7 @@ echo "installing x11 tools..."
 xi xdotool xclip xautolock xzoom
 
 echo "installing general tools..."
-xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift safeeyes newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng bind-utils ncftp bluez
+xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils entr nq youtube-dl rsync exa ripgrep fd skim fzf bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift safeeyes newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng ncftp bluez
 
 echo "installing manual pages..."
 xi man-pages man-pages-devel man-pages-posix
@@ -58,7 +58,7 @@ echo "installing video/photo/audio editors..."
 xi openshot darktable audacity lmms
 
 echo "installing system monitoring tools..."
-xi htop iotop gotop procs mon lm_sensors iftop bmon speedometer
+xi htop atop iotop gotop iftop lm_sensors sysstat procs mon nmon bmon speedometer
 
 echo "installing email tools..."
 xi neomutt msmtp isync notmuch
@@ -99,7 +99,7 @@ echo "installing markup/latex tools..."
 xi pandoc groff mdocml texlive lowdown glow mdp
 
 echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wrk hey wuzz httpie
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools bind-utils socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wrk hey wuzz httpie
 cargo install xh
 go install -v github.com/rs/curlie@latest
 pip install mitmproxy
