@@ -19,10 +19,11 @@ xi -u xbps
 xi -u
 
 echo "installing x..."
-xi xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel glib-devel
+xi xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel
 
 echo "installing filesystems support..."
-xi fuse fuse-exfat mtpfs simple-mtpfs autofs
+xi fuse fuse-exfat
+# mtpfs simple-mtpfs
 
 echo "installing network manager..."
 xi NetworkManager ufw
@@ -30,23 +31,21 @@ xi NetworkManager ufw
 echo "installing build tools..."
 xi gcc git make pkg-config
 
-echo "installing text editor..."
-xi vim neovim
-
-echo "installing x11 tools..."
-xi xdotool xclip xautolock xzoom
-
 echo "installing general tools..."
-xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq youtube-dl rsync exa ripgrep fd fzf skim bat delta xz translate-shell cronie libnotify tree xcompmgr unclutter urlview redshift safeeyes newsboat spt sc-im surfraw thttpd youtube-viewer tig pam-gnupg xwallpaper pmount mlocate zip unzip geoip screenkey openntpd fswebcam lprng ncftp bluez qemu github-cli
+xi zsh curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
 
 echo "installing manual pages..."
-xi man-pages man-pages-devel man-pages-posix
+xi man-pages man-pages-posix
+
+echo "installing text editor..."
+xi vim neovim
 
 echo "installing audio tools..."
 xi alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
 echo "installing multimedia tools..."
-xi ffmpeg ImageMagick mpv sxiv obs gimp
+xi ffmpeg ImageMagick mpv sxiv gimp
+# obs
 
 echo "installing music players..."
 xi mpd mpc ncmpcpp
@@ -54,20 +53,23 @@ xi mpd mpc ncmpcpp
 echo "installing pdf tools..."
 xi zathura zathura-pdf-mupdf mupdf wkhtmltopdf
 
-echo "installing video/photo/audio editors..."
-xi openshot darktable audacity lmms
+# echo "installing video/photo/audio editors..."
+# xi openshot darktable audacity lmms
 
 echo "installing system monitoring tools..."
-xi htop atop iotop gotop iftop lm_sensors sysstat procs mon nmon bmon speedometer
+xi lm_sensors htop iftop bmon mon speedometer
+# atop iotop gotop sysstat procs nmon
 
 echo "installing email tools..."
 xi neomutt msmtp isync notmuch
 
 echo "installing chatting applications..."
-xi irssi weechat weechat-python slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
+xi irssi
+# weechat weechat-python bitlbee slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
 
 echo "installing web browsers..."
-xi firefox lynx w3m amfora sacc lagrange tor torbrowser-launcher
+xi firefox lynx w3m amfora sacc tor torbrowser-launcher
+# netsurf lagrange
 
 echo "installing torrent tools..."
 xi transmission rtorrent
@@ -92,24 +94,22 @@ fi
 echo "installing docker..."
 xi docker docker-compose docker-credential-pass
 
-echo "installing arduino..."
-xi arduino arduino-cli
+# echo "installing arduino..."
+# xi arduino arduino-cli
 
 echo "installing markup/latex tools..."
-xi pandoc groff mdocml texlive lowdown glow mdp mdBook
+xi pandoc groff texlive
+# texlive-full mdocml lowdown mdBook
 
 echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils net-tools bind-utils socat websocat iperf3 iputils arp-scan aircrack-ng kismet hashcat hashcat-utils bettercap sqlmap wrk hey wuzz httpie testssl.sh
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng bettercap sqlmap wrk hey wuzz
+# httpie testssl.sh geoip geoip-data kismet proxychains-ng hashcat hashcat-utils
 cargo install xh
-go install -v github.com/rs/curlie@latest
+# go install -v github.com/rs/curlie@latest
 pip install mitmproxy
 
 echo "installing fonts..."
 xi font-ibm-plex-otf font-inconsolata-otf
-
-echo "installing zsh..."
-xi zsh
-chsh -s "$(which zsh)"
 
 progdir="$HOME/programs"
 [ -d "$progdir" ] || mkdir -p "$progdir"
@@ -168,5 +168,8 @@ if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 fi
 
 cd "$cdir"
+
+echo "changing default shell to zsh..."
+chsh -s "$(which zsh)"
 
 # vim: wrap
