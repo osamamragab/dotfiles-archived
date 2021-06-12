@@ -54,10 +54,10 @@ echo "installing pdf tools..."
 xi zathura zathura-pdf-mupdf mupdf wkhtmltopdf
 
 # echo "installing video/photo/audio editors..."
-# xi openshot darktable audacity lmms
+# xi openshot darktable krita audacity lmms
 
 echo "installing system monitoring tools..."
-xi lm_sensors htop iftop bmon mon speedometer
+xi lm_sensors htop iftop bmon mon speedometer vnstat
 # atop iotop gotop sysstat procs nmon
 
 echo "installing email tools..."
@@ -103,7 +103,7 @@ xi pandoc groff texlive
 
 echo "installing networking tools..."
 xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng bettercap sqlmap wrk hey wuzz
-# httpie testssl.sh geoip geoip-data kismet proxychains-ng hashcat hashcat-utils
+# httpie testssl.sh geoip geoip-data kismet proxychains-ng john hashcat hashcat-utils
 cargo install xh
 # go install -v github.com/rs/curlie@latest
 pip install mitmproxy
