@@ -1,4 +1,5 @@
 #!/bin/sh
+# vim: wrap
 
 cdir="$(dirname "$(readlink -f "$0")")"
 if [ -x "$cdir/setup.sh" ]; then
@@ -32,7 +33,7 @@ echo "installing build tools..."
 xi gcc git make pkg-config
 
 echo "installing general tools..."
-xi zsh curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
+xi zsh curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip bsdtar openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
 
 echo "installing manual pages..."
 xi man-pages man-pages-posix
@@ -102,7 +103,7 @@ xi pandoc groff texlive
 # texlive-full mdocml lowdown mdBook
 
 echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng bettercap sqlmap wrk hey wuzz
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap sqlmap wrk hey wuzz
 # httpie testssl.sh geoip geoip-data kismet proxychains-ng john hashcat hashcat-utils
 cargo install xh
 # go install -v github.com/rs/curlie@latest
@@ -171,5 +172,3 @@ cd "$cdir"
 
 echo "changing default shell to zsh..."
 chsh -s "$(which zsh)"
-
-# vim: wrap
