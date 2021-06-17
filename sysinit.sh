@@ -33,13 +33,16 @@ echo "installing build tools..."
 xi gcc git make pkg-config
 
 echo "installing general tools..."
-xi zsh curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip bsdtar openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
+xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip bsdtar openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
 
 echo "installing manual pages..."
 xi man-pages man-pages-posix
 
 echo "installing text editor..."
 xi vim neovim
+
+echo "installing zsh..."
+xi zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
 
 echo "installing audio tools..."
 xi alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
