@@ -106,7 +106,7 @@ xi pandoc groff texlive
 # texlive-full mdocml lowdown mdBook
 
 echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap sqlmap wrk hey wuzz
+xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz
 # httpie testssl.sh geoip geoip-data kismet proxychains-ng john hashcat hashcat-utils
 cargo install xh
 # go install -v github.com/rs/curlie@latest
