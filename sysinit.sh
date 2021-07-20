@@ -13,107 +13,145 @@ if ! command -v doas >/dev/null 2>&1; then
 	echo "permit nopass keepenv :wheel" | sudo tee /etc/doas.conf >/dev/null
 fi
 
-alias xi="doas xbps-install -Sy"
+level="${1:-0}"
+
+xi() {
+	name="$1"
+	pkgs=""
+	shift
+	while [ $# -gt 0 ]; do
+		case "$1" in
+			-*)
+				c="$(echo "$1" | tr -cd "-" | wc -c)"
+				[ "$c" -eq "${#1}" ] && [ "$level" -lt "${#1}" ] && break
+				;;
+			*)
+				pkgs="$pkgs $1"
+				;;
+		esac
+		shift
+	done
+	[ -z "$pkgs" ] && return
+	[ "$name" != "_" ] && echo "installing $name..."
+	# shellcheck disable=SC2086
+	doas xbps-install -Sy $pkgs
+}
 
 echo "updating system..."
-xi -u xbps
-xi -u
+doas xbps-install -Sy xbps
+doas xbps-install -Syu
 
-echo "installing x..."
-xi xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel
+xi "x" \
+	xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel
 
-echo "installing filesystems support..."
-xi fuse fuse-exfat
-# mtpfs simple-mtpfs
+xi "filesystems support" \
+	fuse fuse-exfat - mtpfs simple-mtpfs
 
-echo "installing network manager..."
-xi NetworkManager ufw
+xi "network manager" \
+	NetworkManager ufw
 
-echo "installing build tools..."
-xi gcc git make pkg-config
+xi "build tools" \
+	gcc git make pkg-config
 
-echo "installing general tools..."
-xi curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr nq rsync mlocate fd fzf skim ripgrep translate-shell cronie libnotify mmv tree xcompmgr unclutter urlview newsboat spt sc-im surfraw darkhttpd miniserve youtube-dl youtube-viewer pam-gnupg xdotool xclip xautolock xwallpaper pmount autofs xz zip unzip bsdtar openntpd bluez lprng qemu lftp redshift safeeyes github-cli delta tig bat glow mdp screenkey
+xi "general tools" \
+	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip xwallpaper pmount autofs tar bsdtar xz zip unzip delta tig \
+	- lshw rsync nq fd skim mmv tree spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes \
+	-- glow mdp screenkey bat github-cli glab
 
-echo "installing manual pages..."
-xi man-pages man-pages-posix
+xi "manual pages" \
+	man-pages man-pages-posix
 
-echo "installing text editor..."
-xi vim neovim
+xi "text editor" \
+	vim neovim
 
-echo "installing zsh..."
-xi zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+xi "zsh" \
+	zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
 
-echo "installing audio tools..."
-xi alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
+xi "audio tools" \
+	alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
 
-echo "installing multimedia tools..."
-xi ffmpeg ImageMagick mpv sxiv gimp
-# obs
+xi "multimedia tools" \
+	ffmpeg ImageMagick mpv sxiv \
+	- gimp \
+	-- obs
 
-echo "installing music players..."
-xi mpd mpc ncmpcpp
+xi "music players" \
+	mpd mpc ncmpcpp
 
-echo "installing pdf tools..."
-xi zathura zathura-pdf-mupdf mupdf wkhtmltopdf
+xi "pdf tools" \
+	zathura zathura-pdf-mupdf mupdf \
+	-- wkhtmltopdf
 
-# echo "installing video/photo/audio editors..."
-# xi openshot darktable krita audacity lmms
+xi "video/photo/audio editors" \
+	-- openshot darktable krita audacity lmms
 
-echo "installing system monitoring tools..."
-xi lm_sensors htop iftop bmon mon speedometer vnstat
-# atop iotop gotop sysstat procs nmon
+xi "system monitoring tools" \
+	lm_sensors htop iftop mon \
+	- bmon atop iotop gotop \
+	-- speedometer vnstat sysstat procs nmon wavemon
 
-echo "installing email tools..."
-xi neomutt msmtp isync notmuch
+xi "email tools" \
+	neomutt msmtp isync notmuch
 
-echo "installing chatting applications..."
-xi irssi
-# weechat weechat-python bitlbee slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
+xi "chatting applications" \
+	irssi \
+	- weechat weechat-python \
+	-- bitlbee slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
 
-echo "installing web browsers..."
-xi firefox lynx w3m amfora sacc tor torbrowser-launcher
-# netsurf lagrange
+xi "web browsers" \
+	firefox lynx w3m tor \
+	- amfora sacc torbrowser-launcher \
+	-- netsurf lagrange
 
-echo "installing torrent tools..."
-xi transmission rtorrent
+xi "torrent tools" \
+	transmission rtorrent \
+	- btfs
 
-echo "installing programming stuff..."
-xi clang tcc rustup go python3 nodejs yarn lua R ruby sassc postgresql13 mariadb sqlite redis flex bison c gdb valgrind strace ltrace clang-analyzer clang-tools-extra ccls rust-analyzer binutils upx ctags delve jq grpc protobuf terraform shellcheck shfmt pylint black tflint tokei misspell pgcli xxd hexedit hyperfine svgcleaner
-go install -v github.com/google/pprof@latest github.com/securego/gosec@latest google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/cosmtrek/air@latest github.com/timakin/bodyclose@latest
-pip install jupyter mycli litecli
-yarn global add typescript eslint prettier sass pug svgo ts-node
+xi "programming stuff" \
+	clang tcc rustup go python3 nodejs yarn lua R ruby sassc c gdb valgrind strace ltrace clang-analyzer rust-analyzer binutils upx delve jq xxd
+[ "$level" -gt 0 ] && xi _ postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
+go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
+if [ "$level" -gt 1 ]; then
+	xi _ ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
+	go install -v google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/timakin/bodyclose@latest
+	pip install jupyter mycli litecli
+fi
+yarn global add typescript eslint prettier
+[ "$level" -gt 0 ] && yarn global add sass pug
+[ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon livereload
 if ! command -v deno >/dev/null 2>&1; then
 	export DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
 	curl -fsSL "https://deno.land/x/install/install.sh" | sh
 fi
 
-echo "installing cheat sheet tools..."
-xi cheat tealdeer
-if ! command -v cht.sh >/dev/null 2>&1; then
+xi "cheat sheet tools" \
+	cheat tealdeer
+if [ "$level" -gt 0 ] && ! command -v cht.sh >/dev/null 2>&1; then
 	doas curl https://cht.sh/:cht.sh -o /usr/local/bin/cht.sh
 	doas chmod +x /usr/local/bin/cht.sh
 fi
 
-echo "installing docker..."
-xi docker docker-compose docker-credential-pass
+xi "docker" \
+	docker docker-compose docker-credential-pass
 
-# echo "installing arduino..."
-# xi arduino arduino-cli
+xi "arduino" \
+	- arduino arduino-cli
 
-echo "installing markup/latex tools..."
-xi pandoc groff texlive
-# texlive-full mdocml lowdown mdBook
+xi "markup/latex tools" \
+	pandoc groff texlive \
+	-- texlive-full mdocml lowdown mdBook
 
-echo "installing networking tools..."
-xi nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz
-# httpie testssl.sh geoip geoip-data kismet proxychains-ng john hashcat hashcat-utils
+echo "installing ..."
+xi "networking tools" \
+	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
+	- httpie hashcat hashcat-utils testssl.sh \
+	-- geoip geoip-data kismet proxychains-ng john
 cargo install xh
-# go install -v github.com/rs/curlie@latest
+[ "$level" -gt 0 ] && go install -v github.com/rs/curlie@latest
 pip install mitmproxy
 
-echo "installing fonts..."
-xi font-ibm-plex-otf font-inconsolata-otf
+xi "fonts" \
+	font-ibm-plex-otf font-inconsolata-otf
 
 progdir="$HOME/programs"
 [ -d "$progdir" ] || mkdir -p "$progdir"
@@ -121,25 +159,23 @@ progdir="$HOME/programs"
 ghuser="$(git config --global --get user.username)"
 if [ -z "$ghuser" ]; then
 	printf "github username: "
-	read ghuser
+	read -r ghuser
 fi
 
 if [ "$ghuser" ]; then
 	echo "installing suckless programs..."
 	for p in dwm st dmenu dwmblocks surf slock sent; do
 		echo "installig $p"
-
 		case "$p" in
 			surf)
-				echo "installing surf dependencies..."
-				i webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
+				xi "surf dependencies" \
+					webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
 				;;
 			sent)
-				echo "installing sent dependencies..."
-				i farbfeld
+				xi "sent dependencies" \
+					farbfeld
 				;;
 		esac
-
 		[ -d "$progdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$progdir/$p"
 		cd "$progdir/$p"
 		git checkout main
