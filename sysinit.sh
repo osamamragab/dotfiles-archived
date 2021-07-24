@@ -166,8 +166,14 @@ if [ "$ghuser" ]; then
 	echo "installing suckless programs..."
 	for p in dwm st dmenu dwmblocks surf slock sent; do
 		echo "installig $p"
+		ups="git://git.suckless.org/$p"
+		sbr="master"
 		case "$p" in
+			dwmblocks)
+				ups="git@github.com:torrinfail/$p.git"
+				;;
 			surf)
+				sbr="surf-webkit2"
 				xi "surf dependencies" \
 					webkit2gtk-devel gcr-devel gst-libav gst-plugins-good1
 				;;
@@ -179,6 +185,9 @@ if [ "$ghuser" ]; then
 		[ -d "$progdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$progdir/$p"
 		cd "$progdir/$p"
 		git checkout main
+		git remote add upstream "$ups"
+		git pull "$ups" "$sbr"
+		git merge "$ups/$sbr"
 		doas make install
 		make clean
 	done
