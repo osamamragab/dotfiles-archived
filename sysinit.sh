@@ -144,7 +144,7 @@ xi "markup/latex tools" \
 echo "installing ..."
 xi "networking tools" \
 	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
-	- httpie hashcat hashcat-utils testssl.sh \
+	- httpie hashcat hashcat-utils thc-hydra testssl.sh \
 	-- geoip geoip-data kismet proxychains-ng john
 cargo install xh
 [ "$level" -gt 0 ] && go install -v github.com/rs/curlie@latest
