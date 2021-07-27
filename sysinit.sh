@@ -72,7 +72,7 @@ xi "audio tools" \
 
 xi "multimedia tools" \
 	ffmpeg ImageMagick mpv sxiv \
-	- gimp \
+	- playerctl mpv-mpris gimp \
 	-- obs
 
 xi "music players" \
@@ -206,6 +206,8 @@ git checkout master
 doas make install
 make clean
 
+cd "$cdir"
+
 echo "installing z..."
 [ -d "$progdir/z" ] || git clone "git@github.com:rupa/z.git" "$progdir/z"
 doas cp -f "$progdir/z/z.1" "/usr/local/share/man/man1/z.1"
@@ -216,7 +218,11 @@ if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	curl --create-dirs -fLo "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 fi
 
-cd "$cdir"
+if [ -f "/usr/lib/mpv-mpris/mpris.so" ]; then
+	echo "linking mpv-mpris plugin"
+	[ -d "$HOME/.config/mpv/scripts" ] || mkdir -p "$HOME/.config/mpv/scripts"
+	doas ln -s "/usr/lib/mpv-mpris/mpris.so" "$HOME/.config/mpv/scripts/mpris.so"
+fi
 
 echo "changing default shell to zsh..."
 chsh -s "$(which zsh)"
