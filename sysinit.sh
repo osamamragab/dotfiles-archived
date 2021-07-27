@@ -55,7 +55,7 @@ xi "build tools" \
 
 xi "general tools" \
 	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip xwallpaper pmount autofs tar bsdtar xz zip unzip delta tig \
-	- lshw rsync nq fd skim mmv tree spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes \
+	- lshw rsync nq fd skim mmv tree spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes fribidi \
 	-- glow mdp screenkey bat github-cli glab
 
 xi "manual pages" \
@@ -151,7 +151,8 @@ cargo install xh
 pip install mitmproxy
 
 xi "fonts" \
-	font-ibm-plex-otf font-inconsolata-otf
+	font-ibm-plex-otf font-inconsolata-otf \
+	- amiri-font
 
 progdir="$HOME/programs"
 [ -d "$progdir" ] || mkdir -p "$progdir"
