@@ -45,7 +45,8 @@ xi "x" \
 	xorg xorg-server xinit libX11-devel libXft-devel libXinerama libXinerama-devel libXrandr libXrandr-devel
 
 xi "filesystems support" \
-	fuse fuse-exfat - mtpfs simple-mtpfs
+	fuse fuse-exfat \
+	-- mtpfs simple-mtpfs
 
 xi "network manager" \
 	NetworkManager ufw
@@ -55,8 +56,8 @@ xi "build tools" \
 
 xi "general tools" \
 	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip xwallpaper pmount autofs tar bsdtar xz zip unzip delta tig \
-	- lshw rsync nq fd skim mmv tree spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes fribidi \
-	-- glow mdp screenkey bat github-cli glab
+	- lshw rsync earlyoom spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes fribidi \
+	-- mdp screenkey bat github-cli glab
 
 xi "manual pages" \
 	man-pages man-pages-posix
@@ -108,7 +109,7 @@ xi "torrent tools" \
 	- btfs
 
 xi "programming stuff" \
-	clang tcc rustup go python3 nodejs yarn lua R ruby sassc c gdb valgrind strace ltrace clang-analyzer rust-analyzer binutils upx delve jq xxd
+	clang tcc go rustup python3 lua nodejs R ruby clisp clojure elixir sassc c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
 [ "$level" -gt 0 ] && xi _ gef postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
@@ -116,6 +117,7 @@ if [ "$level" -gt 1 ]; then
 	go install -v google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/timakin/bodyclose@latest
 	pip install jupyter mycli litecli
 fi
+cargo install stylua
 yarn global add typescript eslint prettier
 [ "$level" -gt 0 ] && yarn global add sass pug
 [ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon livereload
@@ -144,10 +146,9 @@ xi "markup/latex tools" \
 echo "installing ..."
 xi "networking tools" \
 	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
-	- httpie hashcat hashcat-utils thc-hydra testssl.sh \
-	-- geoip geoip-data kismet proxychains-ng john
+	- hashcat hashcat-utils testssl.sh \
+	-- geoip geoip-data kismet proxychains-ng thc-hydra john
 cargo install xh
-[ "$level" -gt 0 ] && go install -v github.com/rs/curlie@latest
 pip install mitmproxy
 
 xi "fonts" \
