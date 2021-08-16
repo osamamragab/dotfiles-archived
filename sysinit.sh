@@ -87,7 +87,7 @@ xi "video/photo/audio editors" \
 	-- openshot darktable krita audacity lmms
 
 xi "system monitoring tools" \
-	lm_sensors htop iftop mon \
+	lm_sensors htop iftop powertop mon \
 	- bmon atop iotop gotop \
 	-- speedometer vnstat sysstat procs nmon wavemon
 
