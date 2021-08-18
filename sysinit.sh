@@ -55,7 +55,7 @@ xi "build tools" \
 
 xi "general tools" \
 	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr vsv mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip xwallpaper pmount autofs tar bsdtar xz zip unzip tlp delta tig \
-	- lshw rsync earlyoom spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift safeeyes fribidi \
+	- lshw rsync earlyoom spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift fribidi arandr \
 	-- mdp screenkey bat github-cli glab
 
 xi "manual pages" \
