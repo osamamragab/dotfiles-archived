@@ -108,7 +108,7 @@ xi "torrent tools" \
 	- btfs
 
 xi "programming stuff" \
-	clang tcc go rustup python3 lua nodejs R ruby clisp clojure elixir sassc c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
+	clang tcc go rustup python3 lua nodejs R ruby clisp clojure elixir c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
 [ "$level" -gt 0 ] && xi _ gef postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
@@ -117,9 +117,9 @@ if [ "$level" -gt 1 ]; then
 	pip install jupyter mycli litecli
 fi
 cargo install stylua
-yarn global add typescript eslint prettier
+yarn global add typescript eslint prettier typescript-language-server
 [ "$level" -gt 0 ] && yarn global add sass pug
-[ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon livereload
+[ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon serve livereload
 if ! command -v deno >/dev/null 2>&1; then
 	export DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
 	curl -fsSL "https://deno.land/x/install/install.sh" | sh
