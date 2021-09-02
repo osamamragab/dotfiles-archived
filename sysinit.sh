@@ -108,11 +108,11 @@ xi "torrent tools" \
 	- btfs
 
 xi "programming stuff" \
-	clang tcc go rustup python3 lua nodejs R ruby clisp clojure elixir c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
-[ "$level" -gt 0 ] && xi _ gef postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
+	clang tcc go rustup python3 lua nodejs R perl ruby c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
+[ "$level" -gt 0 ] && xi _ elixir clojure leiningen gef postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
-	xi _ ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
+	xi _ clisp erlang ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
 	go install -v google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/timakin/bodyclose@latest
 	pip install jupyter mycli litecli
 fi
@@ -142,9 +142,8 @@ xi "markup/latex tools" \
 	pandoc groff texlive \
 	-- texlive-full mdocml lowdown mdBook
 
-echo "installing ..."
 xi "networking tools" \
-	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
+	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz radamsa \
 	- hashcat hashcat-utils testssl.sh \
 	-- geoip geoip-data kismet proxychains-ng thc-hydra john
 cargo install xh
