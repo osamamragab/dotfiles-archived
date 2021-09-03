@@ -109,7 +109,7 @@ xi "torrent tools" \
 
 xi "programming stuff" \
 	clang tcc go rustup python3 lua nodejs R perl ruby c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
-[ "$level" -gt 0 ] && xi _ elixir clojure leiningen gef postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
+[ "$level" -gt 0 ] && xi _ elixir clojure leiningen gef radare2 postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
 	xi _ clisp erlang ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
