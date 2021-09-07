@@ -55,8 +55,8 @@ xi "build tools" \
 
 xi "general tools" \
 	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils time entr vsv mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip xwallpaper pmount autofs tar bsdtar xz zip unzip tlp delta tig exiftool \
-	- lshw rsync earlyoom spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift fribidi arandr \
-	-- mdp screenkey bat github-cli glab
+	- lshw rsync earlyoom spt sc-im newsboat surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer openntpd bluez lprng qemu lftp redshift fribidi arandr tree bat glow \
+	-- mdp screenkey github-cli glab
 
 xi "manual pages" \
 	man-pages man-pages-posix
@@ -101,7 +101,7 @@ xi "chatting applications" \
 xi "web browsers" \
 	firefox lynx w3m tor \
 	- amfora sacc torbrowser-launcher \
-	-- netsurf lagrange
+	-- lagrange
 
 xi "torrent tools" \
 	transmission rtorrent \
@@ -198,6 +198,13 @@ echo "installing mutt-wizard..."
 cd "$progdir/mutt-wizard"
 git checkout master
 doas make install
+
+echo "installing nnn..."
+[ -d "$progdir/nnn" ] || git clone "git@github.com:jarun/nnn.git" "$progdir/nnn"
+cd "$progdir/nnn"
+git checkout master
+doas make install O_NERD=1
+make clean
 
 echo "installing hx..."
 [ -d "$progdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$progdir/hx"
