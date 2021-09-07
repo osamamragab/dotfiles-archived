@@ -117,8 +117,8 @@ if [ "$level" -gt 1 ]; then
 	pip install jupyter mycli litecli
 fi
 cargo install stylua
-yarn global add typescript eslint prettier typescript-language-server
-[ "$level" -gt 0 ] && yarn global add sass pug
+yarn global add typescript eslint prettier typescript-language-server pyright
+[ "$level" -gt 0 ] && yarn global add sass pug @vue/cli vls svelte-language-server
 [ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon serve livereload
 if ! command -v deno >/dev/null 2>&1; then
 	export DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
@@ -206,12 +206,28 @@ git checkout master
 doas make install
 make clean
 
-cd "$cdir"
-
 echo "installing z..."
 [ -d "$progdir/z" ] || git clone "git@github.com:rupa/z.git" "$progdir/z"
 doas cp -f "$progdir/z/z.1" "/usr/local/share/man/man1/z.1"
 doas chmod 644 "/usr/local/share/man/man1/z.1"
+
+echo "installing lua-language-server"
+[ -d "$progdir/lua-language-server" ] || git clone "git@github.com:sumneko/lua-language-server.git"
+cd "$progdir/lua-language-server"
+git submodule update --init --recursive
+cd 3rd/luamake
+./compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
+
+if [ "$level" -gt 0 ]; then
+	echo "installing elixir-ls"
+	[ -d "$progdir/elixir-ls" ] || git clone "git@github.com:elixir-lsp/elixir-ls"
+	cd "$progdir/elixir-ls"
+	mix deps.get && mix compile && mix elixir_ls.release -o bin
+fi
+
+cd "$cdir"
 
 if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	echo "installing vim plug..."
