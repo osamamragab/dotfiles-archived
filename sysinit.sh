@@ -164,7 +164,7 @@ fi
 
 if [ "$ghuser" ]; then
 	echo "installing suckless programs..."
-	for p in dwm st dmenu dwmblocks surf slock sent; do
+	for p in dwm st dmenu dwmblocks surf tabbed slock sent; do
 		echo "installig $p"
 		ups="git://git.suckless.org/$p"
 		sbr="master"
@@ -186,7 +186,7 @@ if [ "$ghuser" ]; then
 		cd "$progdir/$p"
 		git checkout main
 		git remote add upstream "$ups"
-		git pull "$ups" "$sbr"
+		git fetch "$ups" "$sbr"
 		git merge "$ups/$sbr"
 		doas make install
 		make clean
