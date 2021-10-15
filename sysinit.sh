@@ -153,7 +153,7 @@ xi "fonts" \
 	font-ibm-plex-otf font-inconsolata-otf \
 	- amiri-font
 
-progdir="$HOME/programs"
+progdir="${PROGRAMSDIR:-$HOME/programs}"
 [ -d "$progdir" ] || mkdir -p "$progdir"
 
 ghuser="$(git config --global --get user.username)"
@@ -186,10 +186,8 @@ if [ "$ghuser" ]; then
 		cd "$progdir/$p"
 		git checkout main
 		git remote add upstream "$ups"
-		git fetch "$ups" "$sbr"
-		git merge "$ups/$sbr"
-		doas make install
-		make clean
+		git fetch "$ups" "$sbr" && git merge "$ups/$sbr"
+		doas make install && make clean
 	done
 fi
 
@@ -203,15 +201,13 @@ echo "installing nnn..."
 [ -d "$progdir/nnn" ] || git clone "git@github.com:jarun/nnn.git" "$progdir/nnn"
 cd "$progdir/nnn"
 git checkout master
-doas make install O_NERD=1
-make clean
+doas make install O_NERD=1 && make clean
 
 echo "installing hx..."
 [ -d "$progdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$progdir/hx"
 cd "$progdir/hx"
 git checkout master
-doas make install
-make clean
+doas make install && make clean
 
 echo "installing z..."
 [ -d "$progdir/z" ] || git clone "git@github.com:rupa/z.git" "$progdir/z"
@@ -222,17 +218,12 @@ echo "installing lua-language-server"
 [ -d "$progdir/lua-language-server" ] || git clone "git@github.com:sumneko/lua-language-server.git"
 cd "$progdir/lua-language-server"
 git submodule update --init --recursive
-cd 3rd/luamake
-./compile/install.sh
-cd ../..
-./3rd/luamake/luamake rebuild
+cd 3rd/luamake && ./compile/install.sh && cd ../.. && ./3rd/luamake/luamake rebuild
 
-if [ "$level" -gt 0 ]; then
-	echo "installing elixir-ls"
-	[ -d "$progdir/elixir-ls" ] || git clone "git@github.com:elixir-lsp/elixir-ls"
-	cd "$progdir/elixir-ls"
-	mix deps.get && mix compile && mix elixir_ls.release -o bin
-fi
+echo "installing elixir-ls"
+[ -d "$progdir/elixir-ls" ] || git clone "git@github.com:elixir-lsp/elixir-ls"
+cd "$progdir/elixir-ls"
+mix deps.get && mix compile && mix elixir_ls.release -o bin
 
 cd "$cdir"
 
