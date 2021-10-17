@@ -1,5 +1,6 @@
 #!/bin/sh
 # vim: wrap
+# shellcheck disable=SC2164
 
 cdir="$(dirname "$(readlink -f "$0")")"
 if [ -x "$cdir/setup.sh" ]; then
@@ -121,14 +122,14 @@ yarn global add typescript eslint prettier typescript-language-server pyright
 [ "$level" -gt 0 ] && yarn global add sass pug @vue/cli vls svelte-language-server
 [ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon serve livereload
 if ! command -v deno >/dev/null 2>&1; then
-	export DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno"
-	curl -fsSL "https://deno.land/x/install/install.sh" | sh
+	curl -fsSL https://deno.land/x/install/install.sh | \
+		DENO_INSTALL="${XDG_DATA_HOME:-$HOME/.local/share}/deno" sh
 fi
 
 xi "cheat sheet tools" \
 	cheat tealdeer
 if [ "$level" -gt 0 ] && ! command -v cht.sh >/dev/null 2>&1; then
-	doas curl https://cht.sh/:cht.sh -o /usr/local/bin/cht.sh
+	doas curl -o /usr/local/bin/cht.sh https://cht.sh/:cht.sh
 	doas chmod +x /usr/local/bin/cht.sh
 fi
 
@@ -153,8 +154,8 @@ xi "fonts" \
 	font-ibm-plex-otf font-inconsolata-otf \
 	- amiri-font
 
-progdir="${PROGRAMSDIR:-$HOME/programs}"
-[ -d "$progdir" ] || mkdir -p "$progdir"
+PROGRAMSDIR="${PROGRAMSDIR:-$HOME/programs}"
+[ -d "$PROGRAMSDIR" ] || mkdir -p "$PROGRAMSDIR"
 
 ghuser="$(git config --global --get user.username)"
 if [ -z "$ghuser" ]; then
@@ -182,8 +183,8 @@ if [ "$ghuser" ]; then
 					farbfeld
 				;;
 		esac
-		[ -d "$progdir/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$progdir/$p"
-		cd "$progdir/$p"
+		[ -d "$PROGRAMSDIR/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$PROGRAMSDIR/$p"
+		cd "$PROGRAMSDIR/$p"
 		git checkout main
 		git remote add upstream "$ups"
 		git fetch "$ups" "$sbr" && git merge "$ups/$sbr"
@@ -192,50 +193,50 @@ if [ "$ghuser" ]; then
 fi
 
 echo "installing mutt-wizard..."
-[ -d "$progdir/mutt-wizard" ] || git clone "git@github.com:LukeSmithxyz/mutt-wizard.git" "$progdir/mutt-wizard"
-cd "$progdir/mutt-wizard"
+[ -d "$PROGRAMSDIR/mutt-wizard" ] || git clone git@github.com:LukeSmithxyz/mutt-wizard.git "$PROGRAMSDIR/mutt-wizard"
+cd "$PROGRAMSDIR/mutt-wizard"
 git checkout master
 doas make install
 
 echo "installing nnn..."
-[ -d "$progdir/nnn" ] || git clone "git@github.com:jarun/nnn.git" "$progdir/nnn"
-cd "$progdir/nnn"
+[ -d "$PROGRAMSDIR/nnn" ] || git clone git@github.com:jarun/nnn.git "$PROGRAMSDIR/nnn"
+cd "$PROGRAMSDIR/nnn"
 git checkout master
 doas make install O_NERD=1 && make clean
 
 echo "installing hx..."
-[ -d "$progdir/hx" ] || git clone "git@github.com:krpors/hx.git" "$progdir/hx"
-cd "$progdir/hx"
+[ -d "$PROGRAMSDIR/hx" ] || git clone git@github.com:krpors/hx.git "$PROGRAMSDIR/hx"
+cd "$PROGRAMSDIR/hx"
 git checkout master
 doas make install && make clean
 
 echo "installing z..."
-[ -d "$progdir/z" ] || git clone "git@github.com:rupa/z.git" "$progdir/z"
-doas cp -f "$progdir/z/z.1" "/usr/local/share/man/man1/z.1"
-doas chmod 644 "/usr/local/share/man/man1/z.1"
+[ -d "$PROGRAMSDIR/z" ] || git clone git@github.com:rupa/z.git "$PROGRAMSDIR/z"
+doas cp -f "$PROGRAMSDIR/z/z.1" /usr/local/share/man/man1/z.1
+doas chmod 644 /usr/local/share/man/man1/z.1
 
 echo "installing lua-language-server"
-[ -d "$progdir/lua-language-server" ] || git clone "git@github.com:sumneko/lua-language-server.git"
-cd "$progdir/lua-language-server"
+[ -d "$PROGRAMSDIR/lua-language-server" ] || git clone git@github.com:sumneko/lua-language-server.git
+cd "$PROGRAMSDIR/lua-language-server"
 git submodule update --init --recursive
 cd 3rd/luamake && ./compile/install.sh && cd ../.. && ./3rd/luamake/luamake rebuild
 
 echo "installing elixir-ls"
-[ -d "$progdir/elixir-ls" ] || git clone "git@github.com:elixir-lsp/elixir-ls"
-cd "$progdir/elixir-ls"
+[ -d "$PROGRAMSDIR/elixir-ls" ] || git clone git@github.com:elixir-lsp/elixir-ls
+cd "$PROGRAMSDIR/elixir-ls"
 mix deps.get && mix compile && mix elixir_ls.release -o bin
 
 cd "$cdir"
 
 if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	echo "installing vim plug..."
-	curl --create-dirs -fLo "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+	curl --create-dirs -fLo "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-if [ -f "/usr/lib/mpv-mpris/mpris.so" ]; then
+if [ -f /usr/lib/mpv-mpris/mpris.so ] && [ ! -f "$HOME/.config/mpv/scripts/mpris.so" ]; then
 	echo "linking mpv-mpris plugin"
 	[ -d "$HOME/.config/mpv/scripts" ] || mkdir -p "$HOME/.config/mpv/scripts"
-	doas ln -s "/usr/lib/mpv-mpris/mpris.so" "$HOME/.config/mpv/scripts/mpris.so"
+	doas ln -s /usr/lib/mpv-mpris/mpris.so "$HOME/.config/mpv/scripts/mpris.so"
 fi
 
 echo "changing default shell to zsh..."
