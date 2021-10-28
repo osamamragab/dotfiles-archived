@@ -156,13 +156,13 @@ xi "fonts" \
 PROGRAMSDIR="${PROGRAMSDIR:-$HOME/programs}"
 [ -d "$PROGRAMSDIR" ] || mkdir -p "$PROGRAMSDIR"
 
-ghuser="$(git config --global --get user.username)"
-if [ -z "$ghuser" ]; then
-	printf "github username: "
-	read -r ghuser
+guser="$(git config --global --get user.username)"
+if [ -z "$guser" ]; then
+	printf "git username: "
+	read -r guser
 fi
 
-if [ "$ghuser" ]; then
+if [ "$guser" ]; then
 	echo "installing suckless programs..."
 	for p in dwm st dmenu dwmblocks surf tabbed slock sent; do
 		echo "installig $p"
@@ -182,7 +182,7 @@ if [ "$ghuser" ]; then
 					farbfeld
 				;;
 		esac
-		[ -d "$PROGRAMSDIR/$p" ] || git clone "git@github.com:$ghuser/$p.git" "$PROGRAMSDIR/$p"
+		[ -d "$PROGRAMSDIR/$p" ] || git clone "git@gitlab.com:$guser/$p.git" "$PROGRAMSDIR/$p"
 		cd "$PROGRAMSDIR/$p"
 		git checkout main
 		git remote add upstream "$ups"
