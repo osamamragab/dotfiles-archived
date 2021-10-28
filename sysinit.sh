@@ -57,7 +57,7 @@ xi "build tools" \
 xi "general tools" \
 	curl wget gnupg gnupg2 openssh pass passmenu tmux nnn slop maim dunst xdg-utils xtools time entr vsv mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip yank xwallpaper pmount autofs tar bsdtar xz zip unzip tlp delta tig exiftool redshift newsboat \
 	- lshw rsync inotify-tools earlyoom spt sc-im surfraw android-tools scrcpy translate-shell xautolock miniserve yt-dlp youtube-viewer aria2 openntpd bluez lprng qemu lftp fribidi arandr tree bat glow dragon catimg mdp screenkey git-extras xoris fbida \
-	-- github-cli glab pcmanfm xarchiver
+	-- glab github-cli pcmanfm xarchiver libgsf ffmpegthumbnailer gnome-epub-thumbnailer
 
 xi "manual pages" \
 	man-pages man-pages-posix
@@ -73,8 +73,7 @@ xi "audio tools" \
 
 xi "multimedia tools" \
 	ffmpeg ImageMagick mpv sxiv \
-	- playerctl mpv-mpris gimp \
-	-- obs
+	-- playerctl mpv-mpris
 
 xi "music players" \
 	mpd mpc ncmpcpp
@@ -84,7 +83,8 @@ xi "pdf tools" \
 	-- wkhtmltopdf
 
 xi "video/photo/audio editors" \
-	-- openshot darktable krita audacity lmms
+	- gimp \
+	-- openshot darktable krita audacity lmms obs
 
 xi "system monitoring tools" \
 	lm_sensors htop iftop powertop mon \
@@ -97,7 +97,7 @@ xi "email tools" \
 xi "chatting applications" \
 	irssi \
 	- weechat weechat-python \
-	-- bitlbee slack-term Signal-Desktop telegram-tg telegram-desktop toot tuir toxcore toxic utox
+	-- tuir toot Signal-Desktop telegram-desktop
 
 xi "web browsers" \
 	firefox lynx w3m tor \
@@ -110,7 +110,7 @@ xi "torrent tools" \
 
 xi "programming stuff" \
 	clang tcc go rustup python3 lua nodejs R perl ruby c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
-[ "$level" -gt 0 ] && xi _ elixir clojure leiningen gef radare2 postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra ccls shellcheck shfmt pylint black python3-numpy python3-matplotlib python3-jupyter jupyterlab python3-scipy
+[ "$level" -gt 0 ] && xi _ clib elixir clojure leiningen gef radare2 postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra shellcheck shfmt pylint black python3-numpy python3-matplotlib python3-jupyter jupyterlab python3-scipy
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
 	xi _ clisp erlang ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
@@ -140,19 +140,18 @@ xi "arduino" \
 	- arduino arduino-cli
 
 xi "markup/latex tools" \
-	pandoc groff texlive \
-	-- texlive-full mdocml lowdown mdBook
+	pandoc groff mdocml texlive \
+	-- texlive-full
 
 xi "networking tools" \
-	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz radamsa nemesis \
-	- hashcat hashcat-utils testssl.sh \
+	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
+	- hashcat hashcat-utils testssl.sh radamsa nemesis \
 	-- geoip geoip-data kismet proxychains-ng thc-hydra john
 cargo install xh
 pip install mitmproxy
 
 xi "fonts" \
-	font-ibm-plex-otf font-inconsolata-otf \
-	- amiri-font
+	font-ibm-plex-otf font-inconsolata-otf amiri-font
 
 PROGRAMSDIR="${PROGRAMSDIR:-$HOME/programs}"
 [ -d "$PROGRAMSDIR" ] || mkdir -p "$PROGRAMSDIR"
