@@ -110,7 +110,7 @@ xi "torrent tools" \
 
 xi "programming stuff" \
 	clang tcc go rustup python3 lua nodejs R perl ruby c gdb valgrind strace ltrace clang-analyzer rust-analyzer yarn binutils upx delve jq xxd
-[ "$level" -gt 0 ] && xi _ clib elixir clojure leiningen gef radare2 postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra shellcheck shfmt pylint black python3-numpy python3-matplotlib python3-jupyter jupyterlab python3-scipy
+[ "$level" -gt 0 ] && xi _ clib elixir clojure leiningen gef radare2 postgresql13 mariadb sqlite redis flex bison byacc clang-tools-extra shellcheck shfmt pylint black python3-ipython python3-numpy python3-matplotlib python3-scipy python3-jupyter jupyterlab
 go install -v github.com/google/pprof@latest github.com/securego/gosec@latest honnef.co/go/tools/cmd/staticcheck@latest
 if [ "$level" -gt 1 ]; then
 	xi _ clisp erlang ctags grpc protobuf terraform tflint tokei misspell pgcli hexedit hyperfine svgcleaner
@@ -151,7 +151,7 @@ cargo install xh
 pip install mitmproxy
 
 xi "fonts" \
-	font-ibm-plex-otf font-inconsolata-otf amiri-font
+	font-ibm-plex-otf font-inconsolata-otf amiri-font fonts-croscore-ttf
 
 PROGRAMSDIR="${PROGRAMSDIR:-$HOME/programs}"
 [ -d "$PROGRAMSDIR" ] || mkdir -p "$PROGRAMSDIR"
