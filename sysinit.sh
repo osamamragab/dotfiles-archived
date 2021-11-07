@@ -69,7 +69,7 @@ xi "zsh" \
 	zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
 
 xi "audio tools" \
-	alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer
+	alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer apulse
 
 xi "multimedia tools" \
 	ffmpeg ImageMagick mpv sxiv \
@@ -146,7 +146,7 @@ xi "markup/latex tools" \
 xi "networking tools" \
 	nmap netcat lsof traceroute mtr wireshark wireshark-qt termshark inetutils iputils net-tools bind-utils socat websocat iperf3 arp-scan aircrack-ng ettercap bettercap macchanger sqlmap wrk hey wuzz \
 	- hashcat hashcat-utils testssl.sh radamsa nemesis \
-	-- geoip geoip-data kismet proxychains-ng thc-hydra john
+	-- geoip geoip-data proxychains-ng thc-hydra kismet john urh
 cargo install xh
 pip install mitmproxy
 
@@ -224,8 +224,6 @@ echo "installing elixir-ls"
 [ -d "$PROGRAMSDIR/elixir-ls" ] || git clone git@github.com:elixir-lsp/elixir-ls
 cd "$PROGRAMSDIR/elixir-ls"
 mix deps.get && mix compile && mix elixir_ls.release -o bin
-
-cd "$cdir"
 
 if [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim" ]; then
 	echo "installing vim plug..."
