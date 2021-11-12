@@ -119,7 +119,7 @@ if [ "$level" -gt 1 ]; then
 fi
 cargo install stylua
 yarn global add typescript eslint prettier typescript-language-server pyright
-[ "$level" -gt 0 ] && yarn global add sass pug @vue/cli vls svelte-language-server
+[ "$level" -gt 0 ] && yarn global add sass pug @vue/cli vls svelte-language-server vscode-langservers-extracted yaml-language-server
 [ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon serve livereload
 if ! command -v deno >/dev/null 2>&1; then
 	curl -fsSL https://deno.land/x/install/install.sh | \
