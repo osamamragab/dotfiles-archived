@@ -55,8 +55,8 @@ xi "build tools" \
 	gcc git make pkg-config
 
 xi "general tools" \
-	curl wget gnupg gnupg2 openssh pass passmenu keepassxc tmux nnn slop maim dunst xdg-utils xtools time entr vsv mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl pam-gnupg xdotool xclip yank xwallpaper pmount autofs tar bsdtar xz zip unzip tlp delta tig exiftool redshift newsboat \
-	- lshw rsync inotify-tools earlyoom spt sc-im surfraw android-tools scrcpy translate-shell xautolock miniserve yt-dlp youtube-viewer aria2 openntpd bluez lprng qemu lftp fribidi arandr tree bat glow dragon catimg mdp screenkey git-extras git-lfs xoris fbida buku zbar qrencode \
+	curl wget gnupg gnupg2 openssh pass passmenu keepassxc tmux nnn slop maim dunst xdg-utils xtools time entr vsv mlocate fzf ripgrep cronie libnotify xcompmgr unclutter urlview darkhttpd youtube-dl yt-dlp pam-gnupg xdotool xclip yank xwallpaper pmount autofs tar bsdtar xz zip unzip tlp delta tig exiftool redshift newsboat \
+	- lshw rsync inotify-tools earlyoom spt sc-im surfraw android-tools scrcpy translate-shell xautolock miniserve youtube-viewer aria2 openntpd bluez lprng qemu lftp fribidi arandr tree bat glow dragon catimg mdp screenkey git-extras git-lfs xoris fbida buku zbar qrencode \
 	-- glab github-cli pcmanfm xarchiver ffmpegthumbnailer gnome-epub-thumbnailer
 
 xi "manual pages" \
@@ -72,7 +72,7 @@ xi "audio tools" \
 	alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer apulse
 
 xi "multimedia tools" \
-	ffmpeg ImageMagick mpv sxiv \
+	ffmpeg ImageMagick mpv nsxiv \
 	-- playerctl mpv-mpris
 
 xi "music players" \
