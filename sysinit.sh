@@ -69,7 +69,7 @@ xi "zsh" \
 	zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
 
 xi "audio tools" \
-	alsa-utils alsa-plugins-pulseaudio pulseaudio pamixer pulsemixer apulse
+	alsa-utils alsa-plugins-pulseaudio pulseaudio pulseaudio-utils pamixer pulsemixer apulse
 
 xi "multimedia tools" \
 	ffmpeg ImageMagick mpv nsxiv \
