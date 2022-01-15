@@ -73,7 +73,7 @@ xi "audio tools" \
 
 xi "multimedia tools" \
 	ffmpeg ImageMagick mpv nsxiv \
-	-- playerctl mpv-mpris
+	-- playerctl mpv-mpris mpDris2
 
 xi "music players" \
 	mpd mpc ncmpcpp
