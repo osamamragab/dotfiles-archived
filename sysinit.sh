@@ -117,7 +117,7 @@ if [ "$level" -gt 1 ]; then
 	go install -v google.golang.org/protobuf/cmd/protoc-gen-go@latest github.com/fullstorydev/grpcurl@latest github.com/timakin/bodyclose@latest
 	pip install mycli litecli
 fi
-cargo install stylua
+cargo install cargo-edit cargo-update cargo-watch cargo-make rusty-tags stylua
 yarn global add typescript eslint prettier typescript-language-server pyright
 [ "$level" -gt 0 ] && yarn global add sass pug @vue/cli vls svelte-language-server vscode-langservers-extracted yaml-language-server
 [ "$level" -gt 1 ] && yarn global add svgo ts-node nodemon serve livereload
