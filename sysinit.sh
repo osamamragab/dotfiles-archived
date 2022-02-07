@@ -214,6 +214,13 @@ echo "installing z..."
 doas cp -f "$PROGRAMSDIR/z/z.1" /usr/local/share/man/man1/z.1
 doas chmod 644 /usr/local/share/man/man1/z.1
 
+PYENV_ROOT="${PYENV_ROOT:-${XDG_DATA_HOME:-$HOME/.local/share}}/pyenv"
+echo "installing pyenv"
+[ -d "$PYENV_ROOT" ] || git clone git@github.com:pyenv/pyenv.git "$PYENV_ROOT"
+cd "$PYENV_ROOT"
+git checkout master
+./src/configure make -C src
+
 echo "installing lua-language-server"
 [ -d "$PROGRAMSDIR/lua-language-server" ] || git clone git@github.com:sumneko/lua-language-server.git
 cd "$PROGRAMSDIR/lua-language-server"
