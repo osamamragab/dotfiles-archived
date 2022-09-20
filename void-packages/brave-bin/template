@@ -23,6 +23,8 @@ do_install() {
 
 	vmkdir usr/share
 	vcopy usr/share/applications usr/share/
+	vcopy usr/share/appdata usr/share/
+	vcopy usr/share/man usr/share/
 
 	vlicense opt/brave.com/brave/LICENSE
 
